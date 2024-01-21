@@ -4,10 +4,15 @@ import { FC, memo } from "react";
 interface TypographyProps {
   size?: TypographySize;
   children: React.ReactNode;
+  className?: string;
 }
 
-const Typography: FC<TypographyProps> = ({ size = "small", children }) => {
-  return <p className={cn(TYPO_STYLES[size])}>{children}</p>;
+const Typography: FC<TypographyProps> = ({
+  size = "small",
+  className,
+  children,
+}) => {
+  return <p className={cn(TYPO_STYLES[size], className)}>{children}</p>;
 };
 
 export default memo(Typography);
