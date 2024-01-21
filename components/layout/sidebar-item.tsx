@@ -17,11 +17,17 @@ const SidebarItem: FC<SidebarItemProps> = ({ menu }) => {
       <AccordionTrigger>
         <div className="flex gap-4 justify-start items-center">
           {menu.icon}
-          <Typography size="small">{menu.title}</Typography>
+          <Typography size="small"> {menu.title}</Typography>
         </div>
       </AccordionTrigger>
       <AccordionContent>
-        Yes. It adheres to the WAI-ARIA design pattern.
+        <div className="flex flex-col">
+          {menu.subMenus?.map((subMenu) => (
+            <div key={subMenu.path} className="pl-10 p-2">
+              <Typography size="small">・ {subMenu.title}</Typography>
+            </div>
+          ))}
+        </div>
       </AccordionContent>
     </AccordionItem>
   );

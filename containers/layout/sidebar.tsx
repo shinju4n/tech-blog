@@ -24,7 +24,10 @@ const MENUS: MenuType[] = [
   {
     title: "포스팅",
     icon: <IdCardIcon />,
-    subMenus: [],
+    subMenus: [
+      { title: "FE", path: "/posts/fe" },
+      { title: "BE", path: "/posts/be" },
+    ],
   },
   {
     title: "실험실",
