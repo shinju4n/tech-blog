@@ -6,10 +6,10 @@ interface ContentWrapperProps {
 
 const ContentWrapper: FC<ContentWrapperProps> = ({ children }) => {
   return (
-    <div className="w-full flex justify-center pb-8">
+    <div className="w-full flex md:justify-center p-2 md:py-8">
       <Sidebar />
-      <section className="w-[calc(100%-300px)] max-w-[1500px]">
-        {children}
+      <section className="w-[calc(100%-300px)] p-2 md:px-7">
+        <div className="relative">{children}</div>
       </section>
     </div>
   );
