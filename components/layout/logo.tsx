@@ -1,11 +1,12 @@
 import { FC } from "react";
 import Typography from "../ui/typography";
+import Link from "next/link";
 
 const Logo: FC = () => {
   return (
-    <div>
+    <Link href="/">
       <Typography>Ju4n Blog 🚀</Typography>
-    </div>
+    </Link>
   );
 };
 
