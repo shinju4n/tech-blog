@@ -5,6 +5,7 @@ import MainWrapper from "@/containers/layout/main-wrapper";
 import { cn } from "@/lib/utils";
 import Header from "@/containers/layout/header";
 import ContentWrapper from "@/containers/layout/content-wrapper";
+import { ThemeProvider } from "@/components/theme-provider";
 
 export const fontSans = FontSans({
   subsets: ["latin"],
@@ -26,10 +27,17 @@ export default function RootLayout({
       <body
         className={cn("bg-background font-sans antialiased", fontSans.variable)}
       >
-        <MainWrapper>
-          <Header />
-          <ContentWrapper>{children}</ContentWrapper>
-        </MainWrapper>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <MainWrapper>
+            <Header />
+            <ContentWrapper>{children}</ContentWrapper>
+          </MainWrapper>
+        </ThemeProvider>
       </body>
     </html>
   );
