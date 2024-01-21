@@ -4,7 +4,7 @@ import "./globals.css";
 import MainWrapper from "@/components/layout/main-wrapper";
 import { cn } from "@/lib/utils";
 import Header from "@/components/layout/header";
-import HeaderWrapper from "@/components/layout/header-wrapper";
+import ContentWrapper from "@/components/layout/content-wrapper";
 
 export const fontSans = FontSans({
   subsets: ["latin"],
@@ -24,15 +24,12 @@ export default function RootLayout({
   return (
     <html lang="ko">
       <body
-        className={cn(
-          "min-h- bg-background font-sans antialiased",
-          fontSans.variable
-        )}
+        className={cn("bg-background font-sans antialiased", fontSans.variable)}
       >
-        <HeaderWrapper>
+        <MainWrapper>
           <Header />
-        </HeaderWrapper>
-        {children}
+          <ContentWrapper>{children}</ContentWrapper>
+        </MainWrapper>
       </body>
     </html>
   );
