@@ -22,14 +22,16 @@ export default Sidebar;
 
 const MENUS: MenuType[] = [
   {
+    key: "posts",
     title: "포스팅",
     icon: <IdCardIcon />,
     subMenus: [
-      { title: "FE", path: "/posts/fe" },
-      { title: "BE", path: "/posts/be" },
+      { key: "FE", title: "프론트엔드 (FE)" },
+      { key: "BE", title: "백엔드 (BE)" },
     ],
   },
   {
+    key: "lab",
     title: "실험실",
     icon: <MagicWandIcon />,
     subMenus: [],

@@ -7,6 +7,7 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import Typography from "../ui/typography";
+import Link from "next/link";
 
 interface SidebarItemProps {
   menu: MenuType;
@@ -23,8 +24,10 @@ const SidebarItem: FC<SidebarItemProps> = ({ menu }) => {
       <AccordionContent>
         <div className="flex flex-col">
           {menu.subMenus?.map((subMenu) => (
-            <div key={subMenu.path} className="pl-10 p-2">
-              <Typography size="small">・ {subMenu.title}</Typography>
+            <div key={subMenu.key} className="pl-10 p-2">
+              <Link href={`/${menu.key}?category=${subMenu.key}`}>
+                <Typography size="small">・ {subMenu.title}</Typography>
+              </Link>
             </div>
           ))}
         </div>
