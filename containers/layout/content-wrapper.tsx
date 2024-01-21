@@ -1,5 +1,5 @@
 import { FC } from "react";
-import Sidebar from "@/components/layout/sidebar";
+import Sidebar from "@/containers/layout/sidebar";
 interface ContentWrapperProps {
   children: React.ReactNode;
 }
