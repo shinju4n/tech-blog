@@ -2,6 +2,7 @@ import { FC } from "react";
 import SidebarItem from "@/components/layout/sidebar-item";
 import { MenuType } from "@/types/LayoutType";
 import { Accordion } from "@/components/ui/accordion";
+import { IdCardIcon, MagicWandIcon } from "@radix-ui/react-icons";
 
 interface SidebarProps {}
 
@@ -22,10 +23,12 @@ export default Sidebar;
 const MENUS: MenuType[] = [
   {
     title: "포스팅",
+    icon: <IdCardIcon />,
     subMenus: [],
   },
   {
     title: "실험실",
+    icon: <MagicWandIcon />,
     subMenus: [],
   },
 ];

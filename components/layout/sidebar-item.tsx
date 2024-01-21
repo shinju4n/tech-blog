@@ -13,7 +13,12 @@ interface SidebarItemProps {
 const SidebarItem: FC<SidebarItemProps> = ({ menu }) => {
   return (
     <AccordionItem value={menu.title}>
-      <AccordionTrigger>{menu.title}</AccordionTrigger>
+      <AccordionTrigger>
+        <div className="flex gap-4 justify-start items-center">
+          {menu.icon}
+          {menu.title}
+        </div>
+      </AccordionTrigger>
       <AccordionContent>
         Yes. It adheres to the WAI-ARIA design pattern.
       </AccordionContent>
