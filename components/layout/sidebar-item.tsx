@@ -6,6 +6,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import Typography from "../ui/typography";
 
 interface SidebarItemProps {
   menu: MenuType;
@@ -16,7 +17,7 @@ const SidebarItem: FC<SidebarItemProps> = ({ menu }) => {
       <AccordionTrigger>
         <div className="flex gap-4 justify-start items-center">
           {menu.icon}
-          {menu.title}
+          <Typography size="small">{menu.title}</Typography>
         </div>
       </AccordionTrigger>
       <AccordionContent>
