@@ -8,7 +8,17 @@ interface PostsProps {
   };
 }
 
-const Posts: NextPage<PostsProps> = ({ searchParams }) => {
+const getPosts = async (
+  searchParams: PostsProps["searchParams"]["category"]
+) => {
+  const res = await fetch(
+    `https://jsonplaceholder.typicode.com/posts?category=${searchParams}`
+  );
+  const data = await res.json();
+  return data;
+};
+
+const PostsPage: NextPage<PostsProps> = async ({ searchParams }) => {
   return (
     <div>
       <Typography>category={searchParams.category}</Typography>
@@ -16,4 +26,4 @@ const Posts: NextPage<PostsProps> = ({ searchParams }) => {
   );
 };
 
-export default Posts;
+export default PostsPage;
