@@ -1,4 +1,8 @@
+import PostListItem from "@/components/posts/PostsListItem";
 import Typography from "@/components/ui/typography";
+import { supabase } from "@/lib/supabase/supabase";
+import { PostType } from "@/types/PostType";
+
 import { NextPage } from "next";
 
 interface PostsProps {
@@ -11,17 +15,20 @@ interface PostsProps {
 const getPosts = async (
   searchParams: PostsProps["searchParams"]["category"]
 ) => {
-  const res = await fetch(
-    `https://jsonplaceholder.typicode.com/posts?category=${searchParams}`
-  );
-  const data = await res.json();
+  const { data } = await supabase
+    .from("BlogPosts")
+    .select("*")
+    .filter("category", "eq", searchParams);
   return data;
 };
 
 const PostsPage: NextPage<PostsProps> = async ({ searchParams }) => {
+  const posts = await getPosts(searchParams.category);
   return (
     <div>
-      <Typography>category={searchParams.category}</Typography>
+      {posts?.map((post: PostType) => (
+        <PostListItem key={post.id} post={post} />
+      ))}
     </div>
   );
 };

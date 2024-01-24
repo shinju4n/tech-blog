@@ -1,4 +1,11 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {}
+const nextConfig = {
+  images: {
+    domains: [
+      "https://velog.velcdn.com",
+      "https://mblogthumb-phinf.pstatic.net",
+    ],
+  },
+};
 
-module.exports = nextConfig
+module.exports = nextConfig;
