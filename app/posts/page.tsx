@@ -1,9 +1,9 @@
 import PostListItem from "@/components/posts/PostsListItem";
-import Typography from "@/components/ui/typography";
 import { supabase } from "@/lib/supabase/supabase";
 import { PostType } from "@/types/PostType";
 
 import { NextPage } from "next";
+import Link from "next/link";
 
 interface PostsProps {
   searchParams: {
@@ -27,7 +27,9 @@ const PostsPage: NextPage<PostsProps> = async ({ searchParams }) => {
   return (
     <div>
       {posts?.map((post: PostType) => (
-        <PostListItem key={post.id} post={post} />
+        <Link href={`/posts/${post.id}`} key={post.id}>
+          <PostListItem post={post} />
+        </Link>
       ))}
     </div>
   );
