@@ -1,5 +1,5 @@
 ---
-title: "상태 관리를 URL로 해보자(pagination, filter)"
+title: "상태-관리를-URL로-구현하기"
 date: "2023-12-16"
 category: ["fe", "next.js"]
 summary: "왜 URL에 Pagination & Filter를 사용해야 할까?"

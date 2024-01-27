@@ -14,12 +14,12 @@ interface PostsProps {
 
 const PostsPage: NextPage<PostsProps> = async ({ searchParams }) => {
   const postList = await getPostList(searchParams.category);
-
   return (
     <div>
       {postList?.map((post: PostType) => {
+        console.log(post.id);
         return (
-          <Link href={`/posts/${post.id}`} key={post.id}>
+          <Link key={post.id} href={`/posts/${post.id}`}>
             <PostListItem post={post} />
           </Link>
         );
