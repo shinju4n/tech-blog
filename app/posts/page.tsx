@@ -1,9 +1,9 @@
-import PostListItem from "@/components/posts/PostsListItem";
-import { supabase } from "@/lib/supabase/supabase";
-import { PostType } from "@/types/PostType";
-
 import { NextPage } from "next";
 import Link from "next/link";
+
+import PostListItem from "@/components/posts/PostsListItem";
+import { getPostList } from "@/service/post-service";
+import { PostType } from "@/types/PostType";
 
 interface PostsProps {
   searchParams: {
@@ -12,25 +12,18 @@ interface PostsProps {
   };
 }
 
-const getPosts = async (
-  searchParams: PostsProps["searchParams"]["category"]
-) => {
-  const { data } = await supabase
-    .from("BlogPosts")
-    .select("*")
-    .filter("category", "eq", searchParams);
-  return data;
-};
-
 const PostsPage: NextPage<PostsProps> = async ({ searchParams }) => {
-  const posts = await getPosts(searchParams.category);
+  const postList = await getPostList(searchParams.category);
+
   return (
     <div>
-      {posts?.map((post: PostType) => (
-        <Link href={`/posts/${post.id}`} key={post.id}>
-          <PostListItem post={post} />
-        </Link>
-      ))}
+      {postList?.map((post: PostType) => {
+        return (
+          <Link href={`/posts/${post.id}`} key={post.id}>
+            <PostListItem post={post} />
+          </Link>
+        );
+      })}
     </div>
   );
 };

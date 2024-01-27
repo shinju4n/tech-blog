@@ -1,8 +1,9 @@
 export type PostType = {
-  id: string;
+  id: number;
   title: string;
-  content: string;
+  date: string;
+  category: string;
+  summary: string;
+  isPinned: boolean;
   thumbnailUrl: string;
-  isPublished: boolean;
-  tags: string[];
 };
