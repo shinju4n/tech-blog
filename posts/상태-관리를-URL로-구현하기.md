@@ -1,5 +1,5 @@
 ---
-title: "상태-관리를-URL로-구현하기"
+title: "상태 관리를 URL로 구현하기"
 date: "2023-12-16"
 category: ["fe", "next.js"]
 summary: "왜 URL에 Pagination & Filter를 사용해야 할까?"
@@ -20,6 +20,7 @@ thumbnailUrl: https://mblogthumb-phinf.pstatic.net/MjAyMDA0MjlfNzYg/MDAxNTg4MTQ0
 
 **"쇼핑몰이나 다른 검색페이지는 Query Params로 구현하지 않나?🤔"**
 
+![]("https://velog.velcdn.com/images/shinju4n/post/69a3e961-b9c9-478f-8230-dbfe8b1f69ea/image.png")
 <img src="https://velog.velcdn.com/images/shinju4n/post/69a3e961-b9c9-478f-8230-dbfe8b1f69ea/image.png" width="200%" height="200%">
 <img src="https://velog.velcdn.com/images/shinju4n/post/098e01d7-b39e-4cee-8390-2ef6be80a601/image.png" width="50%" height="50%" >
 
@@ -58,6 +59,7 @@ page = 2;
 ```
 
 1️⃣ URL에 상태 정보를 저장하지 않았을 때 URL : `www.domain.com/shop`
+
 2️⃣ URL에 상태 정보를 저장한 URL:`www.domain.com/shoppage=2&category=black&color=black`
 
 이 두가지 케이스로 한번 이점에 대해서 생각해보자.
