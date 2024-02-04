@@ -15,9 +15,8 @@ interface PostsProps {
 const PostsPage: NextPage<PostsProps> = async ({ searchParams }) => {
   const postList = await getPostList(searchParams.category);
   return (
-    <div>
+    <div className="flex flex-col gap-2 ">
       {postList?.map((post: PostType) => {
-        console.log(post.id);
         return (
           <Link key={post.id} href={`/posts/${post.id}`}>
             <PostListItem post={post} />

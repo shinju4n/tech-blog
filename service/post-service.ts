@@ -10,9 +10,7 @@ export const getPostList = async (category?: string): Promise<PostType[]> => {
   const postData = postFiles.map((postFile, i) => {
     const fileName = postFile.replace(/\.md$/, "");
     const filePath = path.join(postsDirectory, fileName + ".md");
-    console.log(filePath);
     const fileContents = fs.readFileSync(filePath, "utf8");
-    console.log(fileContents);
     const matterResult = matter(fileContents) as GrayMatterFile<string>;
     return {
       id: fileName,
@@ -26,7 +24,6 @@ export const getPost = async (id: string): Promise<PostType> => {
   const filePath = path.join(postsDirectory, `${id}.md`);
   const fileContents = fs.readFileSync(filePath, "utf8");
   const matterResult = matter(fileContents);
-  console.log(matterResult);
 
   return {
     id,
