@@ -2,14 +2,11 @@
 title: "상태 관리를 URL로 구현하기"
 date: "2023-12-16"
 category: ["fe", "next.js"]
-summary: "왜 URL에 Pagination & Filter를 사용해야 할까?"
+summary: "이번에 프로젝트를 시작하면서 `페이지(page)`와 `페이지 수(size)`, 그리고 여러개의 `필터값`을 통해 인플루언서를 검색하는 페이지를 개발하게 되었다.
+맨처음 개발에 들어갔을 때, 최대한 빨리 레이아웃과 API 연동을 완료한 결과물을 보여줘야할 상황이었기 때문에 내 나름대로 간단하게 구현하였다..."
 pinned: true
 thumbnailUrl: https://mblogthumb-phinf.pstatic.net/MjAyMDA0MjlfNzYg/MDAxNTg4MTQ0NDU4MTY2.yI4L02gtOvHSsZV4r5WJi-PJI77MdEEL-xnLHBvLwDUg.nA8WEJkzHYByxzfA3kUyQHvtjKUu-pE8K07kS4djDlYg.JPEG.cream-b/IMG_2043.JPG?type=w800
 ---
-
-<p align="center">
-<img src="https://mblogthumb-phinf.pstatic.net/MjAyMDA0MjlfNzYg/MDAxNTg4MTQ0NDU4MTY2.yI4L02gtOvHSsZV4r5WJi-PJI77MdEEL-xnLHBvLwDUg.nA8WEJkzHYByxzfA3kUyQHvtjKUu-pE8K07kS4djDlYg.JPEG.cream-b/IMG_2043.JPG?type=w800" width="50%" height="50%">
-</p>
 
 ### 🧠 이 글을 쓰게 된 계기
 
@@ -20,10 +17,8 @@ thumbnailUrl: https://mblogthumb-phinf.pstatic.net/MjAyMDA0MjlfNzYg/MDAxNTg4MTQ0
 
 **"쇼핑몰이나 다른 검색페이지는 Query Params로 구현하지 않나?🤔"**
 
-![]("https://velog.velcdn.com/images/shinju4n/post/69a3e961-b9c9-478f-8230-dbfe8b1f69ea/image.png")
-<img src="https://velog.velcdn.com/images/shinju4n/post/69a3e961-b9c9-478f-8230-dbfe8b1f69ea/image.png" width="200%" height="200%">
-<img src="https://velog.velcdn.com/images/shinju4n/post/098e01d7-b39e-4cee-8390-2ef6be80a601/image.png" width="50%" height="50%" >
-
+![](https://velog.velcdn.com/images/shinju4n/post/69a3e961-b9c9-478f-8230-dbfe8b1f69ea/image.png)
+![](https://velog.velcdn.com/images/shinju4n/post/098e01d7-b39e-4cee-8390-2ef6be80a601/image.png)
 물론 기능적으로는 둘다 잘 동작하지만 보편적으로 Query Params로 구현이 되어있는다는 생각이 들어 그 이유가 궁금해졌다.
 그렇게 이유에 대해서 검색해보다가 유튜브에서 너무 마음에 드는 영상을 발견하였다.
 <a href="https://www.youtube.com/watch?v=ukpgxEemXsk" target="_blank">참고 유튜브 링크🚀</a>
