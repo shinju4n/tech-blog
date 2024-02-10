@@ -1,7 +1,7 @@
 import { type NextPage } from "next";
 import { getPost } from "@/service/post-service";
 import MarkdownRender from "@/components/MarkdownRender";
-import Typography from "@/components/ui/typography";
+import PostHead from "@/components/posts/detail/PostHead";
 
 interface PostingDetailProps {
   params: {
@@ -14,9 +14,11 @@ const PostingDetail: NextPage<PostingDetailProps> = async ({ params }) => {
 
   return (
     <div className="w-full">
-      <div className=" pb-3">
-        <Typography size="h2">{post?.title}</Typography>
-      </div>
+      <PostHead
+        title={post.title}
+        createdAt={post.date}
+        category={post.category}
+      />
       <div className="py-4">
         <MarkdownRender markdown={post.content} />
       </div>
