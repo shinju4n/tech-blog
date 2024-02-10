@@ -6,6 +6,8 @@ import Image from "next/image";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import rehypeCodeTitles from "rehype-code-titles";
 import { materialDark } from "react-syntax-highlighter/dist/cjs/styles/prism";
+import Typography from "./ui/typography";
+import Link from "next/link";
 
 interface MarkdownRenderProps {
   markdown: string;
@@ -16,7 +18,7 @@ const MarkdownRender: FC<MarkdownRenderProps> = ({ markdown }) => {
       remarkPlugins={[remarkGfm]}
       rehypePlugins={[rehypeCodeTitles]}
       components={{
-        code: ({ node, className, children, ...props }) => {
+        code: ({ className, children, ...props }) => {
           const match = /language-(\w+)/.exec(className || "");
           return match ? (
             <>
@@ -33,13 +35,31 @@ const MarkdownRender: FC<MarkdownRenderProps> = ({ markdown }) => {
           );
         },
         img: (image) => (
-          <Image
-            src={image.src || ""}
-            alt={image.alt || ""}
-            width={500}
-            height={300}
-          />
+          <span className="flex justify-center items-center mb-6 bg-foreground/5">
+            <Image
+              src={image.src || ""}
+              alt={image.alt || ""}
+              width={500}
+              height={300}
+            />
+          </span>
         ),
+        h1: ({ children }) => <Typography size="h1">{children}</Typography>,
+        h2: ({ children }) => <Typography size="h2">{children}</Typography>,
+        h3: ({ children }) => <Typography size="h3">{children}</Typography>,
+        h4: ({ children }) => <Typography size="h4">{children}</Typography>,
+        p: ({ children }) => <Typography size="p">{children}</Typography>,
+        strong: ({ children }) => (
+          <Typography size="strong">{children}</Typography>
+        ),
+        a: ({ children, href }) => {
+          console.log;
+          return (
+            <Link href={href ?? ""} target="_blank" className="text-blue-500">
+              [{children}]
+            </Link>
+          );
+        },
       }}
     >
       {markdown}

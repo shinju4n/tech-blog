@@ -18,11 +18,15 @@ thumbnailUrl: https://mblogthumb-phinf.pstatic.net/MjAyMDA0MjlfNzYg/MDAxNTg4MTQ0
 **"쇼핑몰이나 다른 검색페이지는 Query Params로 구현하지 않나?🤔"**
 
 ![](https://velog.velcdn.com/images/shinju4n/post/69a3e961-b9c9-478f-8230-dbfe8b1f69ea/image.png)
+
 ![](https://velog.velcdn.com/images/shinju4n/post/098e01d7-b39e-4cee-8390-2ef6be80a601/image.png)
+
 물론 기능적으로는 둘다 잘 동작하지만 보편적으로 Query Params로 구현이 되어있는다는 생각이 들어 그 이유가 궁금해졌다.
 그렇게 이유에 대해서 검색해보다가 유튜브에서 너무 마음에 드는 영상을 발견하였다.
-<a href="https://www.youtube.com/watch?v=ukpgxEemXsk" target="_blank">참고 유튜브 링크🚀</a>
-<img src="https://velog.velcdn.com/images/shinju4n/post/bd6483a2-aaa3-4142-b45f-37a38d033109/image.png" width="100%" height="100%" >
+
+[참고 유튜브 링크🚀](https://www.youtube.com/watch?v=ukpgxEemXsk)
+
+![](https://velog.velcdn.com/images/shinju4n/post/cc300946-58dd-4ec5-bf09-d06e47f53f25/image.png)
 
 해당 영상을 보고 실제 프로젝트에 직접 적용을 해보았는데,
 프로젝트를 사용하는 직원들에게도 좋은 평을 받았고, 코드의 수도 많이 줄었기 때문에 만족도가 높았다.
@@ -32,8 +36,6 @@ thumbnailUrl: https://mblogthumb-phinf.pstatic.net/MjAyMDA0MjlfNzYg/MDAxNTg4MTQ0
 이러한 경험을 잘 녹여내서 한번 작성해보려고 한다.
 
 ### ❓ Query Params
-
-<img src="https://static.semrush.com/blog/uploads/media/ca/37/ca3737d8edb5cf079aaf1f11ae01d286/mMREmiwXSrryVyv8IxbVFgje7ICFhfqWnca7W0db36KjX35vzLTnStkFynEd9NBoXXH-JYKCm2deskxgLo_vxzEvl-qLpVOgtwc78rhFI2Rm1pBK-j2SwMKWz0CXU42STjzUVcF1vaRTFbw_6wvH_5A.png" width="100%" height="100%" >
 
 `Query Params`은 웹 요청(주로 HTTP 요청)에서 사용되는 매개변수(parameters) 중 하나로, 주로 URL에 포함되어 데이터를 전달하는 데 사용된다.
 일반적으로는 "key=value" 형식으로 이루어져 있으며, 여러 개의 쌍을 연결하여 사용할 수 있다.
@@ -245,5 +247,3 @@ const { data, error, isLoading, mutate } = useSWR<ShopResponse>(
 나는 지금 프론트엔드 개발을 혼자서 하고 있으니, 다른 사람이 구현한 방식에 대해 생각해보고
 프로젝트에 계속 적용해보면 더 크게 레벨업을 할 수 있지 않을까 생각한다.
 언제나 이런 레벨업은 항상 즐거운 것 같다.
-
----

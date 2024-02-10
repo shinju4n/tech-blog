@@ -19,9 +19,7 @@ const PostingDetail: NextPage<PostingDetailProps> = async ({ params }) => {
         createdAt={post.date}
         category={post.category}
       />
-      <div className="py-4">
-        <MarkdownRender markdown={post.content} />
-      </div>
+      <MarkdownRender markdown={post.content} />
     </div>
   );
 };
