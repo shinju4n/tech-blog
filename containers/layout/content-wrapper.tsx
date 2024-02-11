@@ -6,7 +6,7 @@ interface ContentWrapperProps {
 
 const ContentWrapper: FC<ContentWrapperProps> = ({ children }) => {
   return (
-    <div className="w-full flex md:justify-center px-6">
+    <div className="w-full flex md:justify-center px-6 relative">
       <Sidebar />
       <div className="relative flex justify-center w-full px-4 py-6">
         {children}

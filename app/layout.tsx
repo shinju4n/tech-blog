@@ -33,8 +33,10 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <Header />
-          <ContentWrapper>{children}</ContentWrapper>
+          <div className="relative h-[100dvh] overflow-y-scroll">
+            <Header />
+            <ContentWrapper>{children}</ContentWrapper>
+          </div>
         </ThemeProvider>
       </body>
     </html>

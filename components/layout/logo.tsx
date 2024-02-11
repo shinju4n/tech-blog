@@ -4,8 +4,9 @@ import Link from "next/link";
 
 const Logo: FC = () => {
   return (
-    <Link href="/">
-      <Typography>Ju4n Blog 🚀</Typography>
+    <Link href="/" className="flex gap-2">
+      <Typography className="hidden md:block">Ju4n Blog</Typography>
+      <Typography>🚀</Typography>
     </Link>
   );
 };
