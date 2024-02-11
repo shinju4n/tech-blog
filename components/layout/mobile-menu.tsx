@@ -15,7 +15,14 @@ import {
 } from "@radix-ui/react-icons";
 import { MenuType } from "@/types/LayoutType";
 import SidebarItem from "./sidebar-item";
-import { Accordion } from "../ui/accordion";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "../ui/accordion";
+import Typography from "../ui/typography";
+import Link from "next/link";
 
 const MobileMenu: FC = () => {
   return (
@@ -30,7 +37,29 @@ const MobileMenu: FC = () => {
             className="w-full px-4 lg:min-w-[300px] xl:min-w-[350px] transition-all"
           >
             {MENUS.map((menu) => (
-              <SidebarItem key={menu.title} menu={menu} />
+              <AccordionItem key={menu.key} value={menu.title}>
+                <AccordionTrigger>
+                  <div className="flex gap-4 justify-start items-center">
+                    {menu.icon}
+                    <Typography size="small"> {menu.title}</Typography>
+                  </div>
+                </AccordionTrigger>
+                <AccordionContent>
+                  <div className="flex flex-col">
+                    {menu.subMenus?.map((subMenu) => (
+                      <div key={subMenu.key} className="pl-10 p-2">
+                        <Link href={`/${menu.key}?category=${subMenu.key}`}>
+                          <SheetTrigger>
+                            <Typography size="small">
+                              ・ {subMenu.title}
+                            </Typography>
+                          </SheetTrigger>
+                        </Link>
+                      </div>
+                    ))}
+                  </div>
+                </AccordionContent>
+              </AccordionItem>
             ))}
           </Accordion>
         </div>
