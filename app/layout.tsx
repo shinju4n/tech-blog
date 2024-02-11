@@ -33,7 +33,7 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <div className="relative h-[100dvh] overflow-y-scroll">
+          <div className="relative h-[100dvh] overflow-y-scroll scrollbar-hide">
             <Header />
             <ContentWrapper>{children}</ContentWrapper>
           </div>
