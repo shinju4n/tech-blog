@@ -13,14 +13,8 @@ const Typography: FC<TypographyProps> = ({
   children,
 }) => {
   if (INCLUDE_EL.includes(size))
-    return (
-      <span className={cn(TYPO_STYLES[size], className, "leading")}>
-        {children}
-      </span>
-    );
-  return (
-    <p className={cn(TYPO_STYLES[size], className, "leading")}>{children}</p>
-  );
+    return <span className={cn(TYPO_STYLES[size], className)}>{children}</span>;
+  return <p className={cn(TYPO_STYLES[size], className)}>{children}</p>;
 };
 
 export default memo(Typography);
@@ -30,7 +24,7 @@ const TYPO_STYLES: Record<TypographySize, string> = {
   h2: "scroll-m-20 pb-2 text-3xl font-semibold tracking-tight first:mt-0",
   h3: "scroll-m-20 text-2xl font-semibold tracking-tight my-6",
   h4: "scroll-m-20 text-xl font-semibold tracking-tight my-4",
-  p: "text-lg leading-tight mb-2",
+  p: "text-lg mb-2 leading-relaxed",
   lead: "text-xl text-muted-foreground",
   large: "text-lg font-semibold",
   small: "text-sm font-medium leading-none",
