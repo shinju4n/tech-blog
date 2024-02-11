@@ -34,7 +34,7 @@ const MobileMenu: FC = () => {
         <div className="py-10">
           <Accordion
             type="multiple"
-            className="w-full px-4 lg:min-w-[300px] xl:min-w-[350px] transition-all"
+            className="w-full px-4 lg:min-w-[300px] xl:min-w-[350px] transition-all outline-none"
           >
             {MENUS.map((menu) => (
               <AccordionItem
