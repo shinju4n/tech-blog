@@ -1,7 +1,6 @@
 import { MenuType } from "@/types/LayoutType";
 import { FC, memo } from "react";
 import {
-  Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,

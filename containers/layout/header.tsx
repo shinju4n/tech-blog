@@ -1,4 +1,5 @@
 import Logo from "@/components/layout/logo";
+import MobileMenu from "@/components/layout/mobile-menu";
 import ThemeToggle from "@/components/layout/theme-toggle";
 import { FC } from "react";
 
@@ -8,6 +9,7 @@ const Header: FC<HeaderProps> = ({}) => {
   return (
     <div className="sticky w-full flex justify-between items-center h-12 border-b border-foreground/20 bg-background top-0 px-8 z-50">
       <Logo />
+      <MobileMenu />
       <ThemeToggle />
     </div>
   );
