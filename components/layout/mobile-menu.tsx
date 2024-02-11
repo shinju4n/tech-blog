@@ -27,7 +27,7 @@ import Link from "next/link";
 const MobileMenu: FC = () => {
   return (
     <Sheet>
-      <SheetTrigger className="block lg:hidden">
+      <SheetTrigger className="block lg:hidden outline-none">
         <HamburgerMenuIcon />
       </SheetTrigger>
       <SheetContent side={"left"}>
@@ -37,7 +37,11 @@ const MobileMenu: FC = () => {
             className="w-full px-4 lg:min-w-[300px] xl:min-w-[350px] transition-all"
           >
             {MENUS.map((menu) => (
-              <AccordionItem key={menu.key} value={menu.title}>
+              <AccordionItem
+                key={menu.key}
+                value={menu.title}
+                className="outline-none"
+              >
                 <AccordionTrigger>
                   <div className="flex gap-4 justify-start items-center">
                     {menu.icon}
