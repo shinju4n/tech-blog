@@ -53,10 +53,13 @@ const MarkdownRender: FC<MarkdownRenderProps> = ({ markdown }) => {
           <Typography size="strong">{children}</Typography>
         ),
         a: ({ children, href }) => {
-          console.log;
           return (
-            <Link href={href ?? ""} target="_blank" className="text-blue-500">
-              [{children}]
+            <Link
+              href={href ?? ""}
+              target="_blank"
+              className="text-blue-500 whitespace-pre-wrap"
+            >
+              [링크]
             </Link>
           );
         },
