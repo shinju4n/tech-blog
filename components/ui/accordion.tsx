@@ -5,6 +5,7 @@ import * as AccordionPrimitive from "@radix-ui/react-accordion";
 import { ChevronDownIcon } from "@radix-ui/react-icons";
 
 import { cn } from "@/lib/utils";
+import { ShapePyramidIcon } from "../Icons";
 
 const Accordion = AccordionPrimitive.Root;
 
@@ -30,7 +31,7 @@ const AccordionTrigger = React.forwardRef<
       {...props}
     >
       {children}
-      <ChevronDownIcon className="h-4 w-4 shrink-0 text-muted-foreground transition-transform duration-200" />
+      <ShapePyramidIcon className="h-3 w-3 shrink-0 transition-transform duration-200 fill-foreground" />
     </AccordionPrimitive.Trigger>
   </AccordionPrimitive.Header>
 ));

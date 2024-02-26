@@ -1,20 +1,6 @@
 import { FC } from "react";
-import {
-  Sheet,
-  SheetContent,
-  SheetDescription,
-  SheetHeader,
-  SheetTitle,
-  SheetTrigger,
-} from "@/components/ui/sheet";
-import {
-  FaceIcon,
-  HamburgerMenuIcon,
-  IdCardIcon,
-  MagicWandIcon,
-} from "@radix-ui/react-icons";
+import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { MenuType } from "@/types/LayoutType";
-import SidebarItem from "./sidebar-item";
 import {
   Accordion,
   AccordionContent,
@@ -23,12 +9,18 @@ import {
 } from "../ui/accordion";
 import Typography from "../ui/typography";
 import Link from "next/link";
+import {
+  ContentWriteIcon,
+  DesktopActionMonitorIcon,
+  MenuNavigationIcon,
+  VideoGameControllerIcon,
+} from "../Icons";
 
 const MobileMenu: FC = () => {
   return (
     <Sheet>
-      <SheetTrigger className="block lg:hidden outline-none">
-        <HamburgerMenuIcon />
+      <SheetTrigger className="block lg:hidden outline-none order-1">
+        <MenuNavigationIcon />
       </SheetTrigger>
       <SheetContent side={"left"}>
         <div className="py-10">
@@ -77,7 +69,7 @@ const MENUS: MenuType[] = [
   {
     key: "posts",
     title: "포스팅",
-    icon: <IdCardIcon />,
+    icon: <ContentWriteIcon />,
     subMenus: [
       { key: "FE", title: "프론트엔드 (FE)" },
       { key: "BE", title: "백엔드 (BE)" },
@@ -86,13 +78,13 @@ const MENUS: MenuType[] = [
   {
     key: "lab",
     title: "실험실",
-    icon: <MagicWandIcon />,
+    icon: <DesktopActionMonitorIcon />,
     subMenus: [],
   },
   {
     key: "apps",
     title: "사이드 프로젝트",
-    icon: <FaceIcon />,
+    icon: <VideoGameControllerIcon />,
     subMenus: [],
   },
 ];
