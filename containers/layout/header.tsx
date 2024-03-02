@@ -7,7 +7,10 @@ interface HeaderProps {}
 
 const Header: FC<HeaderProps> = ({}) => {
   return (
-    <div className="sticky w-full flex justify-between items-center h-12 border-b border-foreground/20 bg-background top-0 px-8 z-50">
+    <div
+      className="sticky w-full flex justify-between items-center h-14 border-b border-foreground/20 backdrop-blur-sm
+    bg-background/70 top-0 px-8 z-50"
+    >
       <Logo />
       <MobileMenu />
       <ThemeToggle />
