@@ -17,7 +17,10 @@ export const getPostList = async (category?: string): Promise<PostType[]> => {
       ...matterResult.data,
     } as PostType;
   });
-  return postData;
+  const orderByDate = postData.sort((a, b) => {
+    return a.date > b.date ? -1 : 1;
+  });
+  return orderByDate;
 };
 
 export const getPost = async (id: string): Promise<PostType> => {
