@@ -12,7 +12,7 @@ interface SidebarProps {}
 
 const Sidebar: FC<SidebarProps> = ({}) => {
   return (
-    <div className="sticky self-start top-[70px] hidden lg:block">
+    <div className="sticky py-4 top-0 hidden lg:block">
       <Accordion
         type="multiple"
         className="w-full px-4 lg:min-w-[300px] transition-all"
