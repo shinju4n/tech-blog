@@ -41,6 +41,8 @@ const MarkdownRender: FC<MarkdownRenderProps> = ({ markdown }) => {
               alt={image.alt || ""}
               width={500}
               height={300}
+              loading="lazy"
+              sizes="(max-width: 768px) 50vw,(max-width: 1024px) 100vw"
             />
           </span>
         ),
