@@ -1,11 +1,12 @@
 import type { Metadata } from "next";
 import { Inter as FontSans } from "next/font/google";
 import "./globals.css";
-import MainWrapper from "@/containers/layout/main-wrapper";
-import { cn } from "@/lib/utils";
+import { ThemeProvider } from "@/components/theme-provider";
+import Container from "@/components/layout/container";
 import Header from "@/containers/layout/header";
 import ContentWrapper from "@/containers/layout/content-wrapper";
-import { ThemeProvider } from "@/components/theme-provider";
+import Sidebar from "@/containers/layout/sidebar";
+import { cn } from "@/lib/utils";
 
 export const fontSans = FontSans({
   subsets: ["latin"],
@@ -23,7 +24,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="ko">
+    <html lang="ko" suppressHydrationWarning>
       <body
         className={cn("bg-background font-sans antialiased", fontSans.variable)}
       >
@@ -33,10 +34,15 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <div className="relative h-[100dvh] overflow-y-scroll scrollbar-hide">
+          <Container>
             <Header />
-            <ContentWrapper>{children}</ContentWrapper>
-          </div>
+            <ContentWrapper>
+              <Sidebar />
+              <div className="relative flex justify-center w-full px-4 py-6">
+                {children}
+              </div>
+            </ContentWrapper>
+          </Container>
         </ThemeProvider>
       </body>
     </html>
