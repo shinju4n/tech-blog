@@ -1,7 +1,7 @@
-import { PostType } from "@/types/PostType";
-import { FC } from "react";
-import Typography from "@/components/ui/typography";
+import { type FC } from "react";
 import Image from "next/image";
+import Typography from "@/components/ui/typography";
+import { type PostType } from "@/types/PostType";
 
 const PostListItem: FC<{ post: PostType }> = ({ post }) => {
   return (
@@ -10,10 +10,10 @@ const PostListItem: FC<{ post: PostType }> = ({ post }) => {
         <Image
           src={post.thumbnailUrl}
           alt="thumbnail"
-          width={200}
-          height={200}
-          sizes="200p®x"
-          className="transition-all group-hover:scale-125 ease-in-out duration-300"
+          width={0}
+          height={0}
+          sizes="30vw"
+          className="transition-all group-hover:scale-125 ease-in-out duration-300 w-full h-auto"
         />
       </div>
       <div className="w-full flex flex-col justify-between py-2">
