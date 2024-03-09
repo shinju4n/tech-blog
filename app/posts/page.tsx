@@ -8,12 +8,14 @@ import { PostType } from "@/types/PostType";
 interface PostsProps {
   searchParams: {
     [key: string]: string | string[] | undefined;
-    category: "FE" | "BE";
+    category?: string;
+    tags?: string;
   };
 }
 
 const PostsPage: NextPage<PostsProps> = async ({ searchParams }) => {
-  const postList = await getPostList(searchParams.category);
+  console.log(searchParams);
+  const postList = await getPostList(searchParams);
   return (
     <div className="flex flex-col gap-2 ">
       {postList?.map((post: PostType) => {
