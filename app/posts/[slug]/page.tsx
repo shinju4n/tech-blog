@@ -2,8 +2,6 @@ import { Metadata, ResolvingMetadata, type NextPage } from "next";
 import { getPost } from "@/service/post-service";
 import MarkdownRender from "@/components/MarkdownRender";
 import PostHead from "@/components/posts/detail/PostHead";
-import Head from "next/head";
-import { Props } from "next/script";
 
 interface PostingDetailProps {
   params: {
@@ -20,11 +18,13 @@ export async function generateMetadata(
 
   const previousImages = (await parent).openGraph?.images || [];
 
+  const title = "주안 블로그 | " + post.title;
+
   return {
-    title: post.title,
+    title: title,
     description: post.summary,
     openGraph: {
-      title: post.title,
+      title: title,
       description: post.summary,
       locale: "ko_KR",
       siteName: "주안 블로그",

@@ -17,7 +17,7 @@ export const metadata: Metadata = {
   title: "🚀 주안 블로그",
   description: "재미있는 개발이 좋아요",
   verification: {
-    google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION,
+    google: process.env.GOOGLE_SITE_VERIFICATION,
   },
 };
 
