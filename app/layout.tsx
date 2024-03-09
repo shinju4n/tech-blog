@@ -14,8 +14,11 @@ export const fontSans = FontSans({
 });
 
 export const metadata: Metadata = {
-  title: "주안 블로그",
-  description: "주안 블로그입니다.",
+  title: "🚀 주안 블로그",
+  description: "재미있는 개발이 좋아요",
+  verification: {
+    google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION,
+  },
 };
 
 export default function RootLayout({
