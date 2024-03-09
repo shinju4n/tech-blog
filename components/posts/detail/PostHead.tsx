@@ -9,7 +9,7 @@ interface PostHeadProps {
 
 const PostHead: FC<PostHeadProps> = ({ title, createdAt, category }) => {
   return (
-    <div className="py-5 mb-2 border-b border-foreground/50">
+    <div className="mb-2 border-b border-foreground/50">
       <Typography size="h1" className="mb-4">
         {title}
       </Typography>
