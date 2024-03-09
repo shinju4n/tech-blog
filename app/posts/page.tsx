@@ -1,22 +1,24 @@
 import { NextPage } from "next";
 import Link from "next/link";
-
+import { getPostList, getPostTags } from "@/service/post-service";
 import PostListItem from "@/components/posts/PostsListItem";
-import { getPostList } from "@/service/post-service";
-import { PostType } from "@/types/PostType";
+import PostTagList from "@/components/posts/PostTabList";
+import { type PostType } from "@/types/PostType";
 
 interface PostsProps {
   searchParams: {
     [key: string]: string | string[] | undefined;
     category?: string;
-    tags?: string;
+    tag?: string;
   };
 }
 
-const PostsPage: NextPage<PostsProps> = async ({ searchParams }) => {
+const PostListPage: NextPage<PostsProps> = async ({ searchParams }) => {
   const postList = await getPostList(searchParams);
+  const postTags = await getPostTags();
   return (
     <div className="flex flex-col gap-2 ">
+      <PostTagList searchParams={searchParams} tags={postTags} />
       {postList?.map((post: PostType) => {
         return (
           <Link key={post.id} href={`/posts/${post.id}`}>
@@ -28,4 +30,4 @@ const PostsPage: NextPage<PostsProps> = async ({ searchParams }) => {
   );
 };
 
-export default PostsPage;
+export default PostListPage;
