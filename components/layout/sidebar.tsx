@@ -12,10 +12,10 @@ interface SidebarProps {}
 
 const Sidebar: FC<SidebarProps> = ({}) => {
   return (
-    <div className="sticky py-4 top-0 hidden lg:block">
+    <div className="top-0 hidden lg:block py-4">
       <Accordion
         type="multiple"
-        className="w-full px-4 lg:min-w-[300px] transition-all"
+        className="w-full lg:min-w-[300px] transition-all px-4 pt-14"
       >
         {MENUS.map((menu) => (
           <SidebarItem key={menu.title} menu={menu} />

@@ -1,4 +1,3 @@
-import exp from "constants";
 import { FC } from "react";
 
 interface ContainerProps {
@@ -7,9 +6,7 @@ interface ContainerProps {
 
 const Container: FC<ContainerProps> = ({ children }) => {
   return (
-    <div className="relative h-[100dvh] overflow-y-scroll scrollbar-hide">
-      {children}
-    </div>
+    <div className="relative max-h-[100dvh] overflow-hidden">{children}</div>
   );
 };
 

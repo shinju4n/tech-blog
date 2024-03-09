@@ -1,11 +1,16 @@
+"use client";
 import { type FC } from "react";
 import Image from "next/image";
 import Typography from "@/components/ui/typography";
 import { type PostType } from "@/types/PostType";
+import { setScrollPosition } from "@/lib/utils";
 
 const PostListItem: FC<{ post: PostType }> = ({ post }) => {
   return (
-    <div className="flex flex-col sm:flex-row gap-10 w-full h-full bg-background border border-foreground/10 rounded-xl p-4 hover:bg-muted group">
+    <div
+      className="flex flex-col sm:flex-row gap-10 w-full h-full bg-background border border-foreground/10 rounded-xl p-4 hover:bg-muted group"
+      onClick={setScrollPosition}
+    >
       <div className="flex justify-center items-center w-full sm:max-w-[200px] h-[250px] sm:h-[200px] overflow-hidden bg-foreground/5 ">
         <Image
           src={post.thumbnailUrl}

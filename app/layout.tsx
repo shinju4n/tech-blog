@@ -3,9 +3,11 @@ import { Inter as FontSans } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import Container from "@/components/layout/container";
-import Header from "@/containers/layout/header";
-import ContentWrapper from "@/containers/layout/content-wrapper";
-import Sidebar from "@/containers/layout/sidebar";
+import Header from "@/components/layout/header";
+import ContentWrapper from "@/components/layout/content-wrapper";
+import Sidebar from "@/components/layout/sidebar";
+import MainWrapper from "@/components/layout/main-wrapper";
+
 import { cn } from "@/lib/utils";
 
 export const fontSans = FontSans({
@@ -41,9 +43,7 @@ export default function RootLayout({
             <Header />
             <ContentWrapper>
               <Sidebar />
-              <div className="relative flex justify-center w-full px-4 py-6">
-                {children}
-              </div>
+              <MainWrapper>{children}</MainWrapper>
             </ContentWrapper>
           </Container>
         </ThemeProvider>
