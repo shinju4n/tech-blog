@@ -1,22 +1,45 @@
-import { FC } from "react";
+import { type FC } from "react";
+import Link from "next/link";
+import { getPostCategories } from "@/service/post-service";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
-import { MenuType } from "@/types/LayoutType";
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
-} from "../ui/accordion";
-import Typography from "../ui/typography";
-import Link from "next/link";
+} from "@/components/ui/accordion";
+import Typography from "@/components/ui/typography";
 import {
   ContentWriteIcon,
   DesktopActionMonitorIcon,
   MenuNavigationIcon,
   VideoGameControllerIcon,
-} from "../Icons";
+} from "@/components/Icons";
 
-const MobileMenu: FC = () => {
+import { type MenuType } from "@/types/LayoutType";
+
+const MobileMenu: FC = async () => {
+  const categories = await getPostCategories();
+  const MENUS: MenuType[] = [
+    {
+      key: "posts",
+      title: "포스팅",
+      icon: <ContentWriteIcon />,
+      subMenus: categories,
+    },
+    {
+      key: "lab",
+      title: "실험실",
+      icon: <DesktopActionMonitorIcon />,
+      subMenus: [],
+    },
+    {
+      key: "apps",
+      title: "사이드 프로젝트",
+      icon: <VideoGameControllerIcon />,
+      subMenus: [],
+    },
+  ];
   return (
     <Sheet>
       <SheetTrigger className="block lg:hidden outline-none order-1">
@@ -43,12 +66,10 @@ const MobileMenu: FC = () => {
                 <AccordionContent>
                   <div className="flex flex-col">
                     {menu.subMenus?.map((subMenu) => (
-                      <div key={subMenu.key} className="pl-10 p-2">
-                        <Link href={`/${menu.key}?category=${subMenu.key}`}>
+                      <div key={subMenu} className="pl-10 p-2">
+                        <Link href={`/${menu.key}?category=${subMenu}`}>
                           <SheetTrigger>
-                            <Typography size="small">
-                              ・ {subMenu.title}
-                            </Typography>
+                            <Typography size="small">・ {subMenu}</Typography>
                           </SheetTrigger>
                         </Link>
                       </div>
@@ -64,27 +85,3 @@ const MobileMenu: FC = () => {
   );
 };
 export default MobileMenu;
-
-const MENUS: MenuType[] = [
-  {
-    key: "posts",
-    title: "포스팅",
-    icon: <ContentWriteIcon />,
-    subMenus: [
-      { key: "FE", title: "프론트엔드 (FE)" },
-      { key: "BE", title: "백엔드 (BE)" },
-    ],
-  },
-  {
-    key: "lab",
-    title: "실험실",
-    icon: <DesktopActionMonitorIcon />,
-    subMenus: [],
-  },
-  {
-    key: "apps",
-    title: "사이드 프로젝트",
-    icon: <VideoGameControllerIcon />,
-    subMenus: [],
-  },
-];

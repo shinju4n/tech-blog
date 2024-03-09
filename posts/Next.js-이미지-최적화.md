@@ -1,7 +1,8 @@
 ---
 title: "Next.js 이미지 최적화"
 date: "2024-03-03"
-category: ["Next.js","웹 최적화","이미지"]
+category: "FE"
+tags: ["Next.js","웹 최적화","이미지"]
 summary: "
 Next.js에서는 기본적으로 `<Image>` 컴포넌트를 제공해준다.이 이미지 컴포넌트는 이미지를 자동으로 최적화시켜준다. 1.최신 이미지 형식을 사용, 각 디바이스에 대응한 크기의 이미지
 2.layout shift 방지

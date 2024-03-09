@@ -1,7 +1,8 @@
 ---
 title: "포트원 인증 결제 모듈 사용기 in Next.js 13"
 date: "2024-02-25"
-category: ["FE", "Next.js"]
+category: "FE"
+tags: ["Next.js"]
 summary: "인증결제는 신용카드 결제시 PG사로 부터 결제에 대한 인증 결과 수신 이후 해당 인증키로 결제를 요청하는 결제 방식을 지칭한다. 
 국내에서 제일 많이 볼수 있는 결제방식이며 결제 주문페이지에서 결제가 요청되면 각 PG사의.."
 pinned: true

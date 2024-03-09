@@ -1,7 +1,8 @@
 ---
 title: "Next 13: Error Handling"
 date: "2024-02-18"
-category: ["FE", "Next.js"]
+category: "FE"
+tags: ["Next.js"]
 summary: "예상치 못한 런타임 오류를 우아하게 처리:
 error.js 파일 규약을 사용하면 중첩된 라우트에서 예상치 못한 런타임 오류를 우아하게 처리할 수 있다."
 pinned: true

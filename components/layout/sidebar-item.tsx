@@ -23,9 +23,9 @@ const SidebarItem: FC<SidebarItemProps> = ({ menu }) => {
       <AccordionContent>
         <div className="flex flex-col">
           {menu.subMenus?.map((subMenu) => (
-            <div key={subMenu.key} className="pl-10 p-2">
-              <Link href={`/${menu.key}?category=${subMenu.key}`}>
-                <Typography size="small">・ {subMenu.title}</Typography>
+            <div key={subMenu} className="pl-10 p-2">
+              <Link href={`/${menu.key}?category=${subMenu}`}>
+                <Typography size="small">・ {subMenu}</Typography>
               </Link>
             </div>
           ))}

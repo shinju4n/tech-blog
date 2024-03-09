@@ -1,5 +1,5 @@
 import { Metadata, ResolvingMetadata, type NextPage } from "next";
-import { getPost } from "@/service/post-service";
+import { getPostDetail } from "@/service/post-service";
 import MarkdownRender from "@/components/MarkdownRender";
 import PostHead from "@/components/posts/detail/PostHead";
 
@@ -14,7 +14,7 @@ export async function generateMetadata(
   { params }: PostingDetailProps,
   parent: ResolvingMetadata
 ): Promise<Metadata> {
-  const post = await getPost(decodeURIComponent(params.slug));
+  const post = await getPostDetail(decodeURIComponent(params.slug));
 
   const previousImages = (await parent).openGraph?.images || [];
 
@@ -35,15 +35,11 @@ export async function generateMetadata(
 }
 
 const PostingDetail: NextPage<PostingDetailProps> = async ({ params }) => {
-  const post = await getPost(decodeURIComponent(params.slug));
+  const post = await getPostDetail(decodeURIComponent(params.slug));
 
   return (
     <div className="w-full lg:max-w-xl xl:max-w-5xl transition-all">
-      <PostHead
-        title={post.title}
-        createdAt={post.date}
-        category={post.category}
-      />
+      <PostHead title={post.title} createdAt={post.date} tags={post.tags} />
       <MarkdownRender markdown={post.content} />
     </div>
   );

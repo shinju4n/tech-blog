@@ -7,10 +7,35 @@ import {
   DesktopActionMonitorIcon,
   VideoGameControllerIcon,
 } from "@/components/Icons";
+import { getPostCategories } from "@/service/post-service";
 
 interface SidebarProps {}
 
-const Sidebar: FC<SidebarProps> = ({}) => {
+const Sidebar: FC<SidebarProps> = async ({}) => {
+  const categories = await getPostCategories();
+  console.log(categories);
+
+  const MENUS: MenuType[] = [
+    {
+      key: "posts",
+      title: "포스팅",
+      icon: <ContentWriteIcon />,
+      subMenus: categories,
+    },
+    {
+      key: "lab",
+      title: "실험실",
+      icon: <DesktopActionMonitorIcon />,
+      subMenus: [],
+    },
+    {
+      key: "apps",
+      title: "사이드 프로젝트",
+      icon: <VideoGameControllerIcon />,
+      subMenus: [],
+    },
+  ];
+
   return (
     <div className="top-0 hidden lg:block py-4">
       <Accordion
@@ -26,27 +51,3 @@ const Sidebar: FC<SidebarProps> = ({}) => {
 };
 
 export default Sidebar;
-
-const MENUS: MenuType[] = [
-  {
-    key: "posts",
-    title: "포스팅",
-    icon: <ContentWriteIcon />,
-    subMenus: [
-      { key: "FE", title: "프론트엔드 (FE)" },
-      { key: "BE", title: "백엔드 (BE)" },
-    ],
-  },
-  {
-    key: "lab",
-    title: "실험실",
-    icon: <DesktopActionMonitorIcon />,
-    subMenus: [],
-  },
-  {
-    key: "apps",
-    title: "사이드 프로젝트",
-    icon: <VideoGameControllerIcon />,
-    subMenus: [],
-  },
-];
