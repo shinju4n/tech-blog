@@ -1,7 +1,7 @@
 ---
 title: "Reflow/Repaint 알아보기"
 date: "2023-11-11"
-category: ["WEB"]
+category: ["FE","WEB"]
 summary: "
 최근에 Reflow와 Repaint에 대해서 알게 되었는데, 이 두가지가 웹 성능에 영향을 미치는지 알게 되었다.
 웹 개발자로써 Reflow와 Repaint에 대한 지식을 내 것으로 만들기 위해 이 포스팅을 작성하게 되었다."

@@ -1,25 +1,36 @@
 import fs from "fs";
 import path from "path";
-import matter, { GrayMatterFile } from "gray-matter";
-import { PostType } from "@/types/PostType";
+import matter from "gray-matter";
+import { type PostType } from "@/types/PostType";
 
 const postsDirectory = path.join(process.cwd(), "posts");
 
+const readPostFile = async (filePath: string): Promise<PostType> => {
+  const fileContents = await fs.promises.readFile(filePath, "utf8");
+  const matterResult = matter(fileContents);
+  return {
+    id: path.basename(filePath, ".md"),
+    ...matterResult.data,
+  } as PostType;
+};
+
 export const getPostList = async (category?: string): Promise<PostType[]> => {
-  const postFiles = fs.readdirSync(postsDirectory);
-  const postData = postFiles.map((postFile, i) => {
-    const fileName = postFile.replace(/\.md$/, "");
-    const filePath = path.join(postsDirectory, fileName + ".md");
-    const fileContents = fs.readFileSync(filePath, "utf8");
-    const matterResult = matter(fileContents) as GrayMatterFile<string>;
-    return {
-      id: fileName,
-      ...matterResult.data,
-    } as PostType;
+  const postsDirectory = path.join(process.cwd(), "posts");
+  const postFiles = await fs.promises.readdir(postsDirectory);
+  const postDataPromises = postFiles.map((postFile) => {
+    const filePath = path.join(postsDirectory, postFile);
+    return readPostFile(filePath);
   });
-  const orderByDate = postData.sort((a, b) => {
-    return a.date > b.date ? -1 : 1;
-  });
+  let postData = await Promise.all(postDataPromises);
+
+  if (category) {
+    const lowerCaseCategory = category.toLowerCase();
+    postData = postData.filter((post) =>
+      post.category.some((cat) => cat.toLowerCase() === lowerCaseCategory)
+    );
+  }
+
+  const orderByDate = postData.sort((a, b) => (a.date > b.date ? -1 : 1));
   return orderByDate;
 };
 
