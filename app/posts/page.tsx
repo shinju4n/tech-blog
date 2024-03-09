@@ -2,7 +2,7 @@ import { NextPage } from "next";
 import Link from "next/link";
 import { getPostList, getPostTags } from "@/service/post-service";
 import PostListItem from "@/components/posts/PostsListItem";
-import PostTagList from "@/components/posts/PostTabList";
+import PostTagList from "@/components/posts/PostTagList";
 import { type PostType } from "@/types/PostType";
 
 interface PostsProps {

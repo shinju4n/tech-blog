@@ -15,8 +15,7 @@ interface PostTagListProps {
 
 const PostTagList: FC<PostTagListProps> = ({ searchParams, tags }) => {
   return (
-    <div className="flex justify-start items-center gap-4 border border-foreground/10 rounded-xl p-4">
-      <Typography size="small">태그 : </Typography>
+    <div className="flex flex-wrap justify-evenly sm:justify-start items-center gap-4 border border-foreground/10 rounded-xl p-4">
       {tags?.map((tag) => {
         return (
           <Link
@@ -24,7 +23,10 @@ const PostTagList: FC<PostTagListProps> = ({ searchParams, tags }) => {
             href={`/posts?category=${searchParams.category}&tag=${tag}`}
           >
             <Badge
-              className={cn(searchParams.tag === tag && "ring-2 ring-primary")}
+              className={cn(
+                searchParams.tag === tag && "ring-2 ring-primary",
+                "self-stretch"
+              )}
               label={tag}
             />
           </Link>
