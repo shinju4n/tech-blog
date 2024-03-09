@@ -13,7 +13,6 @@ interface SidebarProps {}
 
 const Sidebar: FC<SidebarProps> = async ({}) => {
   const categories = await getPostCategories();
-  console.log(categories);
 
   const MENUS: MenuType[] = [
     {
@@ -41,6 +40,7 @@ const Sidebar: FC<SidebarProps> = async ({}) => {
       <Accordion
         type="multiple"
         className="w-full lg:min-w-[300px] transition-all px-4 pt-14"
+        defaultValue={["포스팅"]}
       >
         {MENUS.map((menu) => (
           <SidebarItem key={menu.title} menu={menu} />

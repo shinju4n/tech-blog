@@ -14,7 +14,6 @@ interface PostsProps {
 }
 
 const PostsPage: NextPage<PostsProps> = async ({ searchParams }) => {
-  console.log(searchParams);
   const postList = await getPostList(searchParams);
   return (
     <div className="flex flex-col gap-2 ">
