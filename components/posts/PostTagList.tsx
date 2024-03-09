@@ -15,7 +15,7 @@ interface PostTagListProps {
 
 const PostTagList: FC<PostTagListProps> = ({ searchParams, tags }) => {
   return (
-    <div className="flex flex-wrap justify-evenly sm:justify-start items-center gap-4 border border-foreground/10 rounded-xl p-4">
+    <div className="relative flex flex-wrap justify-evenly sm:justify-start items-center gap-4 border border-foreground/10 rounded-xl p-4">
       {tags?.map((tag) => {
         return (
           <Link
@@ -32,6 +32,11 @@ const PostTagList: FC<PostTagListProps> = ({ searchParams, tags }) => {
           </Link>
         );
       })}
+      <span className="absolute bg-background -top-3 left-3 px-4 text-center">
+        <Typography size="small" className="font-bold">
+          # 해시 태그
+        </Typography>
+      </span>
     </div>
   );
 };
