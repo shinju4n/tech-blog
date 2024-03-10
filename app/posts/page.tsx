@@ -15,7 +15,7 @@ interface PostsProps {
 
 const PostListPage: NextPage<PostsProps> = async ({ searchParams }) => {
   const postList = await getPostList(searchParams);
-  const postTags = await getPostTags();
+  const postTags = await getPostTags(searchParams.category);
   return (
     <div className="flex flex-col gap-2 pt-10">
       <PostTagList searchParams={searchParams} tags={postTags} />

@@ -68,9 +68,13 @@ export const getPostCategories = async (): Promise<string[]> => {
   return Array.from(new Set(sortedCategories));
 };
 
-export const getPostTags = async (): Promise<string[]> => {
+export const getPostTags = async (category?: string): Promise<string[]> => {
   const posts = await getAllPostList();
-  const tags = posts.flatMap((post) => post.tags);
+  const categoryPosts = posts.filter(
+    (post) =>
+      post.category.toLocaleLowerCase() === category?.toLocaleLowerCase()
+  );
+  const tags = categoryPosts.flatMap((post) => post.tags);
   const sortedTags = tags.sort();
   return Array.from(new Set(sortedTags));
 };
