@@ -64,7 +64,7 @@ export const getPostDetail = async (id: string): Promise<PostType> => {
 export const getPostCategories = async (): Promise<string[]> => {
   const posts = await getAllPostList();
   const categories = posts.map((post) => post.category);
-  const sortedCategories = categories.sort();
+  const sortedCategories = categories.sort().reverse();
   return Array.from(new Set(sortedCategories));
 };
 
