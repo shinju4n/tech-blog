@@ -9,6 +9,7 @@ import { materialDark } from "react-syntax-highlighter/dist/cjs/styles/prism";
 import Typography from "./ui/typography";
 import Link from "next/link";
 import ImageDialog from "./ImageDialog";
+import { EllipsisIcon } from "./Icons";
 
 interface MarkdownRenderProps {
   markdown: string;
@@ -53,10 +54,25 @@ const MarkdownRender: FC<MarkdownRenderProps> = ({ markdown }) => {
         h2: ({ children }) => <Typography size="h2">{children}</Typography>,
         h3: ({ children }) => <Typography size="h3">{children}</Typography>,
         h4: ({ children }) => <Typography size="h4">{children}</Typography>,
-        p: ({ children }) => <Typography size="p">{children}</Typography>,
+        p: ({ children }) => (
+          <Typography size="p" className="whitespace-pre-line">
+            {children}
+          </Typography>
+        ),
         strong: ({ children }) => (
           <Typography size="strong">{children}</Typography>
         ),
+        ol: ({ children }) => <ol className="pl-6 list-decimal">{children}</ol>,
+        ul: ({ children }) => <ul className="pl-6 list-disc">{children}</ul>,
+        li: (props) => {
+          return (
+            <li>
+              <Typography size="p" className="mb-0">
+                {props.children}
+              </Typography>
+            </li>
+          );
+        },
         a: ({ children, href }) => {
           return (
             <Link
