@@ -1,7 +1,7 @@
 ---
 title: "[DB]Index란?"
 date: "2023-10-14"
-category: "DB"
+category: "Database"
 tags: ["MySQL"]
 summary: "- 쉽게 찾아볼 수 있도록 일정한 순서에 따라 놓은 목록
 - Index는 원하는 데이터를 빠르게 찾기 위한 기술로 DB에서는 `SELECT`문에 활용 가능
