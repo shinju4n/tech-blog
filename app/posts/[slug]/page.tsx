@@ -38,10 +38,10 @@ const PostingDetail: NextPage<PostingDetailProps> = async ({ params }) => {
   const post = await getPostDetail(decodeURIComponent(params.slug));
 
   return (
-    <>
+    <div className="w-full py-4">
       <PostHead title={post.title} createdAt={post.date} tags={post.tags} />
       <MarkdownRender markdown={post.content} />
-    </>
+    </div>
   );
 };
 export default PostingDetail;
