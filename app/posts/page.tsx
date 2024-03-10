@@ -17,7 +17,7 @@ const PostListPage: NextPage<PostsProps> = async ({ searchParams }) => {
   const postList = await getPostList(searchParams);
   const postTags = await getPostTags();
   return (
-    <div className="flex flex-col gap-2 ">
+    <div className="flex flex-col gap-2 pt-10">
       <PostTagList searchParams={searchParams} tags={postTags} />
       {postList?.map((post: PostType) => {
         return (
