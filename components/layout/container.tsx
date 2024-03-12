@@ -7,7 +7,7 @@ interface ContainerProps {
 const Container: FC<ContainerProps> = ({ children }) => {
   return (
     <div className="w-full flex justify-center">
-      <div className="relative w-full lg:max-w-xl xl:max-w-7xl  max-h-[100dvh] overflow-hidden">
+      <div className="relative w-full xl:max-w-7xl  max-h-[100dvh] overflow-hidden">
         {children}
       </div>
     </div>
