@@ -1,20 +1,29 @@
 "use client";
-import { FC } from "react";
+import { type FC } from "react";
+import Image from "next/image";
+import Link from "next/link";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
-import Image from "next/image";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import rehypeCodeTitles from "rehype-code-titles";
 import { materialDark } from "react-syntax-highlighter/dist/cjs/styles/prism";
-import Typography from "./ui/typography";
-import Link from "next/link";
-import ImageDialog from "./ImageDialog";
-import { EllipsisIcon } from "./Icons";
+
+import Typography from "@/components/ui/typography";
+import ImageDialog from "@/components/ImageDialog";
+import { CopyIcon } from "@/components/Icons";
 
 interface MarkdownRenderProps {
   markdown: string;
 }
 const MarkdownRender: FC<MarkdownRenderProps> = ({ markdown }) => {
+  const handleCopyClipBoard = async (text: string) => {
+    try {
+      await navigator.clipboard.writeText(text);
+      alert("클립보드에 링크가 복사되었습니다.");
+    } catch (e) {
+      alert("복사에 실패하였습니다");
+    }
+  };
   return (
     <ReactMarkdown
       remarkPlugins={[remarkGfm]}
@@ -23,7 +32,15 @@ const MarkdownRender: FC<MarkdownRenderProps> = ({ markdown }) => {
         code: ({ className, children, ...props }) => {
           const match = /language-(\w+)/.exec(className || "");
           return match ? (
-            <>
+            <div className="relative">
+              <div
+                className="absolute top-5 right-5 z-10 p-1 hover:bg-neutral-50 bg-neutral-50/20 rounded-md cursor-pointer transition-colors"
+                onClick={() =>
+                  handleCopyClipBoard(String(children).replace(/\n$/, ""))
+                }
+              >
+                <CopyIcon size={24} className="font-extrabold" />
+              </div>
               <SyntaxHighlighter
                 language={match[1]}
                 PreTag="div"
@@ -31,9 +48,13 @@ const MarkdownRender: FC<MarkdownRenderProps> = ({ markdown }) => {
               >
                 {String(children).replace(/\n$/, "")}
               </SyntaxHighlighter>
-            </>
+            </div>
           ) : (
-            <code {...props}>{children}</code>
+            <code {...props} className="bg-neutral-600 rounded-sm p-1">
+              <Typography size="strong" className="text-white">
+                {children}
+              </Typography>
+            </code>
           );
         },
         img: (image) => (
