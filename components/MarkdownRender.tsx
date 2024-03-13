@@ -2,11 +2,15 @@
 import { type FC } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { useTheme } from "next-themes";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import rehypeCodeTitles from "rehype-code-titles";
-import { materialDark } from "react-syntax-highlighter/dist/cjs/styles/prism";
+import {
+  materialDark,
+  materialOceanic,
+} from "react-syntax-highlighter/dist/cjs/styles/prism";
 import toast from "react-hot-toast";
 
 import Typography from "@/components/ui/typography";
@@ -17,6 +21,7 @@ interface MarkdownRenderProps {
   markdown: string;
 }
 const MarkdownRender: FC<MarkdownRenderProps> = ({ markdown }) => {
+  const { theme } = useTheme();
   const handleCopyClipBoard = async (text: string) => {
     await navigator.clipboard.writeText(text);
     toast.success("클립보드에 복사되었습니다.", {
@@ -44,7 +49,7 @@ const MarkdownRender: FC<MarkdownRenderProps> = ({ markdown }) => {
               <SyntaxHighlighter
                 language={match[1]}
                 PreTag="div"
-                style={materialDark}
+                style={theme === "light" ? materialOceanic : materialDark}
               >
                 {String(children).replace(/\n$/, "")}
               </SyntaxHighlighter>
