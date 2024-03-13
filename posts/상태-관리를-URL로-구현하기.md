@@ -56,9 +56,9 @@ color = black;
 page = 2;
 ```
 
-1️⃣ URL에 상태 정보를 저장하지 않았을 때 URL : `www.domain.com/shop`
+1️⃣ URL에 상태 정보를 저장하지 않았을 때 URL : www.domain.com/shop
 
-2️⃣ URL에 상태 정보를 저장한 URL:`www.domain.com/shoppage=2&category=black&color=black`
+2️⃣ URL에 상태 정보를 저장한 URL: www.domain.com/shoppage=2&category=black&color=black
 
 이 두가지 케이스로 한번 이점에 대해서 생각해보자.
 
