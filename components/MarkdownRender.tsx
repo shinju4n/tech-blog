@@ -7,6 +7,7 @@ import remarkGfm from "remark-gfm";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import rehypeCodeTitles from "rehype-code-titles";
 import { materialDark } from "react-syntax-highlighter/dist/cjs/styles/prism";
+import toast from "react-hot-toast";
 
 import Typography from "@/components/ui/typography";
 import ImageDialog from "@/components/ImageDialog";
@@ -17,12 +18,11 @@ interface MarkdownRenderProps {
 }
 const MarkdownRender: FC<MarkdownRenderProps> = ({ markdown }) => {
   const handleCopyClipBoard = async (text: string) => {
-    try {
-      await navigator.clipboard.writeText(text);
-      alert("클립보드에 링크가 복사되었습니다.");
-    } catch (e) {
-      alert("복사에 실패하였습니다");
-    }
+    await navigator.clipboard.writeText(text);
+    toast.success("클립보드에 복사되었습니다.", {
+      position: "bottom-center",
+      duration: 10000,
+    });
   };
   return (
     <ReactMarkdown
@@ -34,12 +34,12 @@ const MarkdownRender: FC<MarkdownRenderProps> = ({ markdown }) => {
           return match ? (
             <div className="relative">
               <div
-                className="absolute top-5 right-5 z-10 p-1 hover:bg-neutral-50 bg-neutral-50/20 rounded-md cursor-pointer transition-colors"
+                className="absolute top-4 right-4 z-10 p-1 fill-foreground/30 hover:fill-foreground rounded-md cursor-pointer transition-colors"
                 onClick={() =>
                   handleCopyClipBoard(String(children).replace(/\n$/, ""))
                 }
               >
-                <CopyIcon size={24} className="font-extrabold" />
+                <CopyIcon size={20} className="font-extrabold" />
               </div>
               <SyntaxHighlighter
                 language={match[1]}

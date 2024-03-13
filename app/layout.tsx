@@ -7,8 +7,10 @@ import Header from "@/components/layout/header";
 import ContentWrapper from "@/components/layout/content-wrapper";
 import Sidebar from "@/components/layout/sidebar";
 import MainWrapper from "@/components/layout/main-wrapper";
+import dynamic from "next/dynamic";
 
 import { cn } from "@/lib/utils";
+import { Toaster } from "react-hot-toast";
 
 export const fontSans = FontSans({
   subsets: ["latin"],
@@ -45,6 +47,11 @@ export default function RootLayout({
               <Sidebar />
               <MainWrapper>{children}</MainWrapper>
             </ContentWrapper>
+            <Toaster
+              toastOptions={{
+                className: "!bg-background/70 !text-foreground !text-sm",
+              }}
+            />
           </Container>
         </ThemeProvider>
       </body>
