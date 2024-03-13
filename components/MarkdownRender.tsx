@@ -38,7 +38,7 @@ const MarkdownRender: FC<MarkdownRenderProps> = ({ markdown }) => {
           return match ? (
             <div className="relative">
               <div
-                className="absolute top-4 right-4 z-10 p-1 fill-foreground/30 hover:fill-foreground rounded-md cursor-pointer transition-colors"
+                className="absolute top-4 right-4 z-10 p-1 fill-neutral-50/30 hover:fill-neutral-50 rounded-md cursor-pointer transition-colors"
                 onClick={() =>
                   handleCopyClipBoard(String(children).replace(/\n$/, ""))
                 }
