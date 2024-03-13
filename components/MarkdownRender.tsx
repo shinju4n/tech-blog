@@ -26,7 +26,6 @@ const MarkdownRender: FC<MarkdownRenderProps> = ({ markdown }) => {
     await navigator.clipboard.writeText(text);
     toast.success("클립보드에 복사되었습니다.", {
       position: "bottom-center",
-      duration: 10000,
     });
   };
   return (
