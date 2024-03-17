@@ -1,11 +1,9 @@
-import Logo from "@/components/layout/logo";
-import MobileMenu from "@/components/layout/mobile-menu";
-import ThemeToggle from "@/components/layout/theme-toggle";
-import { FC } from "react";
+import Logo from '@/components/layout/logo';
+import MobileMenu from '@/components/layout/mobile-menu';
+import ThemeToggle from '@/components/layout/theme-toggle';
+import { FC } from 'react';
 
-interface HeaderProps {}
-
-const Header: FC<HeaderProps> = ({}) => {
+const Header: FC = () => {
   return (
     <div
       className="absolute flex justify-between items-center w-full h-14 border-b border-foreground/20 backdrop-blur-sm
