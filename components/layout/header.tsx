@@ -6,7 +6,7 @@ import { FC } from 'react';
 const Header: FC = () => {
   return (
     <div
-      className="absolute flex justify-between items-center w-full h-14 border-b border-foreground/20 backdrop-blur-sm
+      className="sticky flex justify-between items-center w-full h-14 border-b border-foreground/20 backdrop-blur-sm
     bg-background/70 top-0 px-8 z-50"
     >
       <Logo />

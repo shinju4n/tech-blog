@@ -30,12 +30,8 @@ const Sidebar: FC = async () => {
   ];
 
   return (
-    <div className="top-0 hidden lg:block py-4">
-      <Accordion
-        type="multiple"
-        className="w-full lg:min-w-[300px] transition-all px-4 pt-14"
-        defaultValue={['포스팅']}
-      >
+    <div className="sticky top-14 hidden lg:block">
+      <Accordion type="multiple" className="w-full lg:min-w-[300px] transition-all px-4" defaultValue={['포스팅']}>
         {MENUS.map(menu => (
           <SidebarItem key={menu.title} menu={menu} />
         ))}
