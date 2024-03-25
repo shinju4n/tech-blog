@@ -19,6 +19,7 @@
     "bufferutil": "^4.0.8",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.0",
+    "framer-motion": "^11.0.20",
     "gray-matter": "^4.0.3",
     "next": "13.5.5",
     "next-themes": "^0.2.1",
