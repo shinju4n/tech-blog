@@ -1,9 +1,9 @@
-"use client";
-import { type FC } from "react";
-import Image from "next/image";
-import Typography from "@/components/ui/typography";
-import { type PostType } from "@/types/PostType";
-import { setScrollPosition } from "@/lib/utils";
+'use client';
+import { type FC } from 'react';
+import Image from 'next/image';
+import Typography from '@/components/ui/typography';
+import { type PostType } from '@/types/PostType';
+import { setScrollPosition } from '@/lib/utils';
 
 const PostListItem: FC<{ post: PostType }> = ({ post }) => {
   return (
@@ -12,14 +12,16 @@ const PostListItem: FC<{ post: PostType }> = ({ post }) => {
       onClick={setScrollPosition}
     >
       <div className="flex justify-center items-center w-full sm:max-w-[200px] h-[250px] sm:h-[200px] overflow-hidden bg-foreground/5 ">
-        <Image
-          src={post.thumbnailUrl}
-          alt="thumbnail"
-          width={0}
-          height={0}
-          sizes="30vw"
-          className="transition-all group-hover:scale-125 ease-in-out duration-300 w-full h-auto"
-        />
+        <div className="relative w-52 h-52 flex justify-center items-center overflow-hidden">
+          <Image
+            src={post.thumbnailUrl}
+            alt="thumbnail"
+            width={300}
+            height={300}
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+            className="transition-all group-hover:scale-125 ease-in-out duration-300"
+          />
+        </div>
       </div>
       <div className="w-full flex flex-col justify-between py-2">
         <Typography size="h4">{post.title}</Typography>
