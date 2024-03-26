@@ -18,30 +18,11 @@ const PostListItem: FC<{ post: PostType; index: number }> = ({ post, index }) =>
       <motion.div initial={{ x: 200, opacity: 0 }} animate={{ x: 0, opacity: 1 }} transition={{ duration: 0.5 }}>
         <Link href={`/posts/${post.id}`}>
           <div
-            className="flex flex-col sm:flex-row gap-10 w-full h-full bg-background border border-foreground/10 rounded-xl p-4 hover:bg-muted group"
+            className="flex flex-col sm:flex-row gap-5 w-full h-full bg-background border border-foreground/10 rounded-xl hover:bg-foreground/5 group overflow-hidden"
             onClick={setScrollPosition}
           >
-            <div className="flex justify-center items-center w-full sm:max-w-[200px] h-[250px] sm:h-[200px] overflow-hidden bg-foreground/5 ">
-              <div className="relative w-full h-full flex justify-center items-center overflow-hidden">
-                <Image
-                  src={post.thumbnailUrl}
-                  alt="thumbnail"
-                  width={500}
-                  height={500}
-                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                  className="transition-all group-hover:scale-125 ease-in-out duration-300 w-auto h-auto"
-                />
-              </div>
-            </div>
-            <div className="w-full flex flex-col justify-between py-2">
-              <Typography size="h4">{post.title}</Typography>
-              <Typography size="p" className="line-clamp-3">
-                {post.summary}
-              </Typography>
-              <Typography size="small" className="text-end">
-                {post.date}
-              </Typography>
-            </div>
+            <Thumbnail src={post.thumbnailUrl} />
+            <Content title={post.title} summary={post.summary} date={post.date} />
           </div>
         </Link>
       </motion.div>
@@ -50,3 +31,32 @@ const PostListItem: FC<{ post: PostType; index: number }> = ({ post, index }) =>
 };
 
 export default PostListItem;
+
+const Thumbnail: FC<{ src: string }> = ({ src }) => {
+  return (
+    <div className="relative flex justify-center items-center w-full max-w-[170px] overflow-hidden bg-foreground/5 ">
+      <Image
+        src={src}
+        alt="thumbnail"
+        width={300}
+        height={300}
+        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+        className="transition-all group-hover:scale-125 ease-in-out duration-300 w-auto h-auto"
+      />
+    </div>
+  );
+};
+
+const Content: FC<{ title: string; summary: string; date: string }> = ({ title, summary, date }) => {
+  return (
+    <div className="w-full flex flex-col justify-between pb-4 pr-4">
+      <Typography size="h4">{title}</Typography>
+      <Typography size="lead" className="line-clamp-3">
+        {summary}
+      </Typography>
+      <Typography size="small" className="text-end text-foreground/50">
+        {date}
+      </Typography>
+    </div>
+  );
+};

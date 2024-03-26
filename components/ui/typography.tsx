@@ -20,7 +20,7 @@ const TYPO_STYLES: Record<TypographySize, string> = {
   h3: 'scroll-m-20 text-2xl font-semibold tracking-tight my-6',
   h4: 'scroll-m-20 text-xl font-semibold tracking-tight my-4',
   p: 'text-lg mb-2 leading-relaxed',
-  lead: 'text-lg text-muted-foreground',
+  lead: 'text-lg',
   large: 'text-lg font-semibold',
   small: 'text-sm font-medium leading-none',
   muted: 'text-sm text-muted-foreground',
