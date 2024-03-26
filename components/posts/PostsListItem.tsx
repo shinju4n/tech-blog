@@ -4,7 +4,7 @@ import Image from 'next/image';
 import { motion } from 'framer-motion';
 import Typography from '@/components/ui/typography';
 import { type PostType } from '@/types/PostType';
-import { setScrollPosition } from '@/lib/utils';
+import { cn, setScrollPosition } from '@/lib/utils';
 import Link from 'next/link';
 
 const PostListItem: FC<{ post: PostType; index: number }> = ({ post, index }) => {
@@ -18,7 +18,11 @@ const PostListItem: FC<{ post: PostType; index: number }> = ({ post, index }) =>
       <motion.div initial={{ x: 200, opacity: 0 }} animate={{ x: 0, opacity: 1 }} transition={{ duration: 0.5 }}>
         <Link href={`/posts/${post.id}`}>
           <div
-            className="flex flex-col sm:flex-row gap-5 w-full h-full bg-background border border-foreground/10 rounded-xl hover:bg-foreground/5 group overflow-hidden"
+            className={cn(
+              'flex flex-col w-full h-full gap-5 justify-center items-center',
+              'sm:flex-row',
+              'bg-background border border-foreground/10 rounded-xl  group overflow-hidden hover:bg-foreground/5'
+            )}
             onClick={setScrollPosition}
           >
             <Thumbnail src={post.thumbnailUrl} />
@@ -34,7 +38,12 @@ export default PostListItem;
 
 const Thumbnail: FC<{ src: string }> = ({ src }) => {
   return (
-    <div className="relative flex justify-center items-center w-full max-w-[170px] overflow-hidden bg-foreground/5 ">
+    <div
+      className={cn(
+        'relative flex justify-center items-center w-full  overflow-hidden bg-foreground/5',
+        'sm:max-w-[170px]'
+      )}
+    >
       <Image
         src={src}
         alt="thumbnail"
