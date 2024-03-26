@@ -49,8 +49,8 @@ const MarkdownRender: FC<MarkdownRenderProps> = ({ markdown }) => {
               </SyntaxHighlighter>
             </div>
           ) : (
-            <code {...props} className="bg-neutral-600 rounded-sm p-1">
-              <Typography size="strong" className="text-white">
+            <code {...props} className="bg-foreground/10 p-1">
+              <Typography size="strong" className="text-foreground">
                 {children}
               </Typography>
             </code>
