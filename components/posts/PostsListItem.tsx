@@ -22,14 +22,14 @@ const PostListItem: FC<{ post: PostType; index: number }> = ({ post, index }) =>
             onClick={setScrollPosition}
           >
             <div className="flex justify-center items-center w-full sm:max-w-[200px] h-[250px] sm:h-[200px] overflow-hidden bg-foreground/5 ">
-              <div className="relative w-52 h-52 flex justify-center items-center overflow-hidden">
+              <div className="relative w-full h-full flex justify-center items-center overflow-hidden">
                 <Image
                   src={post.thumbnailUrl}
                   alt="thumbnail"
-                  width={300}
-                  height={300}
+                  width={500}
+                  height={500}
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                  className="transition-all group-hover:scale-125 ease-in-out duration-300"
+                  className="transition-all group-hover:scale-125 ease-in-out duration-300 w-auto h-auto"
                 />
               </div>
             </div>
