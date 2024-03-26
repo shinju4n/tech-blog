@@ -41,17 +41,19 @@ const Thumbnail: FC<{ src: string }> = ({ src }) => {
     <div
       className={cn(
         'relative flex justify-center items-start w-full  overflow-hidden bg-foreground/5 h-[200px]',
-        'sm:max-w-[170px] sm:h-full sm:items-center'
+        'sm:max-w-[170px] sm:max-h-[170px] sm:items-center'
       )}
     >
-      <Image
-        src={src}
-        alt="thumbnail"
-        width={300}
-        height={300}
-        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-        className="transition-all group-hover:scale-125 ease-in-out duration-300 w-auto h-auto"
-      />
+      <div className="flex justify-center items-center relative w-[200px] h-[200px]">
+        <Image
+          src={src}
+          alt="thumbnail"
+          width={100}
+          height={100}
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+          className="transition-all group-hover:scale-125 ease-in-out duration-300 w-auto h-auto scale-150"
+        />
+      </div>
     </div>
   );
 };
