@@ -40,8 +40,8 @@ const Thumbnail: FC<{ src: string }> = ({ src }) => {
   return (
     <div
       className={cn(
-        'relative flex justify-center items-center w-full  overflow-hidden bg-foreground/5',
-        'sm:max-w-[170px]'
+        'relative flex justify-center items-start w-full  overflow-hidden bg-foreground/5 h-[200px]',
+        'sm:max-w-[170px] sm:h-full sm:items-center'
       )}
     >
       <Image
@@ -58,7 +58,7 @@ const Thumbnail: FC<{ src: string }> = ({ src }) => {
 
 const Content: FC<{ title: string; summary: string; date: string }> = ({ title, summary, date }) => {
   return (
-    <div className="w-full flex flex-col justify-between pb-4 pr-4">
+    <div className="w-full flex flex-col justify-between pb-4 px-4">
       <Typography size="h4">{title}</Typography>
       <Typography size="lead" className="line-clamp-3">
         {summary}
