@@ -5,7 +5,7 @@ interface ContainerProps {
 }
 
 const GlobalContainer: FC<ContainerProps> = ({ children }) => {
-  return <div className="relative w-full mx-auto my-0">{children}</div>;
+  return <div className="relative w-full mx-auto mt-0 mb-10">{children}</div>;
 };
 
 export default GlobalContainer;
