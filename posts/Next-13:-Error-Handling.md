@@ -62,26 +62,20 @@ export default function Error({
 
 ### 루트 레이아웃에서 오류 처리하기
 
-루트 app/error.js 경계는 루트 app/layout.js 또는 app/template.js 컴포넌트에서 발생한 오류를 잡지 않습니다.
+루트 app/error.js 경계는 루트 app/layout.js 또는 app/template.js 컴포넌트에서 발생한 오류를 잡지 않는다.
 
 이러한 루트 컴포넌트에서 오류를 특별히 처리하려면, 루트 앱 디렉터리에 위치한 error.js의 변형인 app/global-error.js를 사용해야한다.
 
-루트 error.js와는 달리, global-error.js 오류 경계는 전체 애플리케이션을 둘러싸며, 활성화될 때 루트 레이아웃을 대체하는 대체 컴포넌트를 제공한다. 이로 인해, global-error.js는 자체 <html> 및 <body> 태그를 정의해야 합니다.
+루트 error.js와는 달리, global-error.js 오류 경계는 전체 애플리케이션을 둘러싸며, 활성화될 때 루트 레이아웃을 대체하는 대체 컴포넌트를 제공한다. 이로 인해, global-error.js는 자체 <html> 및 <body> 태그를 정의해야 한다.
 
-global-error.js는 가장 세분화된 오류 UI가 아니며, 전체 애플리케이션에 대한 "catch-all" 오류 처리로 간주될 수 있
+global-error.js는 가장 세분화된 오류 UI가 아니며, 전체 애플리케이션에 대한 "catch-all" 오류 처리로 간주될 수 있다.
 
 global-error.js가 정의되어 있더라도, 전역 UI와 브랜딩이 포함된 루트 레이아웃 내에서 렌더링될 fallback 컴포넌트를 정의하는 것이 좋다.
 
 ```tsx
-"use client";
+'use client';
 
-export default function GlobalError({
-  error,
-  reset,
-}: {
-  error: Error & { digest?: string };
-  reset: () => void;
-}) {
+export default function GlobalError({ error, reset }: { error: Error & { digest?: string }; reset: () => void }) {
   return (
     <html>
       <body>
