@@ -2,10 +2,8 @@ import type { Metadata } from 'next';
 import { Inter as FontSans } from 'next/font/google';
 import './globals.css';
 import { ThemeProvider } from '@/components/theme-provider';
-import Container from '@/components/layout/container';
+import GlobalContainer from '@/components/layout/global-container';
 import Header from '@/components/layout/header';
-import ContentWrapper from '@/components/layout/content-wrapper';
-import Sidebar from '@/components/layout/sidebar';
 import MainWrapper from '@/components/layout/main-wrapper';
 
 import { cn } from '@/lib/utils';
@@ -29,18 +27,15 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="ko" suppressHydrationWarning>
       <body className={cn('bg-background font-sans antialiased', fontSans.variable)}>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
-          <Container>
+          <GlobalContainer>
             <Header />
-            <ContentWrapper>
-              <Sidebar />
-              <MainWrapper>{children}</MainWrapper>
-            </ContentWrapper>
+            <MainWrapper>{children}</MainWrapper>
             <Toaster
               toastOptions={{
                 className: '!bg-background/70 !text-foreground !text-sm',
               }}
             />
-          </Container>
+          </GlobalContainer>
         </ThemeProvider>
       </body>
     </html>

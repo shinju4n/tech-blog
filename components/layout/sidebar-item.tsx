@@ -1,18 +1,14 @@
-"use client";
-import { MenuType } from "@/types/LayoutType";
-import { type FC, memo } from "react";
-import Link from "next/link";
-import { useSearchParams } from "next/navigation";
-import {
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion";
-import Typography from "@/components/ui/typography";
+'use client';
+import { MenuType } from '@/types/LayoutType';
+import { type FC, memo } from 'react';
+import Link from 'next/link';
+import { useSearchParams } from 'next/navigation';
+import { AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
+import Typography from '@/components/ui/typography';
 
-import { EllipsisIcon } from "@/components/Icons";
+import { EllipsisIcon } from '@/components/Icons';
 
-import { cn } from "@/lib/utils";
+import { cn } from '@/lib/utils';
 
 interface SidebarItemProps {
   menu: MenuType;
@@ -29,14 +25,13 @@ const SidebarItem: FC<SidebarItemProps> = ({ menu }) => {
       </AccordionTrigger>
       <AccordionContent>
         <div className="flex flex-col">
-          {menu.subMenus?.map((subMenu) => (
+          {menu.subMenus?.map(subMenu => (
             <div key={subMenu} className="pl-10 p-2">
               <Link
                 href={`/${menu.key}?category=${subMenu}`}
                 className={cn(
-                  "flex items-center gap-2 p-2",
-                  query.get("category") === subMenu &&
-                    "rounded-lg ring-1 ring-foreground/90"
+                  'flex items-center gap-2 p-2',
+                  query.get('category') === subMenu && 'rounded-lg ring-1 ring-foreground/90'
                 )}
               >
                 <EllipsisIcon size={8} />
