@@ -7,7 +7,7 @@ interface MainWrapperProps {
 const MainWrapper: FC<MainWrapperProps> = ({ children }) => {
   return (
     <main className="flex justify-center w-full px-4 ">
-      <section className="relative w-full xl:max-w-3xl ">{children}</section>
+      <section className="relative w-full xl:max-w-3xl overflow-x-hidden">{children}</section>
     </main>
   );
 };
