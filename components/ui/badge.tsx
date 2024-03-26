@@ -1,5 +1,5 @@
-import { cn } from "@/lib/utils";
-import { FC } from "react";
+import { cn } from '@/lib/utils';
+import { FC } from 'react';
 
 interface BadgeProps {
   label?: string;
@@ -11,11 +11,11 @@ const Badge: FC<BadgeProps> = ({ label, className, children }) => {
   return (
     <div
       className={cn(
-        "text-sm font-bold px-2 py-1 bg-muted text-foreground tracking-wide rounded-sm min-w-[5rem] text-center",
+        'text-sm font-bold px-2 py-1 bg-muted text-foreground tracking-wide rounded-sm min-w-[5rem] text-center',
         className
       )}
     >
-      {label && "#" + label}
+      {label}
       {children}
     </div>
   );

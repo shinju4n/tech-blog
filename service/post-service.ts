@@ -1,15 +1,15 @@
-import fs from "fs";
-import path from "path";
-import matter from "gray-matter";
-import { type PostType } from "@/types/PostType";
+import fs from 'fs';
+import path from 'path';
+import matter from 'gray-matter';
+import { type PostType } from '@/types/PostType';
 
-const postsDirectory = path.join(process.cwd(), "posts");
+const postsDirectory = path.join(process.cwd(), 'posts');
 
 const readPostFile = async (filePath: string): Promise<PostType> => {
-  const fileContents = await fs.promises.readFile(filePath, "utf8");
+  const fileContents = await fs.promises.readFile(filePath, 'utf8');
   const matterResult = matter(fileContents);
   return {
-    id: path.basename(filePath, ".md"),
+    id: path.basename(filePath, '.md'),
     ...matterResult.data,
   } as PostType;
 };
@@ -20,29 +20,24 @@ interface GetPostListParams {
 }
 
 const getAllPostList = async (): Promise<PostType[]> => {
-  const postsDirectory = path.join(process.cwd(), "posts");
+  const postsDirectory = path.join(process.cwd(), 'posts');
   const postFiles = await fs.promises.readdir(postsDirectory);
-  const postDataPromises = postFiles.map((postFile) => {
+  const postDataPromises = postFiles.map(postFile => {
     const filePath = path.join(postsDirectory, postFile);
     return readPostFile(filePath);
   });
   return await Promise.all(postDataPromises);
 };
 
-export const getPostList = async ({
-  category,
-  tag,
-}: GetPostListParams): Promise<PostType[]> => {
+export const getPostList = async ({ category, tag }: GetPostListParams): Promise<PostType[]> => {
   let postData = await getAllPostList();
 
-  if (category) {
+  if (category && category !== 'All') {
     const lowerCaseCategory = category.toLowerCase();
-    postData = postData.filter(
-      (post) => post.category.toLocaleLowerCase() === lowerCaseCategory
-    );
+    postData = postData.filter(post => post.category.toLocaleLowerCase() === lowerCaseCategory);
   }
   if (tag) {
-    postData = postData.filter((post) => post.tags.includes(tag));
+    postData = postData.filter(post => post.tags.includes(tag));
   }
 
   const orderByDate = postData.sort((a, b) => (a.date > b.date ? -1 : 1));
@@ -51,7 +46,7 @@ export const getPostList = async ({
 
 export const getPostDetail = async (id: string): Promise<PostType> => {
   const filePath = path.join(postsDirectory, `${id}.md`);
-  const fileContents = fs.readFileSync(filePath, "utf8");
+  const fileContents = fs.readFileSync(filePath, 'utf8');
   const matterResult = matter(fileContents);
 
   return {
@@ -63,9 +58,9 @@ export const getPostDetail = async (id: string): Promise<PostType> => {
 
 export const getPostCategories = async (): Promise<string[]> => {
   const posts = await getAllPostList();
-  const categories = posts.map((post) => post.category);
+  const categories = posts.map(post => post.category);
   const sortedCategories = categories.sort(function (a, b) {
-    const order = ["FE", "BE", "Database"];
+    const order = ['FE', 'BE', 'Database'];
     return order.indexOf(a) - order.indexOf(b);
   });
   return Array.from(new Set(sortedCategories));
@@ -73,11 +68,8 @@ export const getPostCategories = async (): Promise<string[]> => {
 
 export const getPostTags = async (category?: string): Promise<string[]> => {
   const posts = await getAllPostList();
-  const categoryPosts = posts.filter(
-    (post) =>
-      post.category.toLocaleLowerCase() === category?.toLocaleLowerCase()
-  );
-  const tags = categoryPosts.flatMap((post) => post.tags);
+  const categoryPosts = posts.filter(post => post.category.toLocaleLowerCase() === category?.toLocaleLowerCase());
+  const tags = categoryPosts.flatMap(post => post.tags);
   const sortedTags = tags.sort();
   return Array.from(new Set(sortedTags));
 };
