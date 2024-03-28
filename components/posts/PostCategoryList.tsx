@@ -15,6 +15,7 @@ interface PostCategoryListProps {
 }
 
 const PostCategoryList: FC<PostCategoryListProps> = ({ searchParams, tags }) => {
+  const currentCategory = searchParams.category || 'All';
   return (
     <>
       <div className="relative">
@@ -23,7 +24,7 @@ const PostCategoryList: FC<PostCategoryListProps> = ({ searchParams, tags }) => 
             return (
               <Link key={category} href={`/posts?category=${category}`}>
                 <Badge
-                  className={cn(searchParams.category === category && 'ring-2 ring-primary', 'self-stretch')}
+                  className={cn(currentCategory === category && 'ring-2 ring-primary', 'self-stretch')}
                   label={category}
                 />
               </Link>
