@@ -1,7 +1,7 @@
-import { Metadata, ResolvingMetadata, type NextPage } from "next";
-import { getPostDetail } from "@/service/post-service";
-import MarkdownRender from "@/components/MarkdownRender";
-import PostHead from "@/components/posts/detail/PostHead";
+import { Metadata, ResolvingMetadata, type NextPage } from 'next';
+import { getPostDetail } from '@/service/post-service';
+import MarkdownRender from '@/components/MarkdownRender';
+import PostHead from '@/components/posts/detail/PostHead';
 
 interface PostingDetailProps {
   params: {
@@ -10,15 +10,12 @@ interface PostingDetailProps {
   searchParams: Record<string, string | string[] | undefined>;
 }
 
-export async function generateMetadata(
-  { params }: PostingDetailProps,
-  parent: ResolvingMetadata
-): Promise<Metadata> {
+export async function generateMetadata({ params }: PostingDetailProps, parent: ResolvingMetadata): Promise<Metadata> {
   const post = await getPostDetail(decodeURIComponent(params.slug));
 
   const previousImages = (await parent).openGraph?.images || [];
 
-  const title = "주안 블로그 | " + post.title;
+  const title = post.title + ' | Ju4n_Devlog ';
 
   return {
     title: title,
@@ -26,9 +23,9 @@ export async function generateMetadata(
     openGraph: {
       title: title,
       description: post.summary,
-      locale: "ko_KR",
-      siteName: "주안 블로그",
-      url: "https://ju4n-blog.vercel.app",
+      locale: 'ko_KR',
+      siteName: 'Ju4n_Devlog',
+      url: 'https://ju4n-devlog.site',
       images: [...previousImages, post.thumbnailUrl],
     },
   };

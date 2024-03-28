@@ -15,8 +15,8 @@ export const fontSans = FontSans({
 });
 
 export const metadata: Metadata = {
-  title: '🚀 주안 블로그',
-  description: '재미있는 개발이 좋아요',
+  title: 'Ju4n_Devlog',
+  description: '불편함을 해결하는 개발을 하는 것을 좋아하는 개발자의 블로그',
   verification: {
     google: process.env.GOOGLE_SITE_VERIFICATION,
   },
