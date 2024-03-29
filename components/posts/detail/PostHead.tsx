@@ -1,7 +1,7 @@
-import Badge from "@/components/ui/badge";
-import Typography from "@/components/ui/typography";
-import Link from "next/link";
-import { FC } from "react";
+import Badge from '@/components/ui/badge';
+import Typography from '@/components/ui/typography';
+import Link from 'next/link';
+import { FC } from 'react';
 interface PostHeadProps {
   title: string;
   createdAt: string;
