@@ -20,7 +20,6 @@ interface GetPostListParams {
 }
 
 const getAllPostList = async (): Promise<PostType[]> => {
-  const postsDirectory = path.join(process.cwd(), 'posts');
   const postFiles = await fs.promises.readdir(postsDirectory);
   const postDataPromises = postFiles.map(postFile => {
     const filePath = path.join(postsDirectory, postFile);
@@ -48,11 +47,14 @@ export const getPostDetail = async (id: string): Promise<PostType> => {
   const filePath = path.join(postsDirectory, `${id}.md`);
   const fileContents = fs.readFileSync(filePath, 'utf8');
   const matterResult = matter(fileContents);
+  const { next, previous } = await getNextAndPreviousPost(id);
 
   return {
     id,
     content: matterResult.content,
     ...matterResult.data,
+    next,
+    previous,
   } as PostType;
 };
 
@@ -72,4 +74,14 @@ export const getPostTags = async (category?: string): Promise<string[]> => {
   const tags = categoryPosts.flatMap(post => post.tags);
   const sortedTags = tags.sort();
   return Array.from(new Set(sortedTags));
+};
+
+export const getNextAndPreviousPost = async (
+  id: string
+): Promise<{ next: PostType | null; previous: PostType | null }> => {
+  const postData = await getAllPostList();
+  const currentIndex = postData.findIndex(post => post.id === id);
+  const next = postData[currentIndex - 1] || null;
+  const previous = postData[currentIndex + 1] || null;
+  return { next, previous };
 };

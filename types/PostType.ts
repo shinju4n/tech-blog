@@ -8,4 +8,6 @@ export type PostType = {
   isPinned: boolean;
   thumbnailUrl: string;
   content: string;
+  next?: PostType;
+  previous?: PostType;
 };
