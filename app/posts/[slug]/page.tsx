@@ -2,6 +2,7 @@ import { Metadata, ResolvingMetadata, type NextPage } from 'next';
 import { getPostDetail } from '@/service/post-service';
 import MarkdownRender from '@/components/MarkdownRender';
 import PostHead from '@/components/posts/detail/PostHead';
+import NextAndPreviousPost from '@/components/posts/detail/NextAndPreviousPost';
 
 interface PostingDetailProps {
   params: {
@@ -35,9 +36,10 @@ const PostingDetail: NextPage<PostingDetailProps> = async ({ params }) => {
   const post = await getPostDetail(decodeURIComponent(params.slug));
 
   return (
-    <div className="w-full pt-4 pb-20">
+    <div className="w-full">
       <PostHead title={post.title} createdAt={post.date} tags={post.tags} />
       <MarkdownRender markdown={post.content} />
+      <NextAndPreviousPost next={post.next} previous={post.previous} />
     </div>
   );
 };

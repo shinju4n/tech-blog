@@ -80,8 +80,9 @@ export const getNextAndPreviousPost = async (
   id: string
 ): Promise<{ next: PostType | null; previous: PostType | null }> => {
   const postData = await getAllPostList();
-  const currentIndex = postData.findIndex(post => post.id === id);
-  const next = postData[currentIndex - 1] || null;
-  const previous = postData[currentIndex + 1] || null;
+  const orderByDate = postData.sort((a, b) => (a.date > b.date ? -1 : 1));
+  const currentIndex = orderByDate.findIndex(post => post.id === id);
+  const next = orderByDate[currentIndex - 1] || null;
+  const previous = orderByDate[currentIndex + 1] || null;
   return { next, previous };
 };
