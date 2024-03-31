@@ -9,7 +9,6 @@ thumbnailUrl: https://velog.velcdn.com/images/shinju4n/post/ae54c525-7e02-439d-b
 ---
 
 Suspense의 개념에 대해서는 이전글을 참고하세요!
-![](https://velog.velcdn.com/images/shinju4n/post/1ea05496-f78b-4cce-9c6c-f33970814214/image.png)
 
 ## 데이터 패칭 라이브러리와 함께 사용하기
 
@@ -133,3 +132,5 @@ export default function ListUsers() {
 
 위와 같이 코드를 작성하게 되면 밑에 화면과 같이 loading... on initial request이 먼저 뜨고 호출이 완료 되었을 때, 리스트를 보여준다.
 ![](https://velog.velcdn.com/images/shinju4n/post/ae54c525-7e02-439d-b083-c3d94d981054/image.gif)
+
+참고 > https://medium.com/creditas-tech/react-suspense-swr-skeleton-e1979e9f32f0
