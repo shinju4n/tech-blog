@@ -9,6 +9,7 @@ thumbnailUrl: https://velog.velcdn.com/images/shinju4n/post/ae54c525-7e02-439d-b
 ---
 
 Suspense의 개념에 대해서는 이전글을 참고하세요!
+![](https://velog.velcdn.com/images/shinju4n/post/1ea05496-f78b-4cce-9c6c-f33970814214/image.png)
 
 ## 데이터 패칭 라이브러리와 함께 사용하기
 
@@ -62,7 +63,7 @@ Suspense 모드를 사용할 때는 상태와 에러 객체가 필요하지 않�
 
 ## 예시 코드
 
-해당 코드는 https://github.com/wpcodevo/nextjs13-react-query를 참고하여 작성하였습니다.
+해당 코드는 https://github.com/wpcodevo/nextjs13-react-query 를 참고하여 작성하였습니다.
 
 ```jsx
 // App.tsx
