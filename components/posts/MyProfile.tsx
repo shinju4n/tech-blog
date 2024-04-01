@@ -16,8 +16,8 @@ const MyProfile: FC = async () => {
   const { avatar_url } = await getGithubProfile();
   return (
     <section className="flex w-full mb-4 items-center">
-      <div className=" bg-primary min-w-[100px] min-h-[100px] rounded-full">
-        <Image src={avatar_url} alt="profile" width={100} height={100} className="rounded-full" />
+      <div className=" bg-primary min-w-[100px] min-h-[100px] rounded-full overflow-hidden">
+        <Image src={avatar_url} alt="profile" width={100} height={100} loading="eager" />
       </div>
       <div className="p-5">
         <span className="font-bold text-2xl">신주안</span>
