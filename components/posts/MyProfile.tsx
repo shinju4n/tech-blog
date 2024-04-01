@@ -14,7 +14,6 @@ const getGithubProfile = async () => {
 
 const MyProfile: FC = async () => {
   const { avatar_url } = await getGithubProfile();
-  console.log(avatar_url);
   return (
     <section className="flex w-full mb-4 items-center">
       <div className=" bg-primary min-w-[100px] min-h-[100px] rounded-full">
