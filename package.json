@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "new-post": "tsc create-post.ts && node create-post.js"
   },
   "dependencies": {
     "@radix-ui/react-accordion": "^1.1.2",
