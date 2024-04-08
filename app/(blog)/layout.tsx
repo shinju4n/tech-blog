@@ -1,14 +1,8 @@
 import type { Metadata } from 'next';
-import { Inter as FontSans } from 'next/font/google';
 import Header from '@/components/layout/header';
 import MainWrapper from '@/components/layout/main-wrapper';
 
 import { Toaster } from 'react-hot-toast';
-
-export const fontSans = FontSans({
-  subsets: ['latin'],
-  variable: '--font-sans',
-});
 
 export const metadata: Metadata = {
   title: 'Ju4n_Devlog',
