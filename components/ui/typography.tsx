@@ -15,13 +15,13 @@ const Typography: FC<TypographyProps> = ({ size = 'small', className, children }
 export default memo(Typography);
 
 const TYPO_STYLES: Record<TypographySize, string> = {
-  h1: 'scroll-m-20 text-4xl font-extrabold tracking-tight',
-  h2: 'scroll-m-20 pb-2 text-3xl font-semibold tracking-tight first:mt-0',
-  h3: 'scroll-m-20 text-2xl font-semibold tracking-tight my-6',
-  h4: 'scroll-m-20 text-xl font-semibold tracking-tight my-4',
+  h1: 'scroll-m-20 text-4xl font-extrabold tracking-tight leading-[1.35]',
+  h2: 'scroll-m-20 pb-2 text-3xl font-bold tracking-tight first:mt-0',
+  h3: 'scroll-m-20 text-2xl font-semibold tracking-tight',
+  h4: 'scroll-m-20 text-xl font-semibold tracking-tight',
   p: 'text-lg mb-2 leading-relaxed',
   lead: 'text-lg',
-  large: 'text-lg font-semibold',
+  large: 'text-xl font-semibold',
   small: 'text-sm font-medium leading-none',
   muted: 'text-sm text-muted-foreground',
   strong: 'font-bold text-foreground/90',
