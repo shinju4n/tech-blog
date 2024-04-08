@@ -3,11 +3,8 @@ import { Inter as FontSans } from 'next/font/google';
 import './globals.css';
 import { ThemeProvider } from '@/components/theme-provider';
 import GlobalContainer from '@/components/layout/global-container';
-import Header from '@/components/layout/header';
-import MainWrapper from '@/components/layout/main-wrapper';
 
 import { cn } from '@/lib/utils';
-import { Toaster } from 'react-hot-toast';
 
 export const fontSans = FontSans({
   subsets: ['latin'],
@@ -27,15 +24,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="ko" suppressHydrationWarning>
       <body className={cn('bg-background font-sans antialiased', fontSans.variable)}>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
-          <GlobalContainer>
-            <Header />
-            <MainWrapper>{children}</MainWrapper>
-            <Toaster
-              toastOptions={{
-                className: '!bg-background/70 !text-foreground !text-sm',
-              }}
-            />
-          </GlobalContainer>
+          <GlobalContainer>{children}</GlobalContainer>
         </ThemeProvider>
       </body>
     </html>

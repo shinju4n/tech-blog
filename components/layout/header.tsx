@@ -1,6 +1,6 @@
+import { FC } from 'react';
 import Logo from '@/components/layout/logo';
 import ThemeToggle from '@/components/layout/theme-toggle';
-import { FC } from 'react';
 
 const Header: FC = () => {
   return (
