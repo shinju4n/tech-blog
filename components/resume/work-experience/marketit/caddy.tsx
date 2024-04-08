@@ -21,7 +21,7 @@ const Caddy: FC = () => {
           <ul className="pl-4 list-disc flex flex-col gap-1">
             <li>Vercel을 사용하여 프로젝트 배포 CI/CD 파이프라인 구축</li>
             <li>
-              포트원 모듈을 사용하여
+              포트원 모듈을 사용하여{' '}
               <BlankLink href={'https://shinju4n.notion.site/9e27b11d8d8b4835aebf47eb5bbdca1e'}>
                 구매정책을 위한 결제기능 구현
               </BlankLink>
