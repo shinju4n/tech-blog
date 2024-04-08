@@ -1,14 +1,24 @@
 'use client';
 import { NextPage } from 'next';
+import Link from 'next/link';
 import Typography from '@/components/ui/typography';
 import Strong from '@/components/Strong';
 import ResumeTitle from '@/components/resume/ResumeTilte';
 import Caddy from '@/components/resume/work-experience/marketit/caddy';
+import { GoBackIcon } from '@/components/Icons';
+import { cn } from '@/lib/utils';
 
-const Resume: NextPage = () => {
+interface ResumeProps {
+  searchParams: Record<'type', 'resume'>;
+}
+
+const Resume: NextPage<ResumeProps> = ({ searchParams }) => {
   return (
     <>
-      <div className="py-10">
+      <div className="py-20 relative">
+        <Link href={'/posts'} className={cn('absolute right-0', searchParams.type === 'resume' ? 'hidden' : 'block')}>
+          <GoBackIcon />
+        </Link>
         <Typography size="h1">
           반갑습니다!👋 <br></br> 저는 FrontEnd 개발자 신주안입니다.
         </Typography>

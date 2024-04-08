@@ -10,9 +10,5 @@ export const metadata: Metadata = {
 };
 
 export default function ResumeLayout({ children }: { children: React.ReactNode }) {
-  return (
-    <MainWrapper>
-      <div className="py-10">{children}</div>
-    </MainWrapper>
-  );
+  return <MainWrapper>{children}</MainWrapper>;
 }
