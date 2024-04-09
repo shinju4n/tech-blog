@@ -9,6 +9,7 @@ import { GoBackIcon } from '@/components/Icons';
 import { cn } from '@/lib/utils';
 import WantMore from '@/components/resume/work-experience/marketit/wantmore';
 import Divider from '@/components/resume/Divider';
+import Inflca from '@/components/resume/work-experience/marketit/inflca';
 
 interface ResumeProps {
   searchParams: Record<'type', 'resume'>;
@@ -47,6 +48,8 @@ const Resume: NextPage<ResumeProps> = ({ searchParams }) => {
             <Caddy />
             <Divider />
             <WantMore />
+            <Divider />
+            <Inflca />
           </div>
         </div>
       </div>
