@@ -7,6 +7,8 @@ import ResumeTitle from '@/components/resume/ResumeTilte';
 import Caddy from '@/components/resume/work-experience/marketit/caddy';
 import { GoBackIcon } from '@/components/Icons';
 import { cn } from '@/lib/utils';
+import WantMore from '@/components/resume/work-experience/marketit/wantmore';
+import Divider from '@/components/resume/Divider';
 
 interface ResumeProps {
   searchParams: Record<'type', 'resume'>;
@@ -43,6 +45,8 @@ const Resume: NextPage<ResumeProps> = ({ searchParams }) => {
           </div>
           <div className="xl:w-2/3">
             <Caddy />
+            <Divider />
+            <WantMore />
           </div>
         </div>
       </div>
