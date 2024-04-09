@@ -1,15 +1,19 @@
 'use client';
 import { NextPage } from 'next';
 import Link from 'next/link';
+
 import Typography from '@/components/ui/typography';
 import Strong from '@/components/Strong';
 import ResumeTitle from '@/components/resume/ResumeTilte';
 import Caddy from '@/components/resume/work-experience/marketit/caddy';
 import { GoBackIcon } from '@/components/Icons';
-import { cn } from '@/lib/utils';
 import WantMore from '@/components/resume/work-experience/marketit/wantmore';
 import Divider from '@/components/resume/Divider';
 import Inflca from '@/components/resume/work-experience/marketit/inflca';
+import TechBlog from '@/components/resume/other-experience/tech-blog';
+import SuwonUniv from '@/components/resume/other-experience/suwon-univ';
+
+import { cn } from '@/lib/utils';
 
 interface ResumeProps {
   searchParams: Record<'type', 'resume'>;
@@ -52,6 +56,13 @@ const Resume: NextPage<ResumeProps> = ({ searchParams }) => {
             <Inflca />
           </div>
         </div>
+      </div>
+      <Divider />
+      <div className="py-10">
+        <ResumeTitle>Other Experience.</ResumeTitle>
+        <TechBlog />
+        <Divider />
+        <SuwonUniv />
       </div>
     </>
   );
