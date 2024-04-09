@@ -16,14 +16,14 @@ import SuwonUniv from '@/components/resume/other-experience/suwon-univ';
 import { cn } from '@/lib/utils';
 
 interface ResumeProps {
-  searchParams: Record<'type', 'resume'>;
+  searchParams: Record<'type', 'blog'>;
 }
 
 const Resume: NextPage<ResumeProps> = ({ searchParams }) => {
   return (
     <>
       <div className="py-20 relative">
-        <Link href={'/posts'} className={cn('absolute right-0', searchParams.type === 'resume' ? 'hidden' : 'block')}>
+        <Link href={'/posts'} className={cn('absolute right-0', searchParams.type === 'blog' ? 'block' : 'hidden')}>
           <GoBackIcon />
         </Link>
         <Typography size="h1">
