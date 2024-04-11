@@ -37,7 +37,7 @@ const Resume: NextPage<ResumeProps> = ({ searchParams }) => {
       <div className="py-10">
         <ResumeTitle>Work Experience</ResumeTitle>
         <div className="flex flex-col xl:flex-row items-start">
-          <div className="xl:w-1/3 mb-4">
+          <div className="xl:w-1/3 h-auto mb-4 sticky top-16">
             <Typography size="h2">
               마켓잇 <span className="text-2xl">(Marketit)</span>
             </Typography>
