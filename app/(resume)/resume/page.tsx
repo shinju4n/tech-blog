@@ -22,7 +22,7 @@ interface ResumeProps {
 const Resume: NextPage<ResumeProps> = ({ searchParams }) => {
   return (
     <>
-      <div className="py-20 relative">
+      <div className="pt-20 relative">
         <Link href={'/posts'} className={cn('absolute right-0', searchParams.type === 'blog' ? 'block' : 'hidden')}>
           <GoBackIcon />
         </Link>
