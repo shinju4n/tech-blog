@@ -1,22 +1,14 @@
-'use client';
 import { NextPage } from 'next';
 import Link from 'next/link';
-
+import { Caddy, Inflca, WantMore } from '@/components/resume/work-experience/marketit/index';
+import { SuwonUniv, TechBlog } from '@/components/resume/other-experience/index';
+import { FrontEnd, BackEnd } from '@/components/resume/skills/index';
 import Typography from '@/components/ui/typography';
 import Strong from '@/components/Strong';
 import ResumeTitle from '@/components/resume/ResumeTilte';
-import Caddy from '@/components/resume/work-experience/marketit/caddy';
-import { GoBackIcon } from '@/components/Icons';
-import WantMore from '@/components/resume/work-experience/marketit/wantmore';
 import Divider from '@/components/resume/Divider';
-import Inflca from '@/components/resume/work-experience/marketit/inflca';
-import TechBlog from '@/components/resume/other-experience/tech-blog';
-import SuwonUniv from '@/components/resume/other-experience/suwon-univ';
-
+import { GoBackIcon } from '@/components/Icons';
 import { cn } from '@/lib/utils';
-import FrontEnd from '@/components/resume/skills/front-end';
-import BackEnd from '@/components/resume/skills/back-end';
-
 import { email } from '@/lib/me';
 
 interface ResumeProps {
