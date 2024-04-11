@@ -14,6 +14,10 @@ import TechBlog from '@/components/resume/other-experience/tech-blog';
 import SuwonUniv from '@/components/resume/other-experience/suwon-univ';
 
 import { cn } from '@/lib/utils';
+import FrontEnd from '@/components/resume/skills/front-end';
+import BackEnd from '@/components/resume/skills/back-end';
+
+import { email } from '@/lib/me';
 
 interface ResumeProps {
   searchParams: Record<'type', 'blog'>;
@@ -63,6 +67,27 @@ const Resume: NextPage<ResumeProps> = ({ searchParams }) => {
         <TechBlog />
         <Divider />
         <SuwonUniv />
+      </div>
+      <Divider />
+      <div className="py-10">
+        <ResumeTitle>Skills.</ResumeTitle>
+        <FrontEnd />
+        <Divider />
+        <BackEnd />
+      </div>
+      <Divider />
+      <div className="py-10">
+        <ResumeTitle>Contact.</ResumeTitle>
+        <Typography size="p">
+          ✉️ Email :{' '}
+          <Link
+            href={'mailto:' + email}
+            className='text-primary dark:text-cyan-500 transition-colors hover:text-cyan-500 dark:hover:text-cyan-300"'
+          >
+            ju4nshin@gmail.com
+          </Link>
+        </Typography>
+        <Typography size="p">📞 Phone : 010-2993-5911</Typography>
       </div>
     </>
   );
