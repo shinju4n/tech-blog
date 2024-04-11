@@ -6,7 +6,7 @@ const Caddy: FC = () => {
   return (
     <section>
       <Typography size="h3">캐디 Caddy</Typography>
-      <Typography size="muted">2023.11 ~ 2024.03</Typography>
+      <Typography size="muted">2023.11 ~ 2024.03 (프론트엔드 1인 개발)</Typography>
       <div className="flex flex-col gap-4 pt-4">
         <div>
           <Typography size="large" className="font-bold">
@@ -27,13 +27,28 @@ const Caddy: FC = () => {
               </BlankLink>
             </li>
 
-            <li>react-hook-form, react-dropzone을 사용한 회원 가입, 이미지 생성 Form 개발</li>
             <li>
-              로딩 화면의 오랜 지속으로 인한 사용자 경험 저하를 고려하여, API 호출 로직을 수정하여 실시간으로 이미지를
-              생성하고 사용자가 지속적으로 확인할 수 있도록 UX를 개선
+              반복되는 코드를 개선하기 위해 react-hook-form, react-dropzone을 사용한 회원 가입, 이미지 생성 Form 개발
             </li>
             <li>
-              인플루언서의 팔로워 수 등락을 시각적으로 표현하기 위해 ApexCharts.js 라이브러리를 도입하여 데이터 시각화
+              로딩 화면의 오랜 지속으로 인한 사용자 경험 저하를 고려하여{' '}
+              <BlankLink href="https://www.notion.so/shinju4n/Portfolio-65757a47cca74474b5f88aee4c716d20?pvs=4#bb1fc65076be4f01b195021887f32427">
+                API 호출 로직을 수정하여 실시간으로 이미지를 생성하고 사용자가 지속적으로 확인할 수 있도록 사용자 경험
+                개선
+              </BlankLink>
+            </li>
+            <li>
+              이름, 성별, 팔로워 수, 카테고리등을{' '}
+              <BlankLink href="https://ju4n-blog.vercel.app/posts/%EC%83%81%ED%83%9C-%EA%B4%80%EB%A6%AC%EB%A5%BC-URL%EB%A1%9C-%EA%B5%AC%ED%98%84%ED%95%98%EA%B8%B0">
+                필터로 사용하여 인플루언서 검색 기능
+              </BlankLink>{' '}
+              개발
+            </li>
+            <li>
+              인플루언서의{' '}
+              <BlankLink href="https://www.notion.so/shinju4n/Portfolio-65757a47cca74474b5f88aee4c716d20?pvs=4#d67635792e7147fca3faa9acc5983cc2">
+                팔로워 수 등락을 시각적으로 표현하기 위해 ApexCharts.js 라이브러리를 도입하여 데이터 시각화
+              </BlankLink>{' '}
               구현
             </li>
             <li>AI 인플루언서의 컨텐츠 제작을 위한 Instagram 포스팅 예약 및 등록을 할 수 있는 업무용 페이지 구현</li>
