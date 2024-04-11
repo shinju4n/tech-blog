@@ -1,5 +1,6 @@
 import { FC } from 'react';
 import Typography from '@/components/ui/typography';
+import BlankLink from '@/components/BlankLink';
 
 const WantMore: FC = () => {
   return (
@@ -22,7 +23,10 @@ const WantMore: FC = () => {
             <ul>
               <li>
                 사용자가 여러 장의 이미지를 등록 후 수정 시, 순서를 원하는대로 지정할 수 없는 문제가 발생하여 이미지에
-                인덱스 기능을 추가하고 체크박스 체크 여부에따라 순서를 자유롭게 조정가능하게 UX 개선
+                인덱스 기능을 추가하고 체크박스 체크 여부에따라 순서를 자유롭게 조정가능하게{' '}
+                <BlankLink href="https://www.notion.so/shinju4n/Portfolio-65757a47cca74474b5f88aee4c716d20?pvs=4#50c3d1fa509e408799466ade6ec4b4e4">
+                  사용자 경험 개선
+                </BlankLink>
               </li>
             </ul>
           </ul>
