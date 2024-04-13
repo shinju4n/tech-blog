@@ -1,7 +1,7 @@
 import { FC } from 'react';
 import Typography from '../ui/typography';
 import Link from 'next/link';
-import { github, email } from '@/lib/me';
+import { github, email, portfolioNotion } from '@/lib/me';
 import Image from 'next/image';
 
 const getGithubProfile = async () => {
@@ -41,6 +41,13 @@ const MyProfile: FC = async () => {
             className="text-neutral-500 hover:text-foreground whitespace-pre-wrap font-bold"
           >
             Resume
+          </Link>
+          <Link
+            href={portfolioNotion}
+            className="text-neutral-500 hover:text-foreground whitespace-pre-wrap font-bold"
+            target="_blank"
+          >
+            Portfolio
           </Link>
         </div>
       </div>
