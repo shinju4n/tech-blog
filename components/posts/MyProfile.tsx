@@ -1,7 +1,7 @@
 import { FC } from 'react';
 import Typography from '../ui/typography';
 import Link from 'next/link';
-import { github, email, resume } from '@/lib/me';
+import { github, email } from '@/lib/me';
 import Image from 'next/image';
 
 const getGithubProfile = async () => {
@@ -37,9 +37,8 @@ const MyProfile: FC = async () => {
             E-mail
           </Link>
           <Link
-            href={resume}
+            href={'/resume?type=blog'}
             className="text-neutral-500 hover:text-foreground whitespace-pre-wrap font-bold"
-            target="_blank"
           >
             Resume
           </Link>
