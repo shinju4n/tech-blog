@@ -5,7 +5,7 @@ import { SuwonUniv, TechBlog } from '@/components/resume/other-experience/index'
 import { FrontEnd, BackEnd } from '@/components/resume/skills/index';
 import Typography from '@/components/ui/typography';
 import Strong from '@/components/Strong';
-import ResumeTitle from '@/components/resume/ResumeTilte';
+import ResumeTitle from '@/components/resume/ResumeTitle';
 import Divider from '@/components/resume/Divider';
 import { GoBackIcon } from '@/components/Icons';
 import { cn } from '@/lib/utils';
