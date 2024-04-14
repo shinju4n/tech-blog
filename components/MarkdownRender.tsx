@@ -71,8 +71,16 @@ const MarkdownRender: FC<MarkdownRenderProps> = ({ markdown }) => {
           </span>
         ),
         h1: ({ children }) => <Typography size="h1">{children}</Typography>,
-        h2: ({ children }) => <Typography size="h2">{children}</Typography>,
-        h3: ({ children }) => <Typography size="h3">{children}</Typography>,
+        h2: ({ children }) => (
+          <Typography size="h2" className="my-4">
+            {children}
+          </Typography>
+        ),
+        h3: ({ children }) => (
+          <Typography size="h3" className="my-4">
+            {children}
+          </Typography>
+        ),
         h4: ({ children }) => <Typography size="h4">{children}</Typography>,
         p: ({ children }) => (
           <Typography size="p" className="whitespace-pre-line">
