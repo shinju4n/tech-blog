@@ -1,7 +1,7 @@
 import { FC } from 'react';
 import Typography from '../ui/typography';
 import Link from 'next/link';
-import { ProgrammerIcon } from '../Icons';
+import { ProgrammerIcon } from '../icons';
 
 const Logo: FC = () => {
   return (

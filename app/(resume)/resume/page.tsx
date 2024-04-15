@@ -7,7 +7,7 @@ import Typography from '@/components/ui/typography';
 import Strong from '@/components/strong';
 import ResumeTitle from '@/components/resume/ResumeTitle';
 import Divider from '@/components/resume/Divider';
-import { GoBackIcon } from '@/components/Icons';
+import { GoBackIcon } from '@/components/icons';
 import { cn } from '@/lib/utils';
 import { email } from '@/lib/me';
 

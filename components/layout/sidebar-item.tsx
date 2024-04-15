@@ -6,7 +6,7 @@ import { useSearchParams } from 'next/navigation';
 import { AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import Typography from '@/components/ui/typography';
 
-import { EllipsisIcon } from '@/components/Icons';
+import { EllipsisIcon } from '@/components/icons';
 
 import { cn } from '@/lib/utils';
 

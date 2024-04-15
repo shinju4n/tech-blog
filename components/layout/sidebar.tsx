@@ -2,7 +2,7 @@ import { FC } from 'react';
 import SidebarItem from '@/components/layout/sidebar-item';
 import { MenuType } from '@/types/LayoutType';
 import { Accordion } from '@/components/ui/accordion';
-import { ContentWriteIcon, DesktopActionMonitorIcon, VideoGameControllerIcon } from '@/components/Icons';
+import { ContentWriteIcon, DesktopActionMonitorIcon, VideoGameControllerIcon } from '@/components/icons';
 import { getPostCategories } from '@/service/post-service';
 
 const Sidebar: FC = async () => {

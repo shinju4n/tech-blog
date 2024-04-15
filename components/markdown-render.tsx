@@ -12,7 +12,7 @@ import toast from 'react-hot-toast';
 
 import Typography from '@/components/ui/typography';
 import ImageDialog from '@/components/image-dialog';
-import { CopyIcon } from '@/components/Icons';
+import { CopyIcon } from '@/components/icons';
 
 interface MarkdownRenderProps {
   markdown: string;
