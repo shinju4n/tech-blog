@@ -1,8 +1,8 @@
 import { Metadata, ResolvingMetadata, type NextPage } from 'next';
 import { getPostDetail } from '@/service/post-service';
-import MarkdownRender from '@/components/MarkdownRender';
-import PostHead from '@/components/posts/detail/PostHead';
-import NextAndPreviousPost from '@/components/posts/detail/NextAndPreviousPost';
+import MarkdownRender from '@/components/markdown-render';
+import PostHead from '@/components/posts/detail/post-head';
+import NextAndPreviousPost from '@/components/posts/detail/next-and-previous-post';
 
 interface PostingDetailProps {
   params: {

@@ -1,11 +1,11 @@
 import { NextPage } from 'next';
 import { getPostList, getPostTags } from '@/service/post-service';
 
-import PostListItem from '@/components/posts/PostsListItem';
+import PostListItem from '@/components/posts/posts-list-item';
 import { type PostType } from '@/types/PostType';
-import PostAnimation from '@/components/posts/PostAnimation';
-import PostCategoryList from '@/components/posts/PostCategoryList';
-import MyProfile from '@/components/posts/MyProfile';
+import PostAnimation from '@/components/posts/post-animation';
+import PostCategoryList from '@/components/posts/post-categoryList';
+import MyProfile from '@/components/posts/my-profile';
 
 interface PostsProps {
   searchParams: {

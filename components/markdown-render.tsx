@@ -11,7 +11,7 @@ import { materialDark, materialOceanic } from 'react-syntax-highlighter/dist/cjs
 import toast from 'react-hot-toast';
 
 import Typography from '@/components/ui/typography';
-import ImageDialog from '@/components/ImageDialog';
+import ImageDialog from '@/components/image-dialog';
 import { CopyIcon } from '@/components/Icons';
 
 interface MarkdownRenderProps {

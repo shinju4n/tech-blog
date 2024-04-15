@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import BlankLink from '@/components/BlankLink';
+import BlankLink from '@/components/blank-link';
 import Typography from '@/components/ui/typography';
 
 const TechBlog: FC = () => {

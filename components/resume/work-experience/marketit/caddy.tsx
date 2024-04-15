@@ -1,6 +1,6 @@
 import { FC } from 'react';
 import Typography from '@/components/ui/typography';
-import BlankLink from '@/components/BlankLink';
+import BlankLink from '@/components/blank-link';
 
 const Caddy: FC = () => {
   return (

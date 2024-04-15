@@ -4,7 +4,7 @@ import * as React from 'react';
 import * as AccordionPrimitive from '@radix-ui/react-accordion';
 
 import { cn } from '@/lib/utils';
-import { ShapePyramidIcon } from '../Icons';
+import { ShapePyramidIcon } from '@/components/Icons';
 
 const Accordion = AccordionPrimitive.Root;
 

@@ -1,7 +1,7 @@
 import { FC } from 'react';
 import Link from 'next/link';
 import Typography from '@/components/ui/typography';
-import PostTagList from '@/components/posts/PostTagList';
+import PostTagList from '@/components/posts/post-tag-list';
 import Badge from '@/components/ui/badge';
 import { cn } from '@/lib/utils';
 

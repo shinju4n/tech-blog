@@ -4,7 +4,7 @@ import { Caddy, Inflca, WantMore } from '@/components/resume/work-experience/mar
 import { SuwonUniv, TechBlog } from '@/components/resume/other-experience/index';
 import { FrontEnd, BackEnd } from '@/components/resume/skills/index';
 import Typography from '@/components/ui/typography';
-import Strong from '@/components/Strong';
+import Strong from '@/components/strong';
 import ResumeTitle from '@/components/resume/ResumeTitle';
 import Divider from '@/components/resume/Divider';
 import { GoBackIcon } from '@/components/Icons';
