@@ -25,7 +25,7 @@ export async function generateMetadata({ params }: PostingDetailProps, parent: R
       title: title,
       description: post.summary,
       locale: 'ko_KR',
-      siteName: 'Ju4n_Devlog',
+      siteName: title,
       url: 'https://ju4n-devlog.site',
       images: [...previousImages, post.thumbnailUrl],
     },
