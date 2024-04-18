@@ -35,7 +35,7 @@ const WantMore: FC = () => {
           <Typography size="large" className="font-bold">
             Tech Stack.
           </Typography>
-          <Typography size="p">Next.js 12, Typescript, Tailwind CSS</Typography>
+          <Typography size="p">Next.js 12, TypeScript, Tailwind CSS</Typography>
         </div>
       </div>
     </section>
