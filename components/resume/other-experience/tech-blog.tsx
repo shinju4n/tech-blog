@@ -12,9 +12,40 @@ const TechBlog: FC = () => {
       </div>
       <Typography size="p">
         <BlankLink href="https://ju4n-devlog.site">ju4n-devlog.site</BlankLink> 라는 주소의 개인 기술 블로그를 운영하고
-        있습니다. 개선하고 싶은 기술적인 문제의 고민이나 새로운 기술을 공부하며 배운 것을 정리하고 있습니다. Next.js 와
-        Vercel로 배포하여 운영하고 있습니다.
+        있습니다. 개선하고 싶은 기술적인 문제의 고민이나 새로운 기술을 공부하며 배운 것을 정리하고 있습니다.
       </Typography>
+      <div className="flex flex-col gap-4 pt-4">
+        <section>
+          <Typography size="large" className="font-bold">
+            Do.
+          </Typography>
+          <ul className="pl-4 list-disc flex flex-col gap-1">
+            <li>Next.js의 SSR을 활용하여 SEO를 향상시켰습니다.</li>
+            <li>Markdown Render를 사용하여 md파일로 파싱하고 있습니다.</li>
+            <li>next-themes를 사용하여 다크모드를 구현하였습니다.</li>
+            <li>shadcn/ui 라이브러리를 사용하여 디자인 및 컴포넌트를 개발하였습니다.</li>
+          </ul>
+        </section>
+        <section>
+          <Typography size="large" className="font-bold">
+            Tech Stack.
+          </Typography>
+          <Typography size="p">Next.js 13, TypeScript, Tailwind CSS, shadcn/ui</Typography>
+        </section>
+        <section>
+          <Typography size="large" className="font-bold">
+            Link.
+          </Typography>
+          <ul className="pl-4 list-disc flex flex-col gap-1">
+            <li>
+              링크 : <BlankLink href="https://ju4n-devlog.site">ju4n-devlog.site</BlankLink>
+            </li>
+            <li>
+              Github : <BlankLink href="https://github.com/shinju4n/tech-blog">shinju4n/tech-blog</BlankLink>
+            </li>
+          </ul>
+        </section>
+      </div>
     </div>
   );
 };
