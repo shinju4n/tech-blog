@@ -21,8 +21,8 @@ const TechBlog: FC = () => {
           </Typography>
           <ul className="pl-4 list-disc flex flex-col gap-1">
             <li>Next.js의 SSR을 활용하여 SEO를 향상시켰습니다.</li>
-            <li>Markdown Render를 사용하여 md파일로 파싱하고 있습니다.</li>
-            <li>next-themes를 사용하여 다크모드를 구현하였습니다.</li>
+            <li>포스팅을 MarkDown 파일로 작성하면 시멘틱 태그에 맞게 파싱할 수 있도록 개발하였습니다.</li>
+            <li>반응형 레이아웃과 다크모드를 구현하였습니다.</li>
             <li>shadcn/ui 라이브러리를 사용하여 디자인 및 컴포넌트를 개발하였습니다.</li>
           </ul>
         </section>
