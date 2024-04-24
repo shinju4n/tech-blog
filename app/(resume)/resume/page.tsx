@@ -17,7 +17,7 @@ interface ResumeProps {
 
 const Resume: NextPage<ResumeProps> = ({ searchParams }) => {
   return (
-    <>
+    <div className="h-[297mm] w-[210mm]">
       <div className="pt-20 relative">
         <Link href={'/posts'} className={cn('absolute right-0', searchParams.type === 'blog' ? 'block' : 'hidden')}>
           <GoBackIcon />
@@ -25,13 +25,19 @@ const Resume: NextPage<ResumeProps> = ({ searchParams }) => {
         <Typography size="h1">
           반갑습니다!👋 <br></br> 저는 FrontEnd 개발자 신주안입니다.
         </Typography>
-        <Typography size="h4" className="text-foreground/80 py-4">
-          불편함과 문제를 해결하는 것에 보람을 느끼는 프론트엔드 개발자인 신주안입니다.<br></br>
+        <Typography size="h4" className="text-foreground/80 py-1">
+          사용자들에게 기능을 제공하는 것 이상으로, 사용자들에게 <Strong>편의성과 쾌적한 경험을 제공</Strong>하는 것을
+          중요하게 생각합니다.
+        </Typography>
+        <Typography size="h4" className="text-foreground/80 py-1">
+          새로운 기술 학습에 관심이 많고, 주도적으로 문제를 발견하여 분석하고 해결하기 위해 노력하고 있습니다.
+        </Typography>
+        <Typography size="h4" className="text-foreground/80 py-1">
           <Strong>Next.js</Strong>를 활용하여 혼자서 프로젝트를 구축하고 배포한 경험이 있습니다.<br></br>
           기존에 수치만을 보여주던 화면의 불편함을 개선하기 위해 <Strong>차트 라이브러리</Strong>를 도입하여 사용자가
           한눈에 등락을 파악할 수 있도록 UI/UX를 개선한 경험이 있습니다.<br></br>
           또한 <Strong>Spring Boot</Strong>와 <Strong>Thymeleaf</Strong>를 활용하여 백오피스 시스템을 풀스택으로 개발한
-          경험이 있습니다. 함께 일하면 열정과 기술력으로 프로젝트에 기여할 준비가 되어 있습니다.
+          경험이 있습니다.
         </Typography>
       </div>
       <div className="py-10">
@@ -87,7 +93,7 @@ const Resume: NextPage<ResumeProps> = ({ searchParams }) => {
         </Typography>
         <Typography size="p">📞 Phone : 010-2993-5911</Typography>
       </div>
-    </>
+    </div>
   );
 };
 export default Resume;
