@@ -10,6 +10,7 @@ import Divider from '@/components/resume/Divider';
 import { GoBackIcon } from '@/components/icons';
 import { cn } from '@/lib/utils';
 import { email } from '@/lib/me';
+import { Link2Icon } from '@radix-ui/react-icons';
 
 interface ResumeProps {
   searchParams: Record<'type', 'blog'>;
@@ -19,12 +20,22 @@ const Resume: NextPage<ResumeProps> = ({ searchParams }) => {
   return (
     <div className="print:h-[297mm] print:w-[210mm]">
       <div className="pt-20 relative">
+        <Link
+          href="https://ju4n-devlog.site/resume"
+          target="_blank"
+          className="items-center gap-1 text-primary hover:text-cyan-400 hidden print:flex mb-2"
+        >
+          <Link2Icon />
+          <Typography size="h4"> 웹페이지로 보면 좀 더 쾌적하게 보실 수 있습니다. </Typography>
+        </Link>
+
         <Link href={'/posts'} className={cn('absolute right-0', searchParams.type === 'blog' ? 'block' : 'hidden')}>
           <GoBackIcon />
         </Link>
         <Typography size="h1">
           반갑습니다!👋 <br></br> 저는 FrontEnd 개발자 신주안입니다.
         </Typography>
+
         <Typography size="h4" className="text-foreground/80 py-1">
           사용자들에게 기능을 제공하는 것 이상으로, 사용자들에게 <Strong>편의성과 쾌적한 경험을 제공</Strong>하는 것을
           중요하게 생각합니다.
