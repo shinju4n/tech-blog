@@ -18,8 +18,8 @@ interface ResumeProps {
 
 const Resume: NextPage<ResumeProps> = ({ searchParams }) => {
   return (
-    <div className="print:h-[297mm] print:w-[210mm]">
-      <div className="pt-20 relative">
+    <div className="px-4">
+      <div className="pt-14 relative">
         <Link
           href="https://ju4n-devlog.site/resume"
           target="_blank"
