@@ -47,6 +47,8 @@ const Resume: NextPage<ResumeProps> = ({ searchParams }) => {
           <Strong>Next.js</Strong>를 활용하여 혼자서 프로젝트를 구축하고 배포한 경험이 있습니다.<br></br>
           기존에 수치만을 보여주던 화면의 불편함을 개선하기 위해 <Strong>차트 라이브러리</Strong>를 도입하여 사용자가
           한눈에 등락을 파악할 수 있도록 UI/UX를 개선한 경험이 있습니다.<br></br>
+        </Typography>
+        <Typography size="h4" className="text-foreground/80 py-1">
           또한 <Strong>Spring Boot</Strong>와 <Strong>Thymeleaf</Strong>를 활용하여 백오피스 시스템을 풀스택으로 개발한
           경험이 있습니다.
         </Typography>
