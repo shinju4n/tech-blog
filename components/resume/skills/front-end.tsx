@@ -13,8 +13,8 @@ const FrontEnd: FC = () => {
         </li>
         <li>공통으로 사용하는 코드를 Custom Hook으로 만들어 코드의 재사용성을 높입니다.</li>
         <li>
-          React 생태계의 최신 기술인 TanStack Query, SWR, 그리고 Recoil을 즐겨 활용하며, 이를 능숙하게 다루기 위해
-          지속적으로 탐구하고 있습니다.
+          React 생태계의 최신 기술에 관심이 많고, TanStack Query, SWR, Recoil을 활용할 줄 알고, 이를 능숙하게 다루기
+          위해 지속적으로 탐구하고 있습니다.
         </li>
         <li>TypeScript를 이용한 React 개발에 익숙합니다.</li>
         <li>

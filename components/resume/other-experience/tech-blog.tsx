@@ -17,7 +17,7 @@ const TechBlog: FC = () => {
       <div className="flex flex-col gap-4 pt-4">
         <section>
           <Typography size="large" className="font-bold">
-            Do.
+            Work.
           </Typography>
           <ul className="pl-4 list-disc flex flex-col gap-1">
             <li>Next.js의 SSR을 활용하여 SEO를 향상시켰습니다.</li>
