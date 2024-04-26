@@ -5,7 +5,7 @@ const FrontEnd: FC = () => {
   return (
     <div className="flex flex-col items-start">
       <div className="mb-4">
-        <Typography size="h3">FrontEnd</Typography>
+        <Typography size="h3">Front-end</Typography>
       </div>
       <ul className="pl-4 list-disc flex flex-col gap-1">
         <li>
