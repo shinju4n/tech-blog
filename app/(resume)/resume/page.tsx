@@ -32,8 +32,8 @@ const Resume: NextPage<ResumeProps> = ({ searchParams }) => {
         <Link href={'/posts'} className={cn('absolute right-0', searchParams.type === 'blog' ? 'block' : 'hidden')}>
           <GoBackIcon />
         </Link>
-        <Typography size="h1">
-          반갑습니다!👋 <br></br> 저는 FrontEnd 개발자 신주안입니다.
+        <Typography size="h1" className="break-keep">
+          반갑습니다!👋 <br></br> 저는 프론트엔드 개발자 신주안입니다.
         </Typography>
 
         <Typography size="h4" className="text-foreground/80 py-1">
