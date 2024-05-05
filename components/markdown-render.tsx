@@ -99,10 +99,10 @@ const MarkdownRender: FC<MarkdownRenderProps> = ({ markdown }) => {
             </li>
           );
         },
-        a: ({ href }) => {
+        a: ({ href, children }) => {
           return (
             <Link href={href ?? ''} target="_blank" className="text-blue-500 whitespace-pre-wrap">
-              [링크]
+              {children}
             </Link>
           );
         },

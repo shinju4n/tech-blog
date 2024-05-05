@@ -1,5 +1,4 @@
 "use strict";
-// create-markdown.ts
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
     return new (P || (P = Promise))(function (resolve, reject) {
@@ -52,24 +51,6 @@ var prompt = function (question) {
         });
     });
 };
-var promptWithOptions = function (question, options) {
-    var rl = readline.createInterface({
-        input: process.stdin,
-        output: process.stdout,
-    });
-    return new Promise(function (resolve) {
-        rl.question('번호를 입력하세요: ', function (answer) {
-            rl.close();
-            var selectedOptionIndex = parseInt(answer) - 1;
-            if (selectedOptionIndex >= 0 && selectedOptionIndex < options.length) {
-                resolve(options[selectedOptionIndex]);
-            }
-            else {
-                resolve('');
-            }
-        });
-    });
-};
 var createMarkdownFile = function (filename, content) {
     var postsDirectory = path.join(process.cwd(), 'posts', filename);
     fs.writeFileSync(postsDirectory, content);
@@ -84,7 +65,7 @@ var main = function () { return __awaiter(void 0, void 0, void 0, function () {
                 return [4 /*yield*/, prompt('카테고리를 입력하세요: ')];
             case 2:
                 category = _a.sent();
-                return [4 /*yield*/, prompt('날짜를 입력하세요 ex) 2024-03-31')];
+                return [4 /*yield*/, prompt('날짜를 입력하세요 ex) 2024-03-31 : ')];
             case 3:
                 date = _a.sent();
                 return [4 /*yield*/, prompt('태그를 입력하세요: ')];
