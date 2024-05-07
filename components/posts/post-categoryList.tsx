@@ -18,7 +18,7 @@ const PostCategoryList: FC<PostCategoryListProps> = ({ searchParams, tags }) => 
   const currentCategory = searchParams.category || 'All';
   return (
     <>
-      <div className="relative">
+      <div className="relative shadow-sm">
         <div className="flex justify-start items-center gap-4 border border-foreground/10 rounded-xl p-4 overflow-x-auto scrollbar-hide">
           {CATEGORY?.map(category => {
             return (
