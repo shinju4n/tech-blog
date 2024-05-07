@@ -22,29 +22,26 @@ const MyProfile: FC = async () => {
       <div className="p-5">
         <span className="font-bold text-2xl">신주안</span>
         <Typography size="p">불편함과 문제를 해결하는 것에 보람을 느끼는 프론트엔드 개발자입니다.</Typography>
-        <div className="flex gap-4">
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
           <Link
             href={github}
             target="_blank"
-            className="text-neutral-500 hover:text-foreground whitespace-pre-wrap font-bold"
+            className="text-neutral-500 hover:text-primary whitespace-pre-wrap font-bold "
           >
             Github
           </Link>
-          <Link
-            href={'mailto:' + email}
-            className="text-neutral-500 hover:text-foreground whitespace-pre-wrap font-bold"
-          >
+          <Link href={'mailto:' + email} className="text-neutral-500 hover:text-primary whitespace-pre-wrap font-bold">
             E-mail
           </Link>
           <Link
             href={'/resume?type=blog'}
-            className="text-neutral-500 hover:text-foreground whitespace-pre-wrap font-bold"
+            className="text-neutral-500 hover:text-primary whitespace-pre-wrap font-bold"
           >
             Resume
           </Link>
           <Link
             href={portfolioNotion}
-            className="text-neutral-500 hover:text-foreground whitespace-pre-wrap font-bold"
+            className="text-neutral-500 hover:text-primary whitespace-pre-wrap font-bold"
             target="_blank"
           >
             Portfolio
