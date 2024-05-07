@@ -19,8 +19,7 @@ const PostListItem: FC<{ post: PostType; index: number }> = ({ post, index }) =>
         <Link href={`/posts/${post.id}`}>
           <div
             className={cn(
-              'flex flex-col w-full h-full gap-5 justify-center items-center',
-              'sm:flex-row',
+              'flex flex-col w-full h-[26rem] gap-5 justify-center items-center shadow-md',
               'bg-background border border-foreground/10 rounded-xl  group overflow-hidden hover:bg-foreground/5'
             )}
             onClick={setScrollPosition}
@@ -39,12 +38,9 @@ export default PostListItem;
 const Thumbnail: FC<{ src: string }> = ({ src }) => {
   return (
     <div
-      className={cn(
-        'relative flex justify-center items-start w-full  overflow-hidden bg-foreground/5 h-[200px]',
-        'sm:max-w-[170px] sm:max-h-[170px] sm:items-center'
-      )}
+      className={cn('relative flex flex-[2] justify-center items-center w-full h-full overflow-hidden bg-foreground/5')}
     >
-      <div className="flex justify-center items-center relative w-[200px] h-[200px]">
+      <div className="flex justify-center items-center relative w-2/3">
         <Image
           src={src}
           alt="thumbnail"
@@ -60,9 +56,11 @@ const Thumbnail: FC<{ src: string }> = ({ src }) => {
 
 const Content: FC<{ title: string; summary: string; date: string }> = ({ title, summary, date }) => {
   return (
-    <div className="w-full flex flex-col justify-between pb-4 px-4">
-      <Typography size="h4">{title}</Typography>
-      <Typography size="lead" className="line-clamp-3">
+    <div className="w-full flex flex-1 flex-col justify-between pb-4 px-4">
+      <Typography size="h4" className="line-clamp-2 font-bold text-xl">
+        {title}
+      </Typography>
+      <Typography size="lead" className="line-clamp-2">
         {summary}
       </Typography>
       <Typography size="small" className="text-end text-foreground/50">

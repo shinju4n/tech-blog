@@ -23,9 +23,11 @@ const PostListPage: NextPage<PostsProps> = async ({ searchParams }) => {
       <MyProfile />
       <PostCategoryList searchParams={searchParams} tags={postTags} />
       <PostAnimation>
-        {postList?.map((post: PostType, index) => {
-          return <PostListItem post={post} key={post.id} index={index} />;
-        })}
+        <div className="grid md:grid-cols-2 gap-4">
+          {postList?.map((post: PostType, index) => {
+            return <PostListItem post={post} key={post.id} index={index} />;
+          })}
+        </div>
       </PostAnimation>
     </div>
   );
