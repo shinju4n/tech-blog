@@ -49,8 +49,8 @@ const MarkdownRender: FC<MarkdownRenderProps> = ({ markdown }) => {
               </SyntaxHighlighter>
             </div>
           ) : (
-            <code {...props} className="bg-foreground/10 p-1">
-              <Typography size="strong" className="text-foreground">
+            <code {...props} className="bg-foreground/10 px-1">
+              <Typography size="strong" className="text-foreground text-sm">
                 {children}
               </Typography>
             </code>
@@ -81,7 +81,11 @@ const MarkdownRender: FC<MarkdownRenderProps> = ({ markdown }) => {
             {children}
           </Typography>
         ),
-        h4: ({ children }) => <Typography size="h4">{children}</Typography>,
+        h4: ({ children }) => (
+          <Typography size="h4" className="mb-2">
+            {children}
+          </Typography>
+        ),
         p: ({ children }) => (
           <Typography size="p" className="whitespace-pre-line">
             {children}
@@ -92,8 +96,8 @@ const MarkdownRender: FC<MarkdownRenderProps> = ({ markdown }) => {
         ul: ({ children }) => <ul className="pl-6 list-disc">{children}</ul>,
         li: props => {
           return (
-            <li>
-              <Typography size="p" className="mb-0">
+            <li className="my-2">
+              <Typography size="p" className="mb-2">
                 {props.children}
               </Typography>
             </li>
