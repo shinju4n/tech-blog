@@ -62,7 +62,7 @@ export const getPostCategories = async (): Promise<string[]> => {
   const posts = await getAllPostList();
   const categories = posts.map(post => post.category);
   const sortedCategories = categories.sort(function (a, b) {
-    const order = ['FE', 'BE', 'Database'];
+    const order = ['FE', 'BE', 'Database', 'CS'];
     return order.indexOf(a) - order.indexOf(b);
   });
   return Array.from(new Set(sortedCategories));

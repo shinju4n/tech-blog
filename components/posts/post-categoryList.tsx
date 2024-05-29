@@ -43,4 +43,4 @@ const PostCategoryList: FC<PostCategoryListProps> = ({ searchParams, tags }) => 
 };
 export default PostCategoryList;
 
-const CATEGORY = ['All', 'FE', 'BE', 'Database'];
+const CATEGORY = ['All', 'FE', 'BE', 'Database', 'CS'];
