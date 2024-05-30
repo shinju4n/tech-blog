@@ -77,3 +77,22 @@ XML(Extensible Markup Language)이란 **마크업 형태**를 쓰는 **데이터
 JSON과 비교했을 때 닫힌 태그가 계속해서 들어가기 때문에 **XML이 JSON과 비교하면 무겁다**.
 
 또한 Javascript Object로 변환하기 위해서 JSON보다는 더 많은 노력이 필요하다.(JSON은 JSON.parse() 면 됩니다.)
+
+### sitemap.xml
+
+xml은 대표적인 예로는`sitemap.xml`
+sitemap.xml은 서비스 내의 모든 페이지들을 리스트업한 데이터이다.
+사이트가 매우 크거나 서로 링크가 종속적으로 연결되지 않은 경우 크롤러가 일부 페이지를 누락하는 일이 있는데 이를 sitemap.xml이 방지하고 모든 페이지들을 크롤링할 수 있도록 해준다.
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>http://www.example.com/foo.html</loc>
+    <lastmod>2018-06-04</lastmod>
+</url> <url>
+    <loc>http://www.example.com/abc.html</loc>
+    <lastmod>2018-06-04</lastmod>
+  </url>
+</urlset>
+```
