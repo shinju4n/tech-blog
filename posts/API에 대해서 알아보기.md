@@ -57,4 +57,4 @@ API는 다음과 같이 중계계층으로 작동한다.
 
 ![](https://velog.velcdn.com/images/shinju4n/post/4426fa14-804a-4eba-be38-f6c27842bb9e/image.png)
 
-> 출처: 인프런 - 개발자 면접 CS 특강
+[> 참고 : 인프런 - CS 지식의 정석](https://www.inflearn.com/course/%EA%B0%9C%EB%B0%9C%EC%9E%90-%EB%A9%B4%EC%A0%91-cs-%ED%8A%B9%EA%B0%95)

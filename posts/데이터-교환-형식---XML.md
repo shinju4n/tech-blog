@@ -96,3 +96,5 @@ sitemap.xml은 서비스 내의 모든 페이지들을 리스트업한 데이터
   </url>
 </urlset>
 ```
+
+[> 참고 : 인프런 - CS 지식의 정석](https://www.inflearn.com/course/%EA%B0%9C%EB%B0%9C%EC%9E%90-%EB%A9%B4%EC%A0%91-cs-%ED%8A%B9%EA%B0%95)
