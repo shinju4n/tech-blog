@@ -58,14 +58,29 @@ export const getPostDetail = async (id: string): Promise<PostType> => {
   } as PostType;
 };
 
-export const getPostCategories = async (): Promise<string[]> => {
+type PostCategories = {
+  category: string;
+  count: number;
+};
+
+export const getPostCategories = async (): Promise<PostCategories[]> => {
   const posts = await getAllPostList();
-  const categories = posts.map(post => post.category);
-  const sortedCategories = categories.sort(function (a, b) {
-    const order = ['FE', 'BE', 'Database', 'CS'];
-    return order.indexOf(a) - order.indexOf(b);
-  });
-  return Array.from(new Set(sortedCategories));
+  const categoryCountMap: { [key: string]: number } = posts.reduce(
+    (acc, post) => {
+      acc[post.category] = (acc[post.category] || 0) + 1;
+      return acc;
+    },
+    {} as { [key: string]: number }
+  );
+  const order = ['FE', 'BE', 'Database', 'CS'];
+  const sortedCategoriesWithCount = Object.keys(categoryCountMap)
+    .sort((a, b) => order.indexOf(a) - order.indexOf(b))
+    .map(category => ({
+      category,
+      count: categoryCountMap[category],
+    }));
+
+  return sortedCategoriesWithCount;
 };
 
 export const getPostTags = async (category?: string): Promise<string[]> => {

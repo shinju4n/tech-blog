@@ -4,6 +4,7 @@ import Typography from '@/components/ui/typography';
 import PostTagList from '@/components/posts/post-tag-list';
 import Badge from '@/components/ui/badge';
 import { cn } from '@/lib/utils';
+import { getPostCategories } from '@/service/post-service';
 
 interface PostCategoryListProps {
   searchParams: {
@@ -14,33 +15,42 @@ interface PostCategoryListProps {
   tags: string[];
 }
 
-const PostCategoryList: FC<PostCategoryListProps> = ({ searchParams, tags }) => {
+const PostCategoryList: FC<PostCategoryListProps> = async ({ searchParams, tags }) => {
   const currentCategory = searchParams.category || 'All';
+  const categories = await getPostCategories();
+
   return (
     <>
       <div className="relative shadow-sm">
-        <div className="flex justify-start items-center gap-4 border border-foreground/10 rounded-xl p-4 overflow-x-auto scrollbar-hide">
-          {CATEGORY?.map(category => {
-            return (
-              <Link key={category} href={`/posts?category=${category}`}>
-                <Badge
-                  className={cn(currentCategory === category && 'ring-2 ring-primary', 'self-stretch')}
-                  label={category}
-                />
-              </Link>
-            );
-          })}
-        </div>
         <span className="absolute bg-background -top-3 left-2 px-4 text-center">
           <Typography size="small" className="font-bold">
             {'> Category'}
           </Typography>
         </span>
+        <div className="flex justify-start items-center gap-4 border border-foreground/10 rounded-xl p-4 overflow-x-auto scrollbar-hide">
+          <Link href={`/posts?category=All`}>
+            <Badge
+              className={cn(currentCategory === 'All' ? 'ring-2 ring-primary' : 'ring-1 ring-foreground/10')}
+              label={'All'}
+            />
+          </Link>
+          {categories?.map(({ category, count }) => {
+            return (
+              <Link key={category} href={`/posts?category=${category}`}>
+                <Badge
+                  className={cn(
+                    currentCategory === category ? 'ring-2 ring-primary' : 'ring-1 ring-foreground/10',
+                    'self-stretch relative'
+                  )}
+                  label={category + ` (${count})`}
+                />
+              </Link>
+            );
+          })}
+        </div>
       </div>
       <PostTagList searchParams={searchParams} tags={tags} />
     </>
   );
 };
 export default PostCategoryList;
-
-const CATEGORY = ['All', 'FE', 'BE', 'Database', 'CS'];
