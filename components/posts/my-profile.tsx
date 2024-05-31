@@ -1,8 +1,9 @@
-import { FC } from 'react';
+import { FC, PropsWithChildren } from 'react';
 import Typography from '../ui/typography';
 import Link from 'next/link';
 import { github, email, portfolioNotion } from '@/lib/me';
 import Image from 'next/image';
+import { EmailIcon, GithubIcon, PortfolioIcon, ResumeIcon } from '../icons';
 
 const getGithubProfile = async () => {
   const res = await fetch('https://api.github.com/users/shinju4n', {
@@ -10,6 +11,10 @@ const getGithubProfile = async () => {
   });
   const data = await res.json();
   return data;
+};
+
+const IconContainer = ({ children }: PropsWithChildren) => {
+  return <div className="flex justify-start items-center gap-2">{children}</div>;
 };
 
 const MyProfile: FC = async () => {
@@ -26,25 +31,40 @@ const MyProfile: FC = async () => {
           <Link
             href={github}
             target="_blank"
-            className="text-neutral-500 hover:text-primary whitespace-pre-wrap font-bold "
+            className="text-neutral-500 whitespace-pre-wrap font-bold hover:-translate-y-1 transition-all "
           >
-            Github
+            <IconContainer>
+              <GithubIcon size={20} />
+              <Typography size="small">Github</Typography>
+            </IconContainer>
           </Link>
-          <Link href={'mailto:' + email} className="text-neutral-500 hover:text-primary whitespace-pre-wrap font-bold">
-            E-mail
+          <Link
+            href={'mailto:' + email}
+            className="text-neutral-500 whitespace-pre-wrap font-bold hover:-translate-y-1 transition-all "
+          >
+            <IconContainer>
+              <EmailIcon size={20} />
+              <Typography size="small">Email</Typography>
+            </IconContainer>
           </Link>
           <Link
             href={'/resume?type=blog'}
-            className="text-neutral-500 hover:text-primary whitespace-pre-wrap font-bold"
+            className="text-neutral-500 whitespace-pre-wrap font-bold hover:-translate-y-1 transition-all "
           >
-            Resume
+            <IconContainer>
+              <ResumeIcon size={20} />
+              <Typography size="small">Resume</Typography>
+            </IconContainer>
           </Link>
           <Link
             href={portfolioNotion}
-            className="text-neutral-500 hover:text-primary whitespace-pre-wrap font-bold"
+            className="text-neutral-500 whitespace-pre-wrap font-bold hover:-translate-y-1 transition-all "
             target="_blank"
           >
-            Portfolio
+            <IconContainer>
+              <PortfolioIcon size={20} />
+              <Typography size="small">Portfolio</Typography>
+            </IconContainer>
           </Link>
         </div>
       </div>
