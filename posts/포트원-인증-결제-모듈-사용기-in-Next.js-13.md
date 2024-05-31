@@ -55,18 +55,14 @@ ex) 네이버페이, 카카오페이, KG이니시스, 나이스페이먼츠, KCP
 
 ### 👨‍💻 포트원을 사용하여 개발하기
 
-1. 모듈 준비
-   포트원 v1 모듈은 CDN을 지원하기 때문에 layout 페이지에 추가해주어야 한다.
+**모듈 준비**
+포트원 v1 모듈은 CDN을 지원하기 때문에 layout 페이지에 추가해주어야 한다.
 
 ```tsx
 // layout.tsx
-import Script from "next/script";
+import Script from 'next/script';
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="ko" suppressHydrationWarning>
       <body>
@@ -98,14 +94,16 @@ yarn add -D iamport-typings
 
 ```
 
-2. 결제 로직
-   내가 구현한 로직는 다음과 같다. 1. 결제창 호출 2. 서버에 사전 검증 API 호출 (결제 UID 받기) 3. 결제창 호출 4. 결제 완료 시 callback 함수로 사후 검증 api 호출 (성공, 실패 둘다)
+**결제 로직**
+내가 구현한 로직는 다음과 같다.
+
+결제창 호출 > 서버에 사전 검증 API 호출 (결제 UID 받기) > 결제창 호출 > 결제 완료 시 callback 함수로 사후 검증 api 호출 (성공, 실패 둘다)
 
 ```tsx
 // Payment.tsx
-import { type FC, useState } from "react";
-import { type RequestPayResponse } from "iamport-typings";
-import { requestCreditPayment } from "@/services/port-one-service";
+import { type FC, useState } from 'react';
+import { type RequestPayResponse } from 'iamport-typings';
+import { requestCreditPayment } from '@/services/port-one-service';
 
 type Item = {
   id: number;
@@ -115,7 +113,7 @@ type Item = {
 const Payment: FC = () => {
   const [selected, setSelected] = useState<Item>({
     id: 1,
-    title: "크레딧 100개",
+    title: '크레딧 100개',
   }); // 예시
 
   const callback = async (response: RequestPayResponse) => {
