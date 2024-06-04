@@ -37,7 +37,7 @@ const PostingDetail: NextPage<PostingDetailProps> = async ({ params }) => {
 
   return (
     <div className="w-full">
-      <PostHead title={post.title} createdAt={post.date} tags={post.tags} />
+      <PostHead title={post.title} createdAt={post.date} tags={post.tags} category={post.category} />
       <MarkdownRender markdown={post.content} />
       <NextAndPreviousPost next={post.next} previous={post.previous} />
     </div>

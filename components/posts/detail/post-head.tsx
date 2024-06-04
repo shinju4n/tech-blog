@@ -6,9 +6,10 @@ interface PostHeadProps {
   title: string;
   createdAt: string;
   tags?: string[];
+  category?: string;
 }
 
-const PostHead: FC<PostHeadProps> = ({ title, createdAt, tags }) => {
+const PostHead: FC<PostHeadProps> = ({ title, createdAt, tags, category }) => {
   return (
     <div className="mb-5 border-b border-foreground/30 py-2">
       <Typography size="h1" className="my-6">
@@ -19,7 +20,7 @@ const PostHead: FC<PostHeadProps> = ({ title, createdAt, tags }) => {
         <div className="flex justify-start items-center gap-2">
           {tags?.map((tag, i) => {
             return (
-              <Link key={i} href={`/posts?tag=${tag}`}>
+              <Link key={i} href={`/posts?category=${category}&tag=${tag}`}>
                 <Badge label={'# ' + tag} />
               </Link>
             );

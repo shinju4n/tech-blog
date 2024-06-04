@@ -33,10 +33,10 @@ export const getPostList = async ({ category, tag }: GetPostListParams): Promise
 
   if (category && category !== 'All') {
     const lowerCaseCategory = category.toLowerCase();
-    postData = postData.filter(post => post.category.toLocaleLowerCase() === lowerCaseCategory);
+    postData = postData.filter(post => post?.category?.toLocaleLowerCase() === lowerCaseCategory);
   }
   if (tag) {
-    postData = postData.filter(post => post.tags.includes(tag));
+    postData = postData.filter(post => post?.tags?.includes(tag));
   }
 
   const orderByDate = postData.sort((a, b) => (a.date > b.date ? -1 : 1));
@@ -85,7 +85,7 @@ export const getPostCategories = async (): Promise<PostCategories[]> => {
 
 export const getPostTags = async (category?: string): Promise<string[]> => {
   const posts = await getAllPostList();
-  const categoryPosts = posts.filter(post => post.category.toLocaleLowerCase() === category?.toLocaleLowerCase());
+  const categoryPosts = posts.filter(post => post?.category?.toLocaleLowerCase() === category?.toLocaleLowerCase());
   const tags = categoryPosts.flatMap(post => post.tags);
   const sortedTags = tags.sort();
   return Array.from(new Set(sortedTags));
