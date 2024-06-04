@@ -2,7 +2,7 @@
 title: '[클라우드] Off-Premise & On-Premise'
 date: '2024-06-04'
 category: 'CS'
-tags: []
+tags: [cloud]
 summary: 오프-프레미스(Off-Premise)와 온-프레미스(On-Premise)에 대한 개념
 pinned: false
 thumbnailUrl: https://velog.velcdn.com/images/shinju4n/post/29611c61-2c97-485c-b553-f93b94364c1d/image.png

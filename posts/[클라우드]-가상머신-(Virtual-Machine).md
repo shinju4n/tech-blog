@@ -1,8 +1,8 @@
 ---
-title: '클라우드 - 가상머신 (Virtual Machine)'
+title: '[클라우드] 가상머신 (Virtual Machine)'
 date: '2024-06-02'
 category: 'CS'
-tags: []
+tags: [cloud]
 summary: '가상머신 (Virtual Machine)에 대해서 알아보자.'
 pinned: false
 thumbnailUrl: https://velog.velcdn.com/images/shinju4n/post/2a26fb66-6a83-4463-9163-4f35887e6afb/image.png
