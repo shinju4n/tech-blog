@@ -84,14 +84,12 @@ const Resume: NextPage<ResumeProps> = ({ searchParams }) => {
         <Divider />
         <SuwonUniv />
       </div>
-      <Divider />
       <div className="py-10">
         <ResumeTitle>Skills.</ResumeTitle>
         <FrontEnd />
         <Divider />
         <BackEnd />
       </div>
-      <Divider />
       <div className="py-10">
         <ResumeTitle>Contact.</ResumeTitle>
         <Typography size="p">
