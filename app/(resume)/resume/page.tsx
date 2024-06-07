@@ -78,7 +78,6 @@ const Resume: NextPage<ResumeProps> = ({ searchParams }) => {
           </div>
         </div>
       </div>
-      <Divider />
       <div className="py-10">
         <ResumeTitle>Other Experience.</ResumeTitle>
         <TechBlog />
