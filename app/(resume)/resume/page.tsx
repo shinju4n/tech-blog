@@ -2,7 +2,6 @@ import { NextPage } from 'next';
 import Link from 'next/link';
 import { Caddy, Inflca, WantMore } from '@/components/resume/work-experience/marketit/index';
 import { SuwonUniv, TechBlog } from '@/components/resume/other-experience/index';
-import { FrontEnd, BackEnd } from '@/components/resume/skills/index';
 import Divider from '@/components/resume/Divider';
 import ResumeTitle from '@/components/resume/ResumeTitle';
 import Typography from '@/components/ui/typography';
@@ -86,9 +85,14 @@ const Resume: NextPage<ResumeProps> = ({ searchParams }) => {
       </div>
       <div className="py-10">
         <ResumeTitle>Skills.</ResumeTitle>
-        <FrontEnd />
-        <Divider />
-        <BackEnd />
+        <ul className="pl-4 list-disc flex flex-col gap-1">
+          <li>
+            <span className="font-bold">Front-End </span>: Next.js, TypeScript, React, Recoil, SWR, Tailwind CSS
+          </li>
+          <li>
+            <span className="font-bold">Back-End </span>: Spring Boot, JPA, QueryDSL
+          </li>
+        </ul>
       </div>
       <div className="py-10">
         <ResumeTitle>Contact.</ResumeTitle>
