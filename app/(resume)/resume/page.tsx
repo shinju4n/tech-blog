@@ -3,10 +3,11 @@ import Link from 'next/link';
 import { Caddy, Inflca, WantMore } from '@/components/resume/work-experience/marketit/index';
 import { SuwonUniv, TechBlog } from '@/components/resume/other-experience/index';
 import { FrontEnd, BackEnd } from '@/components/resume/skills/index';
+import Divider from '@/components/resume/Divider';
+import ResumeTitle from '@/components/resume/ResumeTitle';
 import Typography from '@/components/ui/typography';
 import Strong from '@/components/strong';
-import ResumeTitle from '@/components/resume/ResumeTitle';
-import Divider from '@/components/resume/Divider';
+
 import { GoBackIcon } from '@/components/icons';
 import { cn } from '@/lib/utils';
 import { email } from '@/lib/me';
@@ -33,31 +34,30 @@ const Resume: NextPage<ResumeProps> = ({ searchParams }) => {
           <GoBackIcon />
         </Link>
         <Typography size="h1" className="break-keep">
-          반갑습니다!👋 <br></br> 저는 프론트엔드 개발자 신주안입니다.
+          안녕하세요 👋
+          <br></br>
+          사용자 경험을 중요시하는 신주안입니다.
         </Typography>
-
-        <Typography size="h4" className="text-foreground/80 py-1">
-          사용자들에게 기능을 제공하는 것 이상으로, 사용자들에게 <Strong>편의성과 쾌적한 경험을 제공</Strong>하는 것을
-          중요하게 생각합니다.
+        <Typography size="h4" className="text-foreground/80 py-0.5">
+          2년차 프론트엔드 개발자로 스타트업에서 <Strong>웹 서비스를 개발/배포/운영</Strong>하였습니다. 기존 프로젝트
+          투입 및 새로운 프로젝트의 기획 및 개발을 담당하여 <Strong>처음부터 끝까지 책임졌던 경험</Strong>이 있습니다.
         </Typography>
-        <Typography size="h4" className="text-foreground/80 py-1">
-          새로운 기술 학습에 관심이 많고, 주도적으로 문제를 발견하여 분석하고 해결하기 위해 노력하고 있습니다.
+        <Typography size="h4" className="text-foreground/80 py-0.5">
+          저는 항상 <Strong>적극적이고 능동적인 자세</Strong>로 도전에 임하며, <Strong>문제를 발견하고 해결</Strong>하는
+          것을 두려워하지 않습니다. 프론트엔드 신입으로 입사했으나, 회사의 요구에 따라 백엔드 업무까지 맡게 되어 두 분야
+          모두에서 실무 경험을 쌓을 수 있었습니다.
         </Typography>
-        <Typography size="h4" className="text-foreground/80 py-1">
-          <Strong>Next.js</Strong>를 활용하여 혼자서 프로젝트를 구축하고 배포한 경험이 있습니다.<br></br>
-          기존에 수치만을 보여주던 화면의 불편함을 개선하기 위해 <Strong>차트 라이브러리</Strong>를 도입하여 사용자가
-          한눈에 등락을 파악할 수 있도록 UI/UX를 개선한 경험이 있습니다.<br></br>
-        </Typography>
-        <Typography size="h4" className="text-foreground/80 py-1">
-          또한 <Strong>Spring Boot</Strong>와 <Strong>Thymeleaf</Strong>를 활용하여 백오피스 시스템을 풀스택으로 개발한
-          경험이 있습니다.
+        <Typography size="h4" className="text-foreground/80 py-0.5">
+          항상 기술적인 성장을 위해{' '}
+          <Strong>최신 기술 학습에 관심이 많고, 주도적으로 문제를 발견하여 분석하고 해결하기 위해 노력</Strong>하고
+          있습니다. 이를 통해 팀 내에서의 역량을 발휘하고, 최고의 결과물을 만들어내고자 합니다.
         </Typography>
       </div>
       <div className="py-10">
         <ResumeTitle>Work Experience</ResumeTitle>
         <div className="flex flex-col xl:flex-row items-start">
-          <div className="xl:w-1/3 h-auto mb-4 xl:mb-0 xl:sticky xl:top-16 pr-10">
-            <Typography size="h2">
+          <div className="w-full xl:w-1/3 h-auto mb-4 xl:mb-0 xl:sticky xl:top-16 xl:pr-10">
+            <Typography size="h2" className="w-full">
               마켓잇 <span className="text-2xl">(Marketit)</span>
             </Typography>
             <Typography size="lead">Frontend Developer</Typography>
