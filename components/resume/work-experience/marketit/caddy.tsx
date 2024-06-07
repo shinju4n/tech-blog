@@ -22,7 +22,7 @@ const Caddy: FC = () => {
             <li>
               포트원 모듈을 사용하여{' '}
               <BlankLink href={'https://shinju4n.notion.site/9e27b11d8d8b4835aebf47eb5bbdca1e'}>
-                구매정책을 위한 결제기능 구현
+                구매 정책을 위한 결제 기능 구현
               </BlankLink>
             </li>
             <li>
@@ -40,7 +40,7 @@ const Caddy: FC = () => {
               반복되는 코드를 개선하기 위해 react-hook-form, react-dropzone을 사용한 회원 가입, 이미지 생성 Form 개발
             </li>
             <li>
-              이름, 성별, 팔로워 수, 카테고리등을{' '}
+              이름, 성별, 팔로워 수, 카테고리 등을{' '}
               <BlankLink href="https://www.notion.so/shinju4n/Portfolio-3050aed4843d4a1680dc6db40fc0dec8?pvs=4#2f440d04d08a42e48d8706b9a074563e">
                 필터로 사용하여 인플루언서 검색 기능
               </BlankLink>{' '}
@@ -52,7 +52,7 @@ const Caddy: FC = () => {
                 데이터 시각화 구현
               </BlankLink>
             </li>
-            <li>AI 인플루언서의 컨텐츠 제작을 위한 Instagram 포스팅 예약 및 등록을 할 수 있는 업무용 페이지 구현</li>
+            <li>AI 인플루언서의 콘텐츠 제작을 위한 Instagram 포스팅 예약 및 등록을 할 수 있는 업무용 페이지 구현</li>
             <li>Vercel을 사용하여 프로젝트 배포 CI/CD 파이프라인 구축</li>
           </ul>
         </div>
