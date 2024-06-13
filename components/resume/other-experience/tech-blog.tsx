@@ -14,8 +14,9 @@ const TechBlog: FC = () => {
         Description.
       </Typography>
       <Typography size="p">
-        <BlankLink href="https://ju4n-devlog.site">ju4n-devlog.site</BlankLink> 라는 주소의 개인 기술 블로그를 운영하고
-        있습니다. 개선하고 싶은 기술적인 문제의 고민이나 새로운 기술을 공부하며 배운 것을 정리하고 있습니다.
+        <BlankLink href="https://ju4n-devlog.site">ju4n-devlog.site</BlankLink> 라는 개인 기술 블로그를 직접 개발하고
+        배포하여 운영하고 있습니다. 최신 기술 트렌드와 해결하고 싶은 기술적인 문제들에대해서 다루고 있으며, 새로운
+        기술을 공부하고 배운 내용을 체계적으로 정리하고 공유하고 있습니다. 있습니다.
       </Typography>
       <div className="flex flex-col gap-4 pt-4">
         <section>

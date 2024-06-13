@@ -64,7 +64,7 @@ const Resume: NextPage<ResumeProps> = ({ searchParams }) => {
             <div className="py-2">
               <Typography size="p">
                 신사업실 개발팀 / 매니저 <br></br>
-                전반적인 웹 퍼블리싱, 프론트엔드 개발 담당
+                프론트엔드 개발 담당
               </Typography>
             </div>
           </div>
@@ -87,10 +87,11 @@ const Resume: NextPage<ResumeProps> = ({ searchParams }) => {
         <ResumeTitle>Skills.</ResumeTitle>
         <ul className="pl-4 list-disc flex flex-col gap-1">
           <li>
-            <span className="font-bold">Front-End </span>: Next.js, TypeScript, React, Recoil, SWR, Tailwind CSS
+            <span className="font-bold">Front-End </span>: React, TypeScript, Next.js, TanStack Query, SWR, Zustand,
+            Recoil, Tailwind CSS
           </li>
           <li>
-            <span className="font-bold">Back-End </span>: Spring Boot, JPA, QueryDSL
+            <span className="font-bold">Back-End </span>: MySQL, NestJS, TypeORM
           </li>
         </ul>
       </div>
