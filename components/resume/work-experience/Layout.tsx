@@ -2,13 +2,13 @@ import Typography from '@/components/ui/typography';
 import { FC, PropsWithChildren } from 'react';
 
 interface ProjectTitleProps {
-  children: React.ReactNode;
+  title: string;
   subTitle?: string;
 }
-const ProjectTitle: FC<ProjectTitleProps> = ({ children, subTitle }) => {
+const ProjectTitle: FC<ProjectTitleProps> = ({ title, subTitle }) => {
   return (
     <>
-      <Typography size="h3">{children}</Typography>
+      <Typography size="h3">{title}</Typography>
       <Typography size="muted">{subTitle}</Typography>
     </>
   );
@@ -22,7 +22,7 @@ const Content = ({ type, children }: ContentProps) => {
   return (
     <div>
       <Title>{type}</Title>
-      {children}
+      {typeof children === 'string' ? <Typography size="p">{children}</Typography> : children}
     </div>
   );
 };
