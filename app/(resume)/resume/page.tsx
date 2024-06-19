@@ -18,7 +18,7 @@ interface ResumeProps {
 
 const Resume: NextPage<ResumeProps> = ({ searchParams }) => {
   return (
-    <div className="px-4">
+    <div className="px-10">
       <div className="pt-14 relative">
         <Link
           href="https://ju4n-devlog.site/resume"
@@ -55,7 +55,7 @@ const Resume: NextPage<ResumeProps> = ({ searchParams }) => {
       <div className="py-10">
         <ResumeTitle>Work Experience</ResumeTitle>
         <div className="flex flex-col xl:flex-row items-start">
-          <div className="w-full xl:w-1/3 h-auto mb-4 xl:mb-0 xl:sticky xl:top-16 xl:pr-10">
+          <div className="w-full xl:w-1/3 h-auto xl:mb-0 xl:sticky xl:top-16 xl:pr-10">
             <Typography size="h2" className="w-full">
               마켓잇 <span className="text-2xl">(Marketit)</span>
             </Typography>
