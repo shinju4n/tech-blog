@@ -23,7 +23,7 @@ const WORK_LIST = [
   <li key="1">
     이미지 업로드 모듈의 편의성을 개선하였습니다. 사용자가 여러 장의 이미지를 등록한 후 수정할 때, 순서를 원하는 대로
     지정할 수 있도록 이미지에 인덱스 기능을 추가하고, 체크박스 선택 여부에 따라 순서를 자유롭게 조정할 수 있게 하여{' '}
-    <BlankLink href="https://www.notion.so/shinju4n/Portfolio-3050aed4843d4a1680dc6db40fc0dec8?pvs=4#31372e5c817742e1a34ed80965350581">
+    <BlankLink href="https://www.notion.so/shinju4n/New-682dfc806a804f1f916de972143820bc?pvs=4#985b1b6364fa4a12b19a2438339dbf8d">
       사용자 경험 개선
     </BlankLink>
     하였습니다.

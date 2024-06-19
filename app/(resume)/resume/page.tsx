@@ -49,7 +49,7 @@ const Resume: NextPage<ResumeProps> = ({ searchParams }) => {
         <Typography size="h4" className="text-foreground/80 py-0.5">
           항상 기술적인 성장을 위해{' '}
           <Strong>최신 기술 학습에 관심이 많고, 주도적으로 문제를 발견하여 분석하고 해결하기 위해 노력</Strong>하고
-          있습니다. 이를 통해 팀 내에서의 역량을 발휘하고, 최고의 결과물을 만들어내고자 합니다.
+          있습니다. 이를 통해 팀 내에서의 역량을 발휘하고, 최고의 결과 물을 만들어내고자 합니다.
         </Typography>
       </div>
       <div className="py-10">
