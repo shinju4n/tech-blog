@@ -22,6 +22,14 @@ const Caddy: FC = () => {
 export default Caddy;
 
 const WORK_LIST = [
+  <li key="0">
+    초기 화면에 고해상도 이미지로 인해 로드 시간이 느려지는 문제를 해결하기 위해, next/image 컴포넌트를 사용하여 AVIF와
+    WebP 형식으로 이미지를 최적화하고, lazy loading과 priority 속성을 적용하여{' '}
+    <BlankLink href="https://www.notion.so/shinju4n/Portfolio-682dfc806a804f1f916de972143820bc?pvs=4#f381e7096147466ea417bba82c3e7f7a">
+      초기 페이지 로드 시간을 약 4초에서 0.97초로 개선
+    </BlankLink>
+    하였습니다.
+  </li>,
   <li key="1">
     로딩 화면이 오래 지속되는 문제로 인한 사용자 경험 저하를 해결하기 위해 API 호출 로직을 수정하여 실시간으로 이미지를
     생성하고 사용자에게 지속적으로 업데이트를 제공함으로써{' '}
