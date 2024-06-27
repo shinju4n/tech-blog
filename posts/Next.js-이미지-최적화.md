@@ -13,75 +13,83 @@ thumbnailUrl: https://velog.velcdn.com/images/shinju4n/post/c4334f7e-183f-492e-9
 
 ![](https://velog.velcdn.com/images/shinju4n/post/c4334f7e-183f-492e-9ccb-9cb9249449e4/image.png)
 
-### Next/image에 대해서
+### Next.js의 <Image> 컴포넌트
 
-Next.js에서는 기본적으로 `<Image>` 컴포넌트를 제공해준다.이 이미지 컴포넌트는 이미지를 자동으로 최적화시켜준다.
+Next.js에서는 이미지 최적화를 위한 <Image> 컴포넌트를 제공해준다. 이 컴포넌트를 사용하면 자동으로 이미지 최적화가 이루어지며, 다음과 같은 장점이 있다.
 
-```ts
-import Image from "next/image";
-```
+1. **최신 이미지 형식 사용 및 디바이스에 대응한 크기 제공**:
+   - WebP 및 AVIF와 같은 최신 이미지 형식을 지원하고, 각 디바이스에 최적화된 크기의 이미지를 자동으로 제공하여 성능을 최적화해준다.
+2. **Layout Shift 방지**:
 
-간단하게 장점을 설명하자면,
+   - 레이아웃이 변경되지 않도록 이미지를 로드할 때 고정된 공간을 예약하여 사용자가 페이지를 스크롤할 때 예기치 않은 레이아웃 변경을 방지해준다.
 
-1. 최신 이미지 형식을 사용, 각 디바이스에 대응한 크기의 이미지
-2. layout shift 방지
-3. lazy loading
+3. **Lazy Loading**:
+   - 필요한 시점에만 이미지를 로드하여 초기 페이지 로딩 속도를 향상시키고 불필요한 데이터 전송을 줄여준다.
 
-위의 장점을 활용하여 이미지 최적화를 적용해보았다.
+아래 예시는 최적화 전후의 차이를 보여준다
 
-**최적화 전**
-![](https://velog.velcdn.com/images/shinju4n/post/42c674b2-ab58-444a-be84-cbb7576d838d/image.png)
-**최적화 후**
-![](https://velog.velcdn.com/images/shinju4n/post/ae4bf80b-75bb-48b1-bcac-2fef8744aa59/image.png)
+**최적화 전**:
+![최적화 전](https://velog.velcdn.com/images/shinju4n/post/42c674b2-ab58-444a-be84-cbb7576d838d/image.png)
 
-### 이미지 포맷 형식 변경 WebP,Avif
+**최적화 후**:
+![최적화 후](https://velog.velcdn.com/images/shinju4n/post/ae4bf80b-75bb-48b1-bcac-2fef8744aa59/image.png)
 
-이미지 형식은 주로 무손실 형식, 손실 형식으로 나뉜다. 1. 무손실 형식
-무손실 이미지 압축은 이미지를 압축하면서도 원본 이미지의 모든 세부 정보를 보존하는 방식 2. 손실 형식
-손실 형식은 이미지를 압축 할 때 일부 정보를 제거하여 파일 크기를 줄이는 방식이다.
-이미지의 세부 정보를 압축함으로써 파일 크기를 줄이지만, 이 과정에서 약간의 품질 손실이 발생 할 수 있다.
-댸표적으로 JPEG 형식이 있다.
+### 이미지 포맷 형식 변경 (WebP, AVIF)
 
-결론적으로 말하면 WebP, avif 포맷이 이미지 최적화에 유리하다.
-일반적으로 avif는 jpeg에 비해 약 50%에서 75% 정도 더 나은 압축률을 보여준다.
-즉, 동일한 품질의 이미지를 저장할 때 AVIF는 더 작은 파일 크기를 가진다.
+이미지 포맷은 주로 무손실 및 손실 형식으로 나뉜다.
 
-next/image를 사용하면 자동으로 포맷을 webp로 변환 해준다. 하지만 우리가 사용하고 싶은 포멧은 avif이기 때문에 avif 포맷을 사용하고 싶으면 next.config.ts에서 설정 해주면된다.
+1. **무손실 형식**:
+   - 원본 이미지의 모든 세부 정보를 보존하면서 압축하는 방식이다.
+2. **손실 형식**:
+   - 압축 시 일부 정보를 제거하여 파일 크기를 줄이는 방식으로, 약간의 품질 손실이 발생할 수 있다. 대표적인 예로 JPEG가 있다.
+
+최적화된 이미지 포맷인 WebP와 AVIF는 특히 유용하다.
+
+- **WebP**: JPEG 및 PNG 대비 뛰어난 압축률과 품질을 제공한다.
+- **AVIF**: JPEG 대비 50-75% 더 나은 압축률을 제공하여 더 작은 파일 크기로 동일한 품질의 이미지를 저장할 수 있다.
+
+Next.js에서는 기본적으로 WebP로 자동 변환되지만, AVIF를 사용하고 싶다면 `next.config.ts`에서 설정을 변경할 수 있다:
 
 ```ts
 module.exports = {
   images: {
-    formats: ["image/avif", "image/webp"],
+    formats: ['image/avif', 'image/webp'],
   },
 };
 ```
 
-### Lazy loading
+### Lazy Loading
 
-lazy loading 웹 페이지의 성능을 향상시키기 위한 기술 중 하나로, 페이지가 로드될 때 모든 이미지를 동시에 로드하는 대신에 필요한 이미지만 요청하는 방식이다. Lazy Loading을 사용하면 초기 페이지 로딩 시간을 단추갛고 사용자 경험을 향상시킬 수 있다.
+Lazy Loading은 웹 페이지의 성능을 향상시키는 기술로, 필요한 이미지만 로드하여 초기 페이지 로딩 시간을 단축시킨다. 이는 사용자가 스크롤하면서 이미지를 로드하게 함으로써 사용자 경험을 향상시킨다. Next.js의 `<Image>` 컴포넌트에서 `loading` 속성을 `lazy`로 설정하여 쉽게 적용할 수 있다.
 
 ```tsx
-<Image width={300} height={300} src={...} alt={...} loading="lazy"/>
+<Image width={300} height={300} src="..." alt="..." loading="lazy" />
 ```
 
 ### 이미지 리사이징
 
-next/image의 경우 sizes 값을 설정 할 수 있는데, 미디어 조건 마다 어떤 사이즈의 이미지를 로드할지 지정 할 수가 있다.
+Next.js의 `<Image>` 컴포넌트는 다양한 화면 크기에 맞춰 이미지를 자동으로 리사이징할 수 있다. `sizes` 속성을 사용하여 미디어 조건마다 어떤 크기의 이미지를 로드할지 지정할 수 있다.
 
 ```tsx
 <Image
   sizes="(max-width: 320px) 280px,
-        (max-width: 480px) 440px,
-        800px"
+         (max-width: 480px) 440px,
+         800px"
+  src="..."
+  alt="..."
+  width={800}
+  height={600}
 />
 ```
 
-또는
+또는 `next.config.ts` 파일에서 전역 설정으로 지정할 수도 있다.
 
 ```ts
 module.exports = {
   images: {
-    sizes: "250px",
+    deviceSizes: [320, 480, 800],
   },
 };
 ```
+
+이렇게 하면 Next.js는 각 미디어 조건에 맞춰 최적화된 이미지를 제공해준다.
