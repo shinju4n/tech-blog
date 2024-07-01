@@ -2,6 +2,7 @@ import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
 import { type PostType } from '@/types/PostType';
+import { get } from 'http';
 
 const postsDirectory = path.join(process.cwd(), 'posts');
 
@@ -100,4 +101,9 @@ export const getNextAndPreviousPost = async (
   const next = orderByDate[currentIndex - 1] || null;
   const previous = orderByDate[currentIndex + 1] || null;
   return { next, previous };
+};
+
+export const getPinnedPosts = async (): Promise<PostType[]> => {
+  const postData = await getAllPostList();
+  return postData.filter(post => post.pinned);
 };

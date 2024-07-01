@@ -5,7 +5,7 @@ export type PostType = {
   category: string;
   tags: string[];
   summary: string;
-  isPinned: boolean;
+  pinned: boolean;
   thumbnailUrl: string;
   content: string;
   next: PostType | null;
