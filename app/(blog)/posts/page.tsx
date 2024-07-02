@@ -1,5 +1,5 @@
 import { NextPage } from 'next';
-import { getPostList, getPostTags } from '@/service/post-service';
+import { getPinnedPosts, getPostList, getPostTags } from '@/service/post-service';
 
 import PostListItem from '@/components/posts/posts-list-item';
 import { type PostType } from '@/types/PostType';
@@ -17,11 +17,11 @@ interface PostsProps {
 
 const PostListPage: NextPage<PostsProps> = async ({ searchParams }) => {
   const postList = await getPostList(searchParams);
-  const postTags = await getPostTags(searchParams.category);
+
   return (
     <div className="flex flex-col gap-2 pt-10">
       <MyProfile />
-      <PostCategoryList searchParams={searchParams} tags={postTags} />
+      <PostCategoryList searchParams={searchParams} />
       <PostAnimation>
         <div className="grid md:grid-cols-2 gap-4">
           {postList?.map((post: PostType, index) => {

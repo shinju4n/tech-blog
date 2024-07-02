@@ -4,7 +4,7 @@ import Typography from '@/components/ui/typography';
 import PostTagList from '@/components/posts/post-tag-list';
 import Badge from '@/components/ui/badge';
 import { cn } from '@/lib/utils';
-import { getPostCategories } from '@/service/post-service';
+import { getPostCategories, getPostTags } from '@/service/post-service';
 
 interface PostCategoryListProps {
   searchParams: {
@@ -12,12 +12,12 @@ interface PostCategoryListProps {
     category?: string;
     tag?: string;
   };
-  tags: string[];
 }
 
-const PostCategoryList: FC<PostCategoryListProps> = async ({ searchParams, tags }) => {
+const PostCategoryList: FC<PostCategoryListProps> = async ({ searchParams }) => {
   const currentCategory = searchParams.category || 'All';
   const categories = await getPostCategories();
+  const tags = await getPostTags(searchParams.category);
 
   return (
     <>
