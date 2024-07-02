@@ -1,11 +1,12 @@
 import { NextPage } from 'next';
-import { getPinnedPosts, getPostList, getPostTags } from '@/service/post-service';
+import { getPostList } from '@/service/post-service';
 
 import PostListItem from '@/components/posts/posts-list-item';
 import { type PostType } from '@/types/PostType';
 import PostAnimation from '@/components/posts/post-animation';
 import PostCategoryList from '@/components/posts/post-categoryList';
 import MyProfile from '@/components/posts/my-profile';
+import PinnedPosts from '@/components/posts/pinned-posts';
 
 interface PostsProps {
   searchParams: {
@@ -21,6 +22,7 @@ const PostListPage: NextPage<PostsProps> = async ({ searchParams }) => {
   return (
     <div className="flex flex-col gap-2 pt-10">
       <MyProfile />
+      <PinnedPosts />
       <PostCategoryList searchParams={searchParams} />
       <PostAnimation>
         <div className="grid md:grid-cols-2 gap-4">

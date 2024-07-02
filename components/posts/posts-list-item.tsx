@@ -19,7 +19,7 @@ const PostListItem: FC<{ post: PostType; index: number }> = ({ post, index }) =>
         <Link href={`/posts/${post.id}`}>
           <div
             className={cn(
-              'flex flex-col w-full h-[26rem] gap-5 justify-center items-center shadow-md',
+              'flex flex-1 flex-col w-full h-[26rem] gap-5 justify-center items-center shadow-md',
               'bg-background border border-foreground/10 rounded-xl  group overflow-hidden hover:bg-foreground/5'
             )}
             onClick={setScrollPosition}

@@ -2,7 +2,6 @@ import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
 import { type PostType } from '@/types/PostType';
-import { get } from 'http';
 
 const postsDirectory = path.join(process.cwd(), 'posts');
 
