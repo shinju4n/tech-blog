@@ -8,7 +8,7 @@ summary: "Querydsl DTO로 조회하는 방법은 4가지가 있다.
 - Projection.fields
 - Projection.constructor
 - @QueryProjection"
-pinned: true
+pinned: false
 thumbnailUrl: https://velog.velcdn.com/images/ewan/post/4d809000-30c0-48ed-b0d7-a0ded326b95d/querydsl.png
 ---
 

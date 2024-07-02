@@ -6,7 +6,7 @@ tags: ["JPA", "Spring Boot", "에러"]
 summary: "연관 관계가 설정된 엔티티를 조회 할 경우, 조회된 데이터 갯수(n)만큼 연관관계의 조회 쿼리가 추가로 발생하는 문제.
 만약 쿠폰이라는 엔티티를 조회하는데, 연관 관계 유저와 미션을 조회한다고 가정해보자.
 쿠폰 한개 행을 조회할 때 유저와 미션을 조회하는 쿼리가 같이 발생하기 때문에 한 행을 조회할때 쿼리가 3번 나간다."
-pinned: true
+pinned: false
 thumbnailUrl: https://velog.velcdn.com/cloudflare/alswl689/105df2e3-cbbd-45c3-920b-68b65dc471d7/springbootImg.png
 ---
 

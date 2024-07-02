@@ -4,7 +4,7 @@ date: '2024-05-19'
 category: 'FE'
 tags: ['reactQuery']
 summary: 'React Query 캐싱 라이프사이클에 대해서 알아보자.'
-pinned: false
+pinned: true
 thumbnailUrl: https://velog.velcdn.com/images/shinju4n/post/8e296517-c101-4fea-bff7-231fdfb3cf8c/image.png
 ---
 

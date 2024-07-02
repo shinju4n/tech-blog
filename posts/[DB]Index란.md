@@ -7,7 +7,7 @@ summary: "- 쉽게 찾아볼 수 있도록 일정한 순서에 따라 놓은 목
 - Index는 원하는 데이터를 빠르게 찾기 위한 기술로 DB에서는 `SELECT`문에 활용 가능
 - 데이터가 특정 기준으로 정렬되어 검색 속도를 향상 시킬 수 있음.
 - DB 테이블에 대한 검색 성능을 향상시키는 구조로 `SELECT`문에서도 `WHERE`,`JOIN`,`ORDER BY`, `GROUP BY`절등에 활용"
-pinned: true
+pinned: false
 thumbnailUrl: https://velog.velcdn.com/images/leo3179/post/49f60233-840e-435d-a175-2d63d725c403/image.png
 ---
 

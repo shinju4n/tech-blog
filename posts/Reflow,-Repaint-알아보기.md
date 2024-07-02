@@ -6,7 +6,7 @@ tags: ["웹 최적화"]
 summary: "
 최근에 Reflow와 Repaint에 대해서 알게 되었는데, 이 두가지가 웹 성능에 영향을 미치는지 알게 되었다.
 웹 개발자로써 Reflow와 Repaint에 대한 지식을 내 것으로 만들기 위해 이 포스팅을 작성하게 되었다."
-pinned: true
+pinned: false
 thumbnailUrl: https://velog.velcdn.com/images/shinju4n/post/be4a1b9d-88e0-4eff-b051-197dbaee0e81/image.png
 ---
 

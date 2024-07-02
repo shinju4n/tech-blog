@@ -5,7 +5,7 @@ category: "FE"
 tags: ["Next.js"]
 summary: "이번에 프로젝트를 시작하면서 `페이지(page)`와 `페이지 수(size)`, 그리고 여러개의 `필터값`을 통해 인플루언서를 검색하는 페이지를 개발하게 되었다.
 맨처음 개발에 들어갔을 때, 최대한 빨리 레이아웃과 API 연동을 완료한 결과물을 보여줘야할 상황이었기 때문에 내 나름대로 간단하게 구현하였다..."
-pinned: true
+pinned: false
 thumbnailUrl: https://mblogthumb-phinf.pstatic.net/MjAyMDA0MjlfNzYg/MDAxNTg4MTQ0NDU4MTY2.yI4L02gtOvHSsZV4r5WJi-PJI77MdEEL-xnLHBvLwDUg.nA8WEJkzHYByxzfA3kUyQHvtjKUu-pE8K07kS4djDlYg.JPEG.cream-b/IMG_2043.JPG?type=w800
 ---
 
@@ -106,7 +106,7 @@ URL이든 상태값이든 지정된 정보가 없기 때문에
    나는 useQueryParmas라는 커스텀 훅과 SWR을 구현하여 사용하였다.
 
 ```ts
-import { useSearchParams, useRouter, usePathname } from "next/navigation";
+import { useSearchParams, useRouter, usePathname } from 'next/navigation';
 
 interface UseQueryParamsOptions {
   isDirectPush?: boolean;
@@ -126,7 +126,7 @@ const useQueryParams = ({
 
   const updateQueryAndNavigate = () => {
     if (isSetPageFirst) {
-      query.set("page", "1");
+      query.set('page', '1');
     }
     if (isDirectPush) {
       if (isReplace) {
@@ -150,7 +150,7 @@ const useQueryParams = ({
 
   const setAll = (params: Record<string, string | string[]>) => {
     Object.entries(params).forEach(([key, value]) => {
-      if (value !== "" && !(Array.isArray(value) && value.length === 0)) {
+      if (value !== '' && !(Array.isArray(value) && value.length === 0)) {
         query.set(key, value.toString());
       }
     });
@@ -169,10 +169,10 @@ const useQueryParams = ({
 
   const queryStringToObject = (queryString: string) => {
     const result: Record<string, string> = {};
-    const pairs = queryString.slice(0).split("&");
+    const pairs = queryString.slice(0).split('&');
 
-    pairs.forEach((pair) => {
-      const [key, value] = pair.split("=");
+    pairs.forEach(pair => {
+      const [key, value] = pair.split('=');
       result[key] = value;
     });
 
@@ -204,10 +204,10 @@ const query = useQueryParams({
 });
 
 const handleColor = (value: string) => {
-  if (value === "ALL") {
-    query.remove("color");
+  if (value === 'ALL') {
+    query.remove('color');
   } else {
-    query.set("color", value);
+    query.set('color', value);
   }
 };
 ```
@@ -229,16 +229,12 @@ export default function ShopPage(){
 
 ```ts
 const query = useQueryParams({ isDirectPush: false, isReplace: false });
-const { data, error, isLoading, mutate } = useSWR<ShopResponse>(
-  `/shop?` + query.getAll,
-  fetcher,
-  {
-    revalidateIfStale: false,
-    revalidateOnFocus: false,
-    revalidateOnReconnect: false,
-    keepPreviousData: true,
-  }
-);
+const { data, error, isLoading, mutate } = useSWR<ShopResponse>(`/shop?` + query.getAll, fetcher, {
+  revalidateIfStale: false,
+  revalidateOnFocus: false,
+  revalidateOnReconnect: false,
+  keepPreviousData: true,
+});
 ```
 
 ### 💪 느낀점

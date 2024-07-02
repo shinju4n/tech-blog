@@ -6,7 +6,7 @@ tags: ["React.js"]
 summary: "`React Suspense`는 React.js 버전 16.6에서 소개된 기능이다.
 이 기능을 사용하면 컴포넌트가 서버에서 데이터를 가져오거나 동적으로 코드를 불러오는 등의 비동기 작업이 완료될 때까지 렌더링을 일시적으로 일시 정지할 수 있다.
 기존에는 React에서 비동기 작업을 처리하기 위해 `callback`, `Promise` 와 같은 방법으로 동작했다. 이러한 접근 방식은 작동하지만 여러 비동기 작업을 처리할 때 복잡하고 유지 관리하기 어려운 코드로 이어질 수 있다."
-pinned: true
+pinned: false
 thumbnailUrl: https://velog.velcdn.com/images/seeh_h/post/eabee579-2bff-484c-8380-2e5d36cc12fa/image.png
 ---
 

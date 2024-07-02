@@ -5,7 +5,7 @@
   tags: ["면접"]
   summary: "프론트엔드 면접의 단골질문으로 나오는 문제이다.
 한번 이번에 공부하면서 좋은 글,번역 글이 있어서 한번 정리할겸 작성해본다."
-  pinned: false
+  pinned: true
   thumbnailUrl: https://velog.velcdn.com/images/shinju4n/post/fa15a29d-64cb-4b61-9e23-d0c8fd04c71b/image.png
 ---
 

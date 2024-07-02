@@ -5,7 +5,7 @@ category: "Database"
 tags: ["MySQL"]
 summary: "`EXPLAIN`은 MySQL 서버가 어떠한 쿼리를 실행할 것인가, 즉 실행 계획이 무엇인지 알고 싶을 때 사용하는 가장 기본적인 명령어이다.
 실행 하고자하는 쿼리 위에 explain을 붙여 주면 된다"
-pinned: true
+pinned: false
 thumbnailUrl: https://velog.velcdn.com/images/leo3179/post/49f60233-840e-435d-a175-2d63d725c403/image.png
 ---
 

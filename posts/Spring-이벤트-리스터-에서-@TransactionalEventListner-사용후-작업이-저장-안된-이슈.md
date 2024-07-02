@@ -7,7 +7,7 @@ summary: "DB 수정 작업후 로그를 DB에 저장하면 저장이 되지않�
 
 메소드가 실행되는 트랜잭션의 설정이나 범위가 올바르게 구성되어 있지 않으면 데이터베이스 작업이 롤백됨
 => 첫번째 DB에서 transaction이 끊겨서 로그가 저장되지 않음"
-pinned: true
+pinned: false
 thumbnailUrl: https://velog.velcdn.com/cloudflare/alswl689/105df2e3-cbbd-45c3-920b-68b65dc471d7/springbootImg.png
 ---
 
