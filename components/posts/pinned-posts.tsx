@@ -13,7 +13,7 @@ const PinnedPosts: FC = async () => {
       <div className="flex overflow-scroll gap-2 w-full scrollbar-hide">
         {pinned.map((post, i) => {
           return (
-            <Link href={`/posts/${post.id}`}>
+            <Link href={`/posts/${post.id}`} key={i}>
               <div
                 className={cn(
                   'flex flex-1 flex-col w-[18rem] h-[15rem] gap-5 justify-center items-center shadow-md',
@@ -21,7 +21,7 @@ const PinnedPosts: FC = async () => {
                 )}
               >
                 <Thumbnail src={post.thumbnailUrl} />
-                <Content title={post.title} summary={post.summary} date={post.date} />
+                <Content title={post.title} />
               </div>
             </Link>
           );
@@ -52,7 +52,7 @@ const Thumbnail: FC<{ src: string }> = ({ src }) => {
   );
 };
 
-const Content: FC<{ title: string; summary: string; date: string }> = ({ title, summary, date }) => {
+const Content: FC<{ title: string }> = ({ title }) => {
   return (
     <div className="w-full flex flex-1 flex-col justify-between pb-4 px-4">
       <Typography size="h4" className="line-clamp-2 font-bold text-xl">
