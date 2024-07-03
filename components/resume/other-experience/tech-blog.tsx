@@ -1,6 +1,7 @@
 import { FC } from 'react';
 import BlankLink from '@/components/blank-link';
 import { Layout } from '../work-experience/Layout';
+import BoldText from '@/components/bold-text';
 
 const TechBlog: FC = () => {
   return (
@@ -23,14 +24,23 @@ const TechBlog: FC = () => {
 export default TechBlog;
 
 const WORK_LIST = [
-  <li key="1">검색 엔진에서 높은 순위에 노출 되도록 Next.js의 SSR을 활용하여 SEO를 향상시켰습니다.</li>,
-  <li key="2">포스팅을 MarkDown 파일로 작성하면 시멘틱 태그에 맞게 파싱할 수 있도록 개발하였습니다.</li>,
+  <li key="1">
+    <BoldText>Next.js의 SSR을 활용한 SEO 향상 : </BoldText>
+    검색 엔진 최적화를 위해 Next.js의 서버 사이드 렌더링(SSR)을 활용하여 SEO 성능을 크게 향상시켰습니다.
+  </li>,
+  <li key="2">
+    <BoldText>MarkDown 파일 파싱 : </BoldText>
+    포스팅을 MarkDown 파일로 작성할 수 있도록 하고, 시멘틱 태그로 변환하여 접근성과 검색 엔진 가독성을 개선하는 파싱
+    로직을 개발하였습니다.
+  </li>,
   <li key="3">
-    사용자 경험을 향상시키기 위해 다양한 디바이스와 사용 환경에 대응할 수 있도록 반응형 레이아웃과 다크모드를
-    구현하였습니다.
+    <BoldText>반응형 레이아웃 및 다크모드 구현 : </BoldText>
+    다양한 디바이스와 사용 환경에서 일관된 사용자 경험을 제공하기 위해 반응형 레이아웃과 다크모드를 구현하여 모바일 및
+    데스크탑 사용자 모두에게 최적의 인터페이스를 제공하였습니다.
   </li>,
   <li key="4">
-    기술 블로그를 제작하면서 개발 생산성, UI의 일관성, 반응형 디자인, 커스터마이징 용이성 등을 고려하여 shadcn/ui
-    라이브러리를 선택하여 제작하였습니다.
+    <BoldText>개발 생산성과 커스터마이징 용이성을 고려한 shadcn/ui 라이브러리 사용 : </BoldText>
+    기술 블로그 제작 시, 개발 생산성과 UI 일관성을 유지하고 반응형 디자인 및 커스터마이징 용이성을 높이기 위해 shadcn/ui
+    라이브러리를 선택하여 사용하였습니다.
   </li>,
 ];

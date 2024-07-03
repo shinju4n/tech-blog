@@ -1,6 +1,7 @@
-import { FC } from 'react';
+import { FC, PropsWithChildren, ReactNode } from 'react';
 import BlankLink from '@/components/blank-link';
 import { Layout } from '../Layout';
+import BoldText from '@/components/bold-text';
 
 const Caddy: FC = () => {
   return (
@@ -21,68 +22,52 @@ const Caddy: FC = () => {
 
 export default Caddy;
 
+const LINKS = {
+  '초기 페이지 로딩 속도 개선':
+    'https://www.notion.so/shinju4n/Portfolio-682dfc806a804f1f916de972143820bc?pvs=4#f381e7096147466ea417bba82c3e7f7a',
+  '시간이 오래걸리는 AI 이미지 생성 시 사용자 경험 개선':
+    'https://www.notion.so/shinju4n/Portfolio-1-fdf9319b388a4bc3ae8eecd774143d55?pvs=4#d7497077de754082a8d054eeeee9e83b',
+  '사용자를 위한 데이터 시각화 차트 개발':
+    'https://www.notion.so/shinju4n/Portfolio-1-fdf9319b388a4bc3ae8eecd774143d55?pvs=4#b05d64750fc24cea936a8a019d79aec9',
+  '링크 공유 시 필터링 조건 유지 기능 구현':
+    'https://www.notion.so/shinju4n/Portfolio-1-fdf9319b388a4bc3ae8eecd774143d55?pvs=4#dda1bda3ac97421db6ef03c70b6dded3',
+  '크레딧 및 멤버십 결제 기능 구현':
+    'https://www.notion.so/shinju4n/Portfolio-1-fdf9319b388a4bc3ae8eecd774143d55?pvs=4#bb88225eb636453eaa5d948d7fbb58c7',
+};
+
 const WORK_LIST = [
   <li key="0">
-    초기 화면에 고해상도 이미지로 인해 로드 시간이 느려지는 문제를 해결하기 위해, next/image 컴포넌트를 사용하여 AVIF와
-    WebP 형식으로 이미지를 최적화하고, lazy loading과 priority 속성을 적용하여{' '}
-    <BlankLink href="https://www.notion.so/shinju4n/Portfolio-682dfc806a804f1f916de972143820bc?pvs=4#f381e7096147466ea417bba82c3e7f7a">
-      초기 페이지 로드 시간을 약 4초에서 0.97초로 개선
-    </BlankLink>
+    <BoldText>초기 페이지 로딩 속도 개선 : </BoldText> 초기 화면에 고해상도 이미지로 인해 로드 시간이 느려지는 문제를
+    해결하기 위해, next/image 컴포넌트를 사용하여 AVIF와 WebP 형식으로 이미지를 최적화하고, lazy loading과 priority
+    속성을 적용하여{' '}
+    <BlankLink href={LINKS['초기 페이지 로딩 속도 개선']}>초기 페이지 로드 시간을 약 4초에서 0.97초로 개선</BlankLink>
     하였습니다.
   </li>,
   <li key="1">
+    <BoldText>시간이 오래걸리는 AI 이미지 생성 시 사용자 경험 개선 : </BoldText>
     로딩 화면이 오래 지속되는 문제로 인한 사용자 경험 저하를 해결하기 위해 API 호출 로직을 수정하여 실시간으로 이미지를
     생성하고 사용자에게 지속적으로 업데이트를 제공함으로써{' '}
-    <BlankLink
-      href={
-        'https://www.notion.so/shinju4n/New-682dfc806a804f1f916de972143820bc?pvs=4#0806dd49906e4f66a4ca26517ba92c3e'
-      }
-    >
-      사용자 경험을 개선
-    </BlankLink>
-    하였습니다.
-  </li>,
-  <li key="2">
-    반복되는 코드를 개선하기 위해 react-hook-form, react-dropzone을 사용한 회원 가입, 이미지 생성등{' '}
-    <BlankLink href="https://www.notion.so/shinju4n/New-682dfc806a804f1f916de972143820bc?pvs=4#c350204b97344c639e8333cab024a553">
-      다양한 폼을 개발
-    </BlankLink>
-    하였습니다. 이를 통해 사용자 입력을 효율적으로 처리하고, 유지보수성을 높였습니다.
-  </li>,
-  <li key="3">
-    이름, 성별, 팔로워 수, 카테고리 등을{' '}
-    <BlankLink href="https://www.notion.so/shinju4n/New-682dfc806a804f1f916de972143820bc?pvs=4#37f38634f3a04c168594cc52fa98246b">
-      필터로 사용하여 인플루언서 검색 기능을 개발
-    </BlankLink>
+    <BlankLink href={LINKS['시간이 오래걸리는 AI 이미지 생성 시 사용자 경험 개선']}>사용자 경험을 개선</BlankLink>
     하였습니다.
   </li>,
   <li key="4">
+    <BoldText>사용자를 위한 데이트 시각화 차트 개발 : </BoldText>
     인플루언서의 팔로워 수 등락을 시각적으로 표현하기 위해 ApexCharts.js 라이브러리를 도입하여{' '}
-    <BlankLink href="https://www.notion.so/shinju4n/New-682dfc806a804f1f916de972143820bc?pvs=4#ea8184e8f454403684262edd4d76d138">
-      데이터 시각화를 위한 차트를 개발
-    </BlankLink>
+    <BlankLink href={LINKS['사용자를 위한 데이터 시각화 차트 개발']}>데이터 시각화를 위한 차트를 개발</BlankLink>
     하였습니다. 이를 통해 사용자들이 데이터를 더 쉽게 이해하고 분석할 수 있게 하였습니다.
   </li>,
   <li key="5">
-    AI 인플루언서의 콘텐츠 제작을 위한 Instagram 포스팅 예약 및 등록을 할 수 있는{' '}
-    <BlankLink href="https://www.notion.so/shinju4n/New-682dfc806a804f1f916de972143820bc?pvs=4#a6285cea21ad4ff29b8561a855480cd7">
-      업무용 페이지를 구현
+    <BoldText>링크 공유 시 필터링 조건 유지 기능 구현 : </BoldText>
+    기존 상태 관리 방식을 개선하여{' '}
+    <BlankLink href={LINKS['링크 공유 시 필터링 조건 유지 기능 구현']}>
+      쿼리 파라미터를 활용한 URL 필터링 기능을 구현하고, 재사용 가능한 useQueryParams 커스텀 훅을 개발
     </BlankLink>
-    하였습니다. 이를 통해 사용자들이 편리하게 콘텐츠를 관리하고, 효율적으로 운영할 수 있게 하였습니다.
-  </li>,
-  <li key="6">
-    Vercel을 사용하여 프로젝트 배포를 자동화하는 CI/CD 파이프라인을 구축하였습니다. 이를 통해 개발 프로세스를
-    단순화하고, 빠르고 안정적인 배포가 가능하게 구현하였습니다.
+    하여 팀 간 협업과 코드 유지보수성을 향상시켰습니다.
   </li>,
   <li key="7">
+    <BoldText>크레딧 및 멤버십 결제 기능 구현 : </BoldText>
     포트원 모듈을 사용하여{' '}
-    <BlankLink
-      href={
-        'https://www.notion.so/shinju4n/New-682dfc806a804f1f916de972143820bc?pvs=4#b92c9922ea0d491ca046440e5fe5900c'
-      }
-    >
-      구매 정책을 위한 결제 기능 구현
-    </BlankLink>
+    <BlankLink href={LINKS['크레딧 및 멤버십 결제 기능 구현']}>구매 정책을 위한 결제 기능 구현</BlankLink>
     하였습니다. 이를 통해 안전하고 편리한 결제 시스템을 구축하였습니다.
   </li>,
 ];
