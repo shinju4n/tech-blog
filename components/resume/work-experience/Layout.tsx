@@ -31,7 +31,7 @@ interface WorkListProps {
   list: React.ReactNode[];
 }
 const WorkList: FC<WorkListProps> = ({ list }) => {
-  return <ul className="pl-10 pr-24 xl:pr-10 list-disc flex flex-col gap-1">{list}</ul>;
+  return <ul className="pl-4 md:pl-10 md:pr-10 xl:pr-0 list-disc flex flex-col gap-1">{list}</ul>;
 };
 
 const Title = ({ children }: PropsWithChildren) => {
