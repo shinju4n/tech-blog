@@ -1,4 +1,4 @@
-import { FC, PropsWithChildren, ReactNode } from 'react';
+import { FC } from 'react';
 import BlankLink from '@/components/blank-link';
 import { Layout } from '../Layout';
 import BoldText from '@/components/bold-text';
