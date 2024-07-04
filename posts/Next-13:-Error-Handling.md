@@ -5,7 +5,7 @@ category: "FE"
 tags: ["Next.js"]
 summary: "예상치 못한 런타임 오류를 우아하게 처리:
 error.js 파일 규약을 사용하면 중첩된 라우트에서 예상치 못한 런타임 오류를 우아하게 처리할 수 있다."
-pinned: true
+pinned: false
 thumbnailUrl: https://velog.velcdn.com/images/shinju4n/post/f6dcb716-785e-43c9-8479-fef9758968d4/image.png
 ---
 

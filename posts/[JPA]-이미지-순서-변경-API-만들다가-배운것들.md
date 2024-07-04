@@ -1,10 +1,10 @@
 ---
-title: "[JPA] 이미지 순서 변경 API 만들다가 배운것들"
-date: "2023-08-24"
-category: "BE"
-tags: ["JPA", "Spring Boot"]
-summary: "영속성이란? 정의 : 데이터를 오랜 기간 유지하거나 저장하는 속성 in JPA : 객체를 데이터베이스에 저장하고,필요할 때 다시 불러올 수 있는 속성 1. 비영속성 : JPA가 아직 모르는 상태. 새로운 객체를 생성하고, 영속성 컨텍스트나 데이터베이스와는 관련이없는 상태"
-pinned: true
+title: '[JPA] 이미지 순서 변경 API 만들다가 배운것들'
+date: '2023-08-24'
+category: 'BE'
+tags: ['JPA', 'Spring Boot']
+summary: '영속성이란? 정의 : 데이터를 오랜 기간 유지하거나 저장하는 속성 in JPA : 객체를 데이터베이스에 저장하고,필요할 때 다시 불러올 수 있는 속성 1. 비영속성 : JPA가 아직 모르는 상태. 새로운 객체를 생성하고, 영속성 컨텍스트나 데이터베이스와는 관련이없는 상태'
+pinned: false
 thumbnailUrl: https://velog.velcdn.com/images/dev_zzame/post/0491a410-cf2e-4e35-a26a-e33671955d9a/64585171-96511580-d3d2-11e9-947d-8f1e98e46100.png
 ---
 
