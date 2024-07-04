@@ -19,7 +19,7 @@ const PostListItem: FC<{ post: PostType; index: number }> = ({ post, index }) =>
         <Link href={`/posts/${post.id}`}>
           <div
             className={cn(
-              'flex flex-1 flex-col w-full h-[26rem] gap-5 justify-center items-center shadow-md',
+              'flex flex-1 flex-col w-full h-[20rem] gap-5 justify-center items-center shadow-md',
               'bg-background border border-foreground/10 rounded-xl  group overflow-hidden hover:bg-foreground/5'
             )}
             onClick={setScrollPosition}
@@ -40,14 +40,14 @@ const Thumbnail: FC<{ src: string }> = ({ src }) => {
     <div
       className={cn('relative flex flex-[2] justify-center items-center w-full h-full overflow-hidden bg-foreground/5')}
     >
-      <div className="flex justify-center items-center relative w-2/3">
+      <div className="flex justify-center items-center relative w-full">
         <Image
           src={src}
           alt="thumbnail"
           width={100}
           height={100}
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-          className="transition-all group-hover:scale-125 ease-in-out duration-300 w-auto h-auto scale-150"
+          className="transition-all w-full scale-125 group-hover:scale-150 ease-in-out duration-300"
         />
       </div>
     </div>
