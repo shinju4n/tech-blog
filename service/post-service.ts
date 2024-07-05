@@ -15,6 +15,7 @@ const readPostFile = async (filePath: string): Promise<PostType> => {
 };
 
 interface GetPostListParams {
+  search?: string;
   category?: string;
   tag?: string;
 }
@@ -28,8 +29,13 @@ const getAllPostList = async (): Promise<PostType[]> => {
   return await Promise.all(postDataPromises);
 };
 
-export const getPostList = async ({ category, tag }: GetPostListParams): Promise<PostType[]> => {
+export const getPostList = async ({ search, category, tag }: GetPostListParams): Promise<PostType[]> => {
   let postData = await getAllPostList();
+  if (search) {
+    postData = postData.filter(post =>
+      post.title.toLowerCase().replace(/\s+/g, '').includes(search.toLowerCase().replace(/\s+/g, ''))
+    );
+  }
 
   if (category && category !== 'All') {
     const lowerCaseCategory = category.toLowerCase();
