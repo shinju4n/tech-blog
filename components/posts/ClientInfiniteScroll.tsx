@@ -38,7 +38,7 @@ const ClientInfiniteScroll: React.FC<ClientInfiniteScrollProps> = ({ initialPost
         observer.unobserve(endOfListRef.current);
       }
     };
-  }, []);
+  }, [endOfListRef.current]);
 
   const loadMorePosts = () => {
     setPosts(prevPosts => [...prevPosts, ...initialPosts]);

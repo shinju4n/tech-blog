@@ -8,12 +8,14 @@ import PostCategoryList from '@/components/posts/post-categoryList';
 import MyProfile from '@/components/posts/my-profile';
 import PinnedPosts from '@/components/posts/pinned-posts';
 import ClientInfiniteScroll from '@/components/posts/ClientInfiniteScroll';
+import PostSearch from '@/components/posts/post-search';
 
 interface PostsProps {
   searchParams: {
     [key: string]: string | string[] | undefined;
     category?: string;
     tag?: string;
+    search?: string;
   };
 }
 
@@ -24,13 +26,14 @@ const PostListPage: NextPage<PostsProps> = async ({ searchParams }) => {
   return (
     <div className="flex flex-col gap-2 pt-10">
       <MyProfile />
+      <PostSearch search={searchParams.search as string} />
       <PinnedPosts>
         <ClientInfiniteScroll initialPosts={pinned} />
       </PinnedPosts>
       <PostCategoryList searchParams={searchParams} />
       <PostAnimation>
         {postList.length === 0 && (
-          <div className="flex justify-center items-center w-full h-52 font-bold text-xl">포스팅이 없습니다.</div>
+          <div className="flex justify-center items-center w-full font-bold text-xl">포스팅이 없습니다.</div>
         )}
         <div className="grid md:grid-cols-2 gap-4">
           {postList?.map((post: PostType, index) => {
