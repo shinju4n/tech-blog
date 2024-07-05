@@ -29,6 +29,9 @@ const PostListPage: NextPage<PostsProps> = async ({ searchParams }) => {
       </PinnedPosts>
       <PostCategoryList searchParams={searchParams} />
       <PostAnimation>
+        {postList.length === 0 && (
+          <div className="flex justify-center items-center w-full h-52 font-bold text-xl">포스팅이 없습니다.</div>
+        )}
         <div className="grid md:grid-cols-2 gap-4">
           {postList?.map((post: PostType, index) => {
             return <PostListItem post={post} key={post.id} index={index} />;
