@@ -11,6 +11,7 @@ import { GoBackIcon } from '@/components/icons';
 import { cn } from '@/lib/utils';
 import { email } from '@/lib/me';
 import { Link2Icon } from '@radix-ui/react-icons';
+import Linme from '@/components/resume/work-experience/inroes/linme';
 
 interface ResumeProps {
   searchParams: Record<'type', 'blog'>;
@@ -35,7 +36,7 @@ const Resume: NextPage<ResumeProps> = ({ searchParams }) => {
         <Typography size="h1" className="break-keep">
           안녕하세요 👋
           <br></br>
-          사용자 경험을 중요시하는 신주안입니다.
+          프론트엔드 엔지니어 신주안입니다.
         </Typography>
         <Typography size="h4" className="text-foreground/80 py-0.5">
           2년차 프론트엔드 개발자로 스타트업에서 <Strong>웹 서비스를 개발/배포/운영</Strong>하였습니다. 기존 프로젝트
@@ -54,17 +55,39 @@ const Resume: NextPage<ResumeProps> = ({ searchParams }) => {
       </div>
       <div className="py-10">
         <ResumeTitle>Work Experience</ResumeTitle>
+
+        <div className="flex flex-col xl:flex-row items-start">
+          <div className="w-full xl:w-1/3 h-auto xl:mb-0 xl:sticky xl:top-16 xl:pr-10">
+            <Typography size="h2" className="w-full">
+              이노즈 <span className="text-2xl">(Inroes)</span>
+            </Typography>
+            <Typography size="lead">Frontend Developer</Typography>
+            <Typography size="muted">2024.07 ~ 2024.09 (3개월)</Typography>
+            <div className="py-2">
+              <Typography size="p">
+                개발팀 / 매니저 <br></br>
+                클라이언트 프론트엔드 엔지니어
+              </Typography>
+            </div>
+          </div>
+          <div className="xl:w-2/3">
+            <Linme />
+          </div>
+        </div>
+
+        <Divider />
+
         <div className="flex flex-col xl:flex-row items-start">
           <div className="w-full xl:w-1/3 h-auto xl:mb-0 xl:sticky xl:top-16 xl:pr-10">
             <Typography size="h2" className="w-full">
               마켓잇 <span className="text-2xl">(Marketit)</span>
             </Typography>
             <Typography size="lead">Frontend Developer</Typography>
-            <Typography size="muted">2022.11 ~ 2024.03</Typography>
+            <Typography size="muted">2022.11 ~ 2024.03 (1년 4개월)</Typography>
             <div className="py-2">
               <Typography size="p">
                 신사업실 개발팀 / 매니저 <br></br>
-                프론트엔드 개발 담당
+                프론트엔드 엔지니어
               </Typography>
             </div>
           </div>
