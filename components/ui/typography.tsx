@@ -16,7 +16,7 @@ export default memo(Typography);
 
 const TYPO_STYLES: Record<TypographySize, string> = {
   h1: 'scroll-m-20 text-3xl sm:text-4xl font-extrabold tracking-tight leading-[1.35] mb-2',
-  h2: 'scroll-m-20 pb-2 text-3xl font-bold tracking-tight first:mt-0',
+  h2: 'scroll-m-20 pb-2 text-3xl font-bold tracking-tight first:mt-0 leading-[1.2]',
   h3: 'scroll-m-20 text-2xl font-bold tracking-tight',
   h4: 'scroll-m-20 text-[1rem] xl:text-xl font-semibold tracking-tight',
   p: 'text-lg mb-2 leading-relaxed',

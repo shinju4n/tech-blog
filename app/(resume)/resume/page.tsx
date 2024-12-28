@@ -5,7 +5,6 @@ import { SuwonUniv, TechBlog } from '@/components/resume/other-experience/index'
 import Divider from '@/components/resume/Divider';
 import ResumeTitle from '@/components/resume/ResumeTitle';
 import Typography from '@/components/ui/typography';
-import Strong from '@/components/strong';
 
 import { GoBackIcon } from '@/components/icons';
 import { cn } from '@/lib/utils';
@@ -42,18 +41,9 @@ const Resume: NextPage<ResumeProps> = ({ searchParams }) => {
           프론트엔드 엔지니어 신주안입니다.
         </Typography>
         <Typography size="h4" className="text-foreground/80 py-0.5">
-          2년차 프론트엔드 개발자로 스타트업에서 <Strong>웹 서비스를 개발/배포/운영</Strong>하였습니다. 기존 프로젝트
-          투입 및 새로운 프로젝트의 기획 및 개발을 담당하여 <Strong>처음부터 끝까지 책임졌던 경험</Strong>이 있습니다.
-        </Typography>
-        <Typography size="h4" className="text-foreground/80 py-0.5">
-          저는 항상 <Strong>적극적이고 능동적인 자세</Strong>로 도전에 임하며, <Strong>문제를 발견하고 해결</Strong>하는
-          것을 두려워하지 않습니다. 프론트엔드 신입으로 입사했으나, 회사의 요구에 따라 백엔드 업무까지 맡게 되어 두 분야
-          모두에서 실무 경험을 쌓을 수 있었습니다.
-        </Typography>
-        <Typography size="h4" className="text-foreground/80 py-0.5">
-          항상 기술적인 성장을 위해{' '}
-          <Strong>최신 기술 학습에 관심이 많고, 주도적으로 문제를 발견하여 분석하고 해결하기 위해 노력</Strong>하고
-          있습니다. 이를 통해 팀 내에서의 역량을 발휘하고, 최고의 결과 물을 만들어내고자 합니다.
+          3년차 프론트엔드 개발자입니다.
+          <br></br>
+          사용자 경험 개선과 비즈니스 가치 창출에 몰입하며, 새로운 기술을 학습하고 팀과 함께 성장하는 것을 즐깁니다.
         </Typography>
       </div>
       <div className="py-10">
@@ -61,8 +51,8 @@ const Resume: NextPage<ResumeProps> = ({ searchParams }) => {
 
         <div className="flex flex-col xl:flex-row items-start">
           <div className="w-full xl:w-1/3 h-auto xl:mb-0 xl:sticky xl:top-16 xl:pr-10">
-            <Typography size="h2" className="w-full">
-              메타몬스터 <span className="text-2xl">(MetaMonster)</span>
+            <Typography size="h2" className="w-full ">
+              메타몬스터 <span className="text-2xl">(Meta Monster)</span>
             </Typography>
             <Typography size="lead">Frontend Developer</Typography>
             <Typography size="muted">2024.09 ~ 재직중 </Typography>
