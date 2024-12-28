@@ -12,6 +12,9 @@ import { cn } from '@/lib/utils';
 import { email } from '@/lib/me';
 import { Link2Icon } from '@radix-ui/react-icons';
 import Linme from '@/components/resume/work-experience/inroes/linme';
+import KasRental from '@/components/resume/work-experience/metamonster/kas-rental';
+import Sgis from '@/components/resume/work-experience/metamonster/sgis';
+import MetamonsterPage from '@/components/resume/work-experience/metamonster/metamoster-page';
 
 interface ResumeProps {
   searchParams: Record<'type', 'blog'>;
@@ -59,10 +62,36 @@ const Resume: NextPage<ResumeProps> = ({ searchParams }) => {
         <div className="flex flex-col xl:flex-row items-start">
           <div className="w-full xl:w-1/3 h-auto xl:mb-0 xl:sticky xl:top-16 xl:pr-10">
             <Typography size="h2" className="w-full">
+              메타몬스터 <span className="text-2xl">(MetaMonster)</span>
+            </Typography>
+            <Typography size="lead">Frontend Developer</Typography>
+            <Typography size="muted">2024.09 ~ 재직중 </Typography>
+            <div className="py-2">
+              <Typography size="p">
+                개발팀 / 매니저 <br></br>
+                프론트엔드 엔지니어
+              </Typography>
+            </div>
+          </div>
+          <div className="xl:w-2/3">
+            <MetamonsterPage />
+            <Divider />
+            <Sgis />
+            <Divider />
+            <KasRental />
+          </div>
+        </div>
+
+        <Divider />
+
+        <div className="flex flex-col xl:flex-row items-start">
+          <div className="w-full xl:w-1/3 h-auto xl:mb-0 xl:sticky xl:top-16 xl:pr-10">
+            <Typography size="h2" className="w-full">
               이노즈 <span className="text-2xl">(Inroes)</span>
             </Typography>
             <Typography size="lead">Frontend Developer</Typography>
-            <Typography size="muted">2024.07 ~ 2024.09 (3개월)</Typography>
+            <Typography size="muted">2024.07 ~ 2024.09</Typography>
+            <Typography size="muted">퇴사 사유 : 임금 체불로 인한 퇴사</Typography>
             <div className="py-2">
               <Typography size="p">
                 개발팀 / 매니저 <br></br>
@@ -83,7 +112,7 @@ const Resume: NextPage<ResumeProps> = ({ searchParams }) => {
               마켓잇 <span className="text-2xl">(Marketit)</span>
             </Typography>
             <Typography size="lead">Frontend Developer</Typography>
-            <Typography size="muted">2022.11 ~ 2024.03 (1년 4개월)</Typography>
+            <Typography size="muted">2022.11 ~ 2024.03 (1년 5개월)</Typography>
             <div className="py-2">
               <Typography size="p">
                 신사업실 개발팀 / 매니저 <br></br>
