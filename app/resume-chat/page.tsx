@@ -13,17 +13,60 @@ interface Message {
 export default function ResumeChatPage() {
   const [messages, setMessages] = useState<Message[]>([]);
   const [input, setInput] = useState('');
+  const [isLoading, setIsLoading] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!input.trim()) return;
+    if (!input.trim() || isLoading) return;
 
     // 사용자 메시지 추가
     const userMessage: Message = { role: 'user', content: input };
     setMessages(prev => [...prev, userMessage]);
     setInput('');
+    setIsLoading(true);
 
-    // TODO: API 호출 구현
+    try {
+      const response = await fetch('/api/chat', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          messages: [
+            ...messages,
+            { role: 'user', content: input }
+          ]
+        }),
+      });
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(data.error || 'API 요청 실패');
+      }
+
+      if (!data.content || !data.content[0]?.text) {
+        throw new Error('잘못된 응답 형식입니다.');
+      }
+
+      const assistantMessage: Message = {
+        role: 'assistant',
+        content: data.content[0].text
+      };
+      setMessages(prev => [...prev, assistantMessage]);
+    } catch (error) {
+      console.error('Error:', error);
+      // 에러 메시지 추가
+      const errorMessage: Message = {
+        role: 'assistant',
+        content: error instanceof Error 
+          ? `죄송합니다. 오류가 발생했습니다: ${error.message}`
+          : '죄송합니다. 오류가 발생했습니다. 다시 시도해주세요.'
+      };
+      setMessages(prev => [...prev, errorMessage]);
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   return (
@@ -43,6 +86,7 @@ export default function ResumeChatPage() {
         value={input}
         onChange={setInput}
         onSubmit={handleSubmit}
+        isLoading={isLoading}
       />
     </div>
   );

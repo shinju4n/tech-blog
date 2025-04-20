@@ -10,6 +10,7 @@
     "new-post": "tsc create-post.ts && node create-post.js"
   },
   "dependencies": {
+    "@anthropic-ai/sdk": "^0.39.0",
     "@radix-ui/react-accordion": "^1.1.2",
     "@radix-ui/react-dialog": "^1.0.5",
     "@radix-ui/react-dropdown-menu": "^2.0.6",
