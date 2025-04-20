@@ -55,7 +55,6 @@ export default function ResumeChatPage() {
       };
       setMessages(prev => [...prev, assistantMessage]);
     } catch (error) {
-      console.error('Error:', error);
       // 에러 메시지 추가
       const errorMessage: Message = {
         role: 'assistant',

@@ -28,7 +28,6 @@ export async function POST(req: Request) {
 
     return NextResponse.json(response);
   } catch (error) {
-    console.error('Error:', error);
     return NextResponse.json(
       { 
         error: error instanceof Error ? error.message : 'Internal Server Error',

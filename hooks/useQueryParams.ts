@@ -14,7 +14,7 @@ const useQueryParams = ({
   const router = useRouter();
   const getPathname = usePathname();
   const searchParams = useSearchParams();
-  const query = new URLSearchParams(searchParams);
+  const query = new URLSearchParams(searchParams.toString());
 
   const updateQueryAndNavigate = () => {
     if (isSetPageFirst) {
