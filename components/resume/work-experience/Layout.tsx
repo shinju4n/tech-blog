@@ -28,7 +28,7 @@ const Content = ({ type, children }: ContentProps) => {
 };
 
 interface WorkListProps {
-  list: React.ReactNode[];
+  list: React.ReactNode;
 }
 const WorkList: FC<WorkListProps> = ({ list }) => {
   return <ul className="pl-4 md:pl-10 md:pr-10 xl:pr-0 list-disc flex flex-col gap-1">{list}</ul>;

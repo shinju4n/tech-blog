@@ -13,7 +13,9 @@ import { Link2Icon } from '@radix-ui/react-icons';
 import Linme from '@/components/resume/work-experience/inroes/linme';
 import KasRental from '@/components/resume/work-experience/metamonster/kas-rental';
 import Sgis from '@/components/resume/work-experience/metamonster/sgis';
-import MetamonsterPage from '@/components/resume/work-experience/metamonster/metamoster-page';
+import MetamonsterPage from '@/components/resume/work-experience/metamonster/metamonster-page';
+import Company from './_components/company';
+import { META_MONSTER } from './_constants/resume';
 
 interface ResumeProps {
   searchParams: Record<'type', 'blog'>;
@@ -48,32 +50,8 @@ const Resume: NextPage<ResumeProps> = ({ searchParams }) => {
       </div>
       <div className="py-10">
         <ResumeTitle>Work Experience</ResumeTitle>
-
-        <div className="flex flex-col xl:flex-row items-start">
-          <div className="w-full xl:w-1/3 h-auto xl:mb-0 xl:sticky xl:top-16 xl:pr-10">
-            <Typography size="h2" className="w-full ">
-              메타몬스터 <span className="text-2xl">(Meta Monster)</span>
-            </Typography>
-            <Typography size="lead">Frontend Developer</Typography>
-            <Typography size="muted">2024.09 ~ 재직중 </Typography>
-            <div className="py-2">
-              <Typography size="p">
-                개발팀 / 매니저 <br></br>
-                프론트엔드 엔지니어
-              </Typography>
-            </div>
-          </div>
-          <div className="xl:w-2/3">
-            <MetamonsterPage />
-            <Divider />
-            <Sgis />
-            <Divider />
-            <KasRental />
-          </div>
-        </div>
-
+        <Company company={META_MONSTER} />
         <Divider />
-
         <div className="flex flex-col xl:flex-row items-start">
           <div className="w-full xl:w-1/3 h-auto xl:mb-0 xl:sticky xl:top-16 xl:pr-10">
             <Typography size="h2" className="w-full">
