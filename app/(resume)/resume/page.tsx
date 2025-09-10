@@ -14,10 +14,11 @@ import Company from './_components/company';
 import { META_MONSTER, INROES, MARKETIT } from './_constants/resume';
 
 interface ResumeProps {
-  searchParams: Record<'type', 'blog'>;
+  searchParams: Promise<Record<'type', 'blog'>>;
 }
 
-const Resume: NextPage<ResumeProps> = ({ searchParams }) => {
+const Resume: NextPage<ResumeProps> = async ({ searchParams }) => {
+  const resolvedSearchParams = await searchParams;
   return (
     <div className="px-2 md:px-10">
       <div className="pt-14 relative">
@@ -30,7 +31,7 @@ const Resume: NextPage<ResumeProps> = ({ searchParams }) => {
           <Typography size="h4"> 웹페이지로 보면 좀 더 쾌적하게 보실 수 있습니다. </Typography>
         </Link>
 
-        <Link href={'/posts'} className={cn('absolute right-0', searchParams.type === 'blog' ? 'block' : 'hidden')}>
+        <Link href={'/posts'} className={cn('absolute right-0', resolvedSearchParams.type === 'blog' ? 'block' : 'hidden')}>
           <GoBackIcon />
         </Link>
         <Typography size="h1" className="break-keep">

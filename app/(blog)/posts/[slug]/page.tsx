@@ -5,14 +5,15 @@ import PostHead from '@/components/posts/detail/post-head';
 import NextAndPreviousPost from '@/components/posts/detail/next-and-previous-post';
 
 interface PostingDetailProps {
-  params: {
+  params: Promise<{
     slug: string;
-  };
-  searchParams: Record<string, string | string[] | undefined>;
+  }>;
+  searchParams: Promise<Record<string, string | string[] | undefined>>;
 }
 
 export async function generateMetadata({ params }: PostingDetailProps, parent: ResolvingMetadata): Promise<Metadata> {
-  const post = await getPostDetail(decodeURIComponent(params.slug));
+  const resolvedParams = await params;
+  const post = await getPostDetail(decodeURIComponent(resolvedParams.slug));
 
   const previousImages = (await parent).openGraph?.images || [];
 
@@ -33,7 +34,8 @@ export async function generateMetadata({ params }: PostingDetailProps, parent: R
 }
 
 const PostingDetail: NextPage<PostingDetailProps> = async ({ params }) => {
-  const post = await getPostDetail(decodeURIComponent(params.slug));
+  const resolvedParams = await params;
+  const post = await getPostDetail(decodeURIComponent(resolvedParams.slug));
 
   return (
     <div className="w-full">

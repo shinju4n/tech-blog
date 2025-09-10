@@ -11,26 +11,27 @@ import ClientInfiniteScroll from '@/components/posts/ClientInfiniteScroll';
 import PostSearch from '@/components/posts/post-search';
 
 interface PostsProps {
-  searchParams: {
+  searchParams: Promise<{
     [key: string]: string | string[] | undefined;
     category?: string;
     tag?: string;
     search?: string;
-  };
+  }>;
 }
 
 const PostListPage: NextPage<PostsProps> = async ({ searchParams }) => {
-  const postList = await getPostList(searchParams);
+  const resolvedSearchParams = await searchParams;
+  const postList = await getPostList(resolvedSearchParams);
   const pinned = await getPinnedPosts();
 
   return (
     <div className="flex flex-col gap-2 pt-10">
       <MyProfile />
-      <PostSearch search={searchParams.search as string} />
+      <PostSearch search={resolvedSearchParams.search as string} />
       <PinnedPosts>
         <ClientInfiniteScroll initialPosts={pinned} />
       </PinnedPosts>
-      <PostCategoryList searchParams={searchParams} />
+      <PostCategoryList searchParams={resolvedSearchParams} />
       <PostAnimation>
         {postList.length === 0 && (
           <div className="flex justify-center items-center w-full font-bold text-xl">포스팅이 없습니다.</div>

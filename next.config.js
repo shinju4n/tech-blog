@@ -1,7 +1,20 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
-    domains: ['velog.velcdn.com', 'mblogthumb-phinf.pstatic.net', 'avatars.githubusercontent.com'],
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'velog.velcdn.com',
+      },
+      {
+        protocol: 'https',
+        hostname: 'mblogthumb-phinf.pstatic.net',
+      },
+      {
+        protocol: 'https',
+        hostname: 'avatars.githubusercontent.com',
+      },
+    ],
     formats: ['image/avif', 'image/webp'],
   },
   async redirects() {
