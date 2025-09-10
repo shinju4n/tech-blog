@@ -39,7 +39,7 @@ const JAJAEMOA_CLIENT: ProjectType = {
     {
       featureTitle: "멀티레이어 상태관리 시스템 설계 및 구현",
       featureDescription: [
-        "TanStack Query v5를 활용한 서버 상태, Zustand를 통한 클라이언트 상태, Context API 기반 글로벌 상태를 조합한 멀티레이어 아키텍처를 설계하였습니다. 5분 staleTime과 10분 gcTime으로 최적화된 캐싱 전략을 구현하여 불필요한 API 호출을 최소화하고 사용자 경험을 향상시켰습니다.",
+        "TanStack Query v5를 활용한 서버 상태, Zustand를 통한 클라이언트 상태,멀티레이어 아키텍처를 설계하였습니다. 5분 staleTime과 10분 gcTime으로 최적화된 캐싱 전략을 구현하여 불필요한 API 호출을 최소화하고 사용자 경험을 향상시켰습니다.",
       ],
       link: null,
     },
@@ -544,14 +544,23 @@ export const OTHER_EXPERIENCES = [TECH_BLOG, SUWON_UNIV];
 // Skills 데이터
 export const SKILLS = {
   frontend: [
-    "사용자 도메인에서는 Next.js를 사용하여 SSR을 사용하여 SEO 최적화를 진행하고 있습니다.",
-    "SEO를 중요하게 생각하지 않는 도메인에서는 Vite를 사용하여 빠른 번들링을 진행하고 있습니다.",
-    "React 생태계의 최신 기술에 관심이 많고, TanStack Query, Zustand, Recoil을 활용할 줄 알고, 이를 능숙하게 다루기 위해 지속적으로 탐구하고 있습니다.",
-    "TypeScript를 이용한 React 개발에 익숙합니다.",
-    "웹 표준 성능에 큰 관심을 가지고 있으며, 최신 기술과 방법론을 통해 웹 페이지의 로딩 속도, 사용자 경험 및 성능을 최적화할 수 있습니다.",
-    "Thymeleaf와 jQuery를 실무에서 사용해 본 경험이 있습니다.",
-  ],
-  backend: [
-    "Spring Boot, JPA, QueryDSL을 사용하여 CRUD API를 개발한 경험이 있습니다.",
+    { key: "⚛️ 코어", value: "React, TypeScript, Next.js" },
+    { key: "🗂️ 상태 관리", value: "React-Query v5, Zustand, RecoilI" },
+    { key: "🎨 스타일링", value: "Tailwind CSS, styled-components, SCSS/Sass" },
+    { key: "📦 패키지 매니저", value: "yarn, pnpm" },
+    { key: "✅ 폼 & 유효성 검사", value: "React Hook Form, Zod" },
+    {
+      key: "🧩 UI 라이브러리 & 컴포넌트",
+      value: "shadcn/ui, DnD Kit (Drag & Drop)",
+    },
+    {
+      key: "💳 결제 & 외부 서비스 통합",
+      value:
+        "포트원(PortOne) SDK, 소셜 로그인 (카카오톡, 네이버, 구글, 애플), 다음 우편번호 API, 사업자등록번호 검증 API",
+    },
+    {
+      key: "⚙️ 빌드 도구 & 개발 환경",
+      value: "Vite, Webpack, Next.js Turbopack, ESLint, Prettier, Husky",
+    },
   ],
 };
