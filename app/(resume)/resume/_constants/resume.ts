@@ -562,5 +562,6 @@ export const SKILLS = {
       key: "⚙️ 빌드 도구 & 개발 환경",
       value: "Vite, Webpack, Next.js Turbopack, ESLint, Prettier, Husky",
     },
+    { key: "🤖 AI 활용", value: "Claude Code, Cursor" },
   ],
 };
