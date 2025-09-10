@@ -493,8 +493,10 @@ const TECH_BLOG: ProjectType = {
 
 const SUWON_UNIV: ProjectType = {
   projectTitle: "수원대학교",
-  projectPeriod: "2017.03 ~ 2023.02",
-  projectDescription: ["컴퓨터학부 졸업"],
+  projectPeriod: "2015.03 ~ 2021.02",
+  projectDescription: [
+    "수원대학교에서 운동건강관리학과를 전공하였습니다. 2016년에는 학생회, 2020년에는 체육대학 부학생회장을 역임하며 학생들의 의견을 수렴하여 학교와 학생들의 소통을 원활하게 하였습니다.",
+  ],
   projectLink: null,
   workList: [],
   projectStack: [],
