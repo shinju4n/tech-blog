@@ -39,21 +39,16 @@ const JAJAEMOA_CLIENT: ProjectType = {
     {
       featureTitle: "멀티레이어 상태관리 시스템 설계 및 구현",
       featureDescription: [
-        "TanStack Query v5를 활용한 서버 상태, Zustand를 통한 클라이언트 상태,멀티레이어 아키텍처를 설계하였습니다. 5분 staleTime과 10분 gcTime으로 최적화된 캐싱 전략을 구현하여 불필요한 API 호출을 최소화하고 사용자 경험을 향상시켰습니다.",
-      ],
-      link: null,
-    },
-    {
-      featureTitle: "Optimistic Updates 패턴으로 실시간 반응성 구현",
-      featureDescription: [
-        "좋아요 기능에서 서버 응답을 기다리지 않고 즉시 UI를 업데이트하는 Optimistic Updates 패턴을 구현하였습니다. 실패 시 자동 롤백 메커니즘과 중복 요청 방지 로직을 추가하여 안정적이고 반응성이 뛰어난 사용자 경험을 제공하였습니다.",
+        "TanStack Query v5를 활용한 서버 상태, Zustand를 통한 클라이언트 상태,멀티레이어 아키텍처를 설계",
+        "네트워크 호출 횟수를 분석하여 캐싱 전략을 수립하여 불필요한 API 호출을 최소화",
       ],
       link: null,
     },
     {
       featureTitle: "JWT 미들웨어 기반 보안 인증 시스템 구축",
       featureDescription: [
-        "Next.js middleware를 활용하여 JWT 토큰의 구조적 검증과 만료시간 체크를 수행하는 보안 시스템을 구현하였습니다. 경로별 접근 제어(Protected/Auth Routes)와 자동 리다이렉트 로직을 통해 인증되지 않은 사용자의 보호된 리소스 접근을 차단하고 보안성을 강화하였습니다.",
+        "Next.js middleware를 활용하여 JWT 토큰의 구조적 검증과 만료시간 체크를 수행하는 보안 시스템을 구현",
+        "경로별 접근 제어(Protected/Auth Routes)와 자동 리다이렉트 로직을 통해 인증되지 않은 사용자의 보호된 리소스 접근을 차단하고 보안성을 강화",
       ],
       link: null,
     },
@@ -81,14 +76,18 @@ const JAJAEMOA_ADMIN: ProjectType = {
       featureTitle:
         "Feature-Sliced Design 아키텍처 도입으로 대규모 레거시 시스템 모던화",
       featureDescription: [
-        "기존 기능 기반 구조를 FSD 아키텍처로 완전 마이그레이션하여 6개 레이어(App, Pages, Widgets, Features, Entities, Shared)로 재구성하였습니다. 100여 개 파일 이동 및 임포트 경로 대량 수정을 통해 확장 가능한 아키텍처를 구축하고, 팀 개발 효율성과 코드 유지보수성을 대폭 향상시켰습니다.",
+        "프론트엔드 팀 개발 효율성과 코드 유지보수성을 위해 주도적으로 FSD 아키텍처를 도입 시도",
+        "6개 레이어(App, Pages, Widgets, Features, Entities, Shared)로 재구성하였습니다. 100여 개 파일 이동 및 임포트 경로 대량 수정을 통해 확장 가능한 아키텍처 설계",
       ],
       link: null,
     },
     {
       featureTitle: "TanStack 생태계 기반 고성능 상태 관리 시스템 구축",
       featureDescription: [
-        "TanStack Router의 파일 기반 라우팅과 자동 코드 스플리팅, TanStack Query의 서버 상태 캐싱 최적화, TanStack Table의 가상화 테이블을 통합하여 엔터프라이즈급 상태 관리 시스템을 구축하였습니다. 이를 통해 대용량 데이터 처리 성능과 사용자 경험을 동시에 개선하였습니다.",
+        // todo : 가상화 테이블을 왜썼는지? Tanstack을 왜 썼는지
+        "TanStack Router의 파일 기반 라우팅과 자동 코드 스플리팅",
+        "TanStack Query의 서버 상태 캐싱 최적화",
+        "TanStack Table의 가상화 테이블을 통합하여 엔터프라이즈급 상태 관리 시스템을 구축",
       ],
       link: null,
     },
@@ -114,23 +113,18 @@ const TEE_RUNNER_CLIENT: ProjectType = {
   projectLink: "https://teerunner.co.kr",
   workList: [
     {
-      featureTitle: "다중 결제 시스템 통합 및 최적화",
-      featureDescription: [
-        "포트원(PortOne) SDK를 활용하여 카드결제, 간편결제(네이버페이, 카카오페이 등), 가상계좌 등 다중 결제 수단을 지원하는 통합 결제 시스템을 구현했습니다. Base64 인코딩을 통한 민감 데이터 보안 처리와 결제 실패/취소에 대한 예외 처리 로직을 구축하여 안정적인 결제 플로우를 완성했습니다.",
-      ],
-      link: null,
-    },
-    {
       featureTitle: "스마트 스크롤 복원 시스템 개발",
       featureDescription: [
-        "사용자 경험 향상을 위해 뒤로가기 시에만 작동하는 스마트 스크롤 복원 시스템을 개발했습니다. Throttle 패턴(100ms)을 적용하여 성능을 최적화하고, React Native WebView 환경에서의 충돌 문제를 해결했습니다. 브라우저 기본 스크롤 복원을 비활성화하고 커스텀 로직으로 대체하여 깜빡임 현상을 해결했습니다.",
+        "사용자 경험 향상을 위해 뒤로가기 시에만 작동하는 스마트 스크롤 복원 시스템을 개발했습니다. Throttle 패턴(100ms)을 적용하여 성능을 최적화하고, React Native WebView 환경에서의 충돌 문제를 해결",
+        "브라우저 기본 스크롤 복원을 비활성화하고 커스텀 로직으로 대체하여 깜빡임 현상을 해결",
       ],
       link: null,
     },
     {
-      featureTitle: "코드 품질 및 개발 워크플로우 최적화",
+      featureTitle: "다중 결제 시스템 통합 및 최적화",
       featureDescription: [
-        "ESLint, Prettier, Husky를 도입하여 코드 스타일 통일과 pre-commit 검증을 자동화했습니다. Webpack Bundle Analyzer를 통한 번들 사이즈 모니터링과 Next.js Turbopack을 활용한 빌드 성능 개선을 통해 개발 생산성을 향상시켰습니다.",
+        "포트원 SDK를 활용하여 카드결제, 간편결제(네이버페이, 카카오페이), 가상계좌 등 다중 결제 수단을 지원하는 통합 결제 시스템을 구현",
+        "결제 실패/취소에 대한 예외 처리 로직을 구축하여 안정적인 결제 플로우를 완성",
       ],
       link: null,
     },
@@ -147,21 +141,24 @@ const TEE_RUNNER_ADMIN: ProjectType = {
     {
       featureTitle: "유저 친화적 Drag & Drop 이미지 업로더 구현",
       featureDescription: [
-        "DnD Kit을 활용하여 다중 이미지 업로드 및 드래그 앤 드롭 순서 변경이 가능한 이미지 업로더를 개발하였습니다. 파일 타입/크기 검증(5MB 제한), 실시간 미리보기, 메모리 누수 방지(URL.revokeObjectURL) 등을 구현하여 사용자 경험을 최적화하였습니다.",
+        "DnD Kit을 활용하여 다중 이미지 업로드 및 드래그 앤 드롭 순서 변경이 가능한 이미지 업로더를 개발",
+        "파일 타입/크기 검증(5MB 제한), 실시간 미리보기, 메모리 누수 방지 (URL.revokeObjectURL) 등을 구현하여 사용자 경험을 최적화",
       ],
       link: null,
     },
     {
       featureTitle: "복합 상품 옵션 관리 시스템 아키텍처 설계",
       featureDescription: [
-        "골프, 항공, 숙박을 포함한 다차원 상품 구성 관리 시스템을 개발하였습니다. Zustand를 활용한 복잡한 상태 관리, 실시간 가격 계산 및 유효성 검증, 단계별 폼 워크플로우(Funnel 패턴)를 구현하여 복잡한 비즈니스 로직을 효율적으로 관리할 수 있도록 하였습니다.",
+        "골프, 항공, 숙박을 포함한 다차원 상품 구성 관리 시스템을 개발",
+        "Zustand를 활용한 복잡한 상태 관리, 실시간 가격 계산 및 유효성 검증, 단계별 폼 워크플로우(Funnel 패턴)를 구현하여 복잡한 비즈니스 로직을 효율적으로 관리할 수 있도록 설계",
       ],
       link: null,
     },
     {
       featureTitle: "성능 최적화 및 사용자 경험 개선",
       featureDescription: [
-        "React.memo, useMemo, useCallback을 활용한 메모이제이션 최적화, 스켈레톤 UI를 통한 로딩 상태 개선, 실시간 피드백 시스템(토스트, 알림) 구현을 통해 애플리케이션 성능을 향상시키고 사용자 경험을 개선하였습니다.",
+        "React.memo, useMemo, useCallback을 활용한 메모이제이션 최적화",
+        "스켈레톤 UI를 통한 로딩 상태 개선",
       ],
       link: null,
     },
@@ -183,19 +180,10 @@ const ART_GUIDE_RUN: ProjectType = {
   projectLink: "https://artguiderun.com",
   workList: [
     {
-      featureTitle: "Optimistic Updates 패턴으로 실시간 반응성 구현",
-      featureDescription: [
-        "좋아요 기능에서 서버 응답을 기다리지 않고 즉시 UI를 업데이트하는 Optimistic Updates 패턴을 구현하였습니다. 실패 시 자동 롤백 메커니즘과 중복 요청 방지 로직을 추가하여 안정적이고 반응성이 뛰어난 사용자 경험을 제공하였습니다.",
-      ],
-      link: {
-        url: "#",
-        text: "Optimistic Updates로 즉시 반응하는 UI 구현",
-      },
-    },
-    {
       featureTitle: "JWT 미들웨어 기반 보안 인증 시스템 구축",
       featureDescription: [
-        "Next.js middleware를 활용하여 JWT 토큰의 구조적 검증과 만료시간 체크를 수행하는 보안 시스템을 구현하였습니다. 경로별 접근 제어(Protected/Auth Routes)와 자동 리다이렉트 로직을 통해 인증되지  않은 사용자의 보호된 리소스 접근을 차단하고 보안성을 강화하였습니다.",
+        "Next.js middleware를 활용하여 JWT 토큰의 구조적 검증과 만료시간 체크를 수행하는 보안 시스템을 구현",
+        "경로별 접근 제어(Protected/Auth Routes)와 자동 리다이렉트 로직을 통해 인증되지 않은 사용자의 보호된 리소스 접근을 차단하고 보안성을 강화",
       ],
       link: null,
     },
@@ -203,21 +191,25 @@ const ART_GUIDE_RUN: ProjectType = {
     {
       featureTitle: "이미지 최적화 및 CDN 통합",
       featureDescription: [
-        "Next.js Image 컴포넌트를 연동하여 WebP, AVIF 포맷을 지원하는 이미지 최적화 시스템을 구축하였습니다. 640px~1920px 다양한 디바이스 사이즈 대응과 24시간 캐시 TTL 설정을 통해 이미지 로딩성능을 크게 향상시켰습니다.",
+        "Next.js Image 컴포넌트를 연동하여 WebP, AVIF 포맷을 지원하는 이미지 최적화 시스템을 구축",
+        "640px~1920px 다양한 디바이스 사이즈 대응과 24시간 캐시 TTL 설정을 통해 이미지 로딩성능을 크게 향상",
       ],
       link: null,
     },
     {
       featureTitle: "타입 세이프 폼 검증 시스템 구현",
       featureDescription: [
-        "React Hook Form과 Zod를 결합하여 런타임 타입 검증이 가능한 폼 시스템을 구현하였습니다. 재사용 가능한 스키마 기반 검증 로직과 Resolver 패턴을 활용하여 타입 안정성을 보장하고 개발 생산성을 향상시켰습니다.",
+        "React Hook Form과 Zod를 결합하여 런타임 타입 검증이 가능한 폼 시스템을 구현",
+        "재사용 가능한 스키마 기반 검증 로직과 Resolver 패턴을 활용하여 타입 안정성을 보장하고 개발 생산성을 향상함",
       ],
       link: null,
     },
     {
-      featureTitle: "외부 서비스 통합 및 결제 시스템 구현",
+      featureTitle: "Optimistic Updates 패턴으로 실시간 반응성 구현",
       featureDescription: [
-        "PortOne SDK를 활용한 결제 시스템, 다음 우편번호 API 연동, 카카오톡 소셜 로그인, 사업자등록번호 실시간 검증 등 다양한 외부 서비스를 통합하였습니다. API 에러 핸들링과 사용자 피드백 시스템을 구축하여 안정적인 서비스 운영 환경을 조성하였습니다.",
+        // todo : 롤백 메커니즘에 대해서 블로그 글 작성하면 좋을 듯
+        "좋아요 기능에서 서버 응답을 기다리지 않고 즉시 UI를 업데이트하는 Optimistic Updates 패턴을 구현",
+        "실패 시 자동 롤백 메커니즘과 중복 요청 방지 로직을 추가하여 안정적이고 반응성이 뛰어난 사용자 경험을 제공",
       ],
       link: null,
     },
@@ -551,12 +543,12 @@ export const SKILLS = {
     { key: "✅ 폼 & 유효성 검사", value: "React Hook Form, Zod" },
     {
       key: "🧩 UI 라이브러리 & 컴포넌트",
-      value: "shadcn/ui, DnD Kit (Drag & Drop)",
+      value: "shadcn/ui, DnD Kit",
     },
     {
       key: "💳 결제 & 외부 서비스 통합",
       value:
-        "포트원(PortOne) SDK, 소셜 로그인 (카카오톡, 네이버, 구글, 애플), 다음 우편번호 API, 사업자등록번호 검증 API",
+        "포트원 SDK, 소셜 로그인, 다음 우편번호 API, 사업자등록번호 검증 API",
     },
     {
       key: "⚙️ 빌드 도구 & 개발 환경",
