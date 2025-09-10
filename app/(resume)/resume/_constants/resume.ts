@@ -542,9 +542,9 @@ export const OTHER_EXPERIENCES = [TECH_BLOG, SUWON_UNIV];
 // Skills 데이터
 export const SKILLS = {
   frontend: [
-    "Next.js 13(appDir)을 능숙하게 사용할 줄 압니다. 프로젝트의 처음부터 끝까지 개발하고 운영해 본 경험이 있습니다.",
-    "공통으로 사용하는 코드를 Custom Hook으로 만들어 코드의 재사용성을 높입니다.",
-    "React 생태계의 최신 기술에 관심이 많고, TanStack Query, SWR, Recoil을 활용할 줄 알고, 이를 능숙하게 다루기 위해 지속적으로 탐구하고 있습니다.",
+    "사용자 도메인에서는 Next.js를 사용하여 SSR을 사용하여 SEO 최적화를 진행하고 있습니다.",
+    "SEO를 중요하게 생각하지 않는 도메인에서는 Vite를 사용하여 빠른 번들링을 진행하고 있습니다.",
+    "React 생태계의 최신 기술에 관심이 많고, TanStack Query, Zustand, Recoil을 활용할 줄 알고, 이를 능숙하게 다루기 위해 지속적으로 탐구하고 있습니다.",
     "TypeScript를 이용한 React 개발에 익숙합니다.",
     "웹 표준 성능에 큰 관심을 가지고 있으며, 최신 기술과 방법론을 통해 웹 페이지의 로딩 속도, 사용자 경험 및 성능을 최적화할 수 있습니다.",
     "Thymeleaf와 jQuery를 실무에서 사용해 본 경험이 있습니다.",

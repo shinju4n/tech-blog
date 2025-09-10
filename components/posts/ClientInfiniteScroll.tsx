@@ -1,8 +1,8 @@
-'use client';
+"use client";
 
-import Link from 'next/link';
-import React, { useEffect, useRef, useState } from 'react';
-import Image from 'next/image';
+import Link from "next/link";
+import React, { useEffect, useRef, useState } from "react";
+import Image from "next/image";
 
 interface Post {
   id: string;
@@ -14,7 +14,9 @@ interface ClientInfiniteScrollProps {
   initialPosts: Post[];
 }
 
-const ClientInfiniteScroll: React.FC<ClientInfiniteScrollProps> = ({ initialPosts }) => {
+const ClientInfiniteScroll: React.FC<ClientInfiniteScrollProps> = ({
+  initialPosts,
+}) => {
   const [posts, setPosts] = useState<Post[]>(initialPosts);
   const scrollContainerRef = useRef<HTMLDivElement>(null);
   const endOfListRef = useRef<HTMLDivElement>(null);
@@ -41,11 +43,14 @@ const ClientInfiniteScroll: React.FC<ClientInfiniteScrollProps> = ({ initialPost
   }, [endOfListRef.current]);
 
   const loadMorePosts = () => {
-    setPosts(prevPosts => [...prevPosts, ...initialPosts]);
+    setPosts((prevPosts) => [...prevPosts, ...initialPosts]);
   };
 
   return (
-    <div className="flex w-full mb-4 overflow-x-auto gap-2 scrollbar-hide" ref={scrollContainerRef}>
+    <div
+      className="flex w-full mb-4 overflow-x-auto gap-2 scrollbar-hide"
+      ref={scrollContainerRef}
+    >
       {posts.map((post, i) => (
         <Link href={`/posts/${post.id}`} key={i}>
           <div className="flex flex-col justify-center h-full border rounded-lg shadow-md overflow-hidden">
