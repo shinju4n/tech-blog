@@ -1,10 +1,14 @@
 {
   "root": true,
   "plugins": ["@typescript-eslint"],
-  "extends": ["eslint:recommended", "plugin:@typescript-eslint/recommended", "eslint-config-next"],
+  "extends": [
+    "eslint:recommended",
+    "plugin:@typescript-eslint/recommended",
+    "eslint-config-next"
+  ],
   "parser": "@typescript-eslint/parser",
   "rules": {
     "no-console": "warn",
-    "import/prefer-default-export": "off"
+    "import/prefer-default-export": "on"
   }
 }

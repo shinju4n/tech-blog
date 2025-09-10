@@ -1,14 +1,17 @@
-import Typography from '@/components/ui/typography';
-import { SKILLS } from '@/app/(resume)/resume/_constants/resume';
-import { FC } from 'react';
+import Typography from "@/components/ui/typography";
+import { SKILLS } from "@/app/(resume)/resume/_constants/resume";
+import { FC } from "react";
+import ResumeTitle from "../ResumeTitle";
 
 const Skills: FC = () => {
   return (
     <div className="py-10">
-      <Typography size="h2" className="mb-4 font-bold">Skills.</Typography>
+      <ResumeTitle>Skills.</ResumeTitle>
       <div className="flex flex-col gap-4">
         <div>
-          <Typography size="h3" className="mb-2">Front-end</Typography>
+          <Typography size="h3" className="mb-2">
+            Front-end
+          </Typography>
           <ul className="pl-4 list-disc flex flex-col gap-1">
             {SKILLS.frontend.map((skill, index) => (
               <li key={index}>{skill}</li>
@@ -16,7 +19,9 @@ const Skills: FC = () => {
           </ul>
         </div>
         <div>
-          <Typography size="h3" className="mb-2">Back-end</Typography>
+          <Typography size="h3" className="mb-2">
+            Back-end
+          </Typography>
           <ul className="pl-4 list-disc flex flex-col gap-1">
             {SKILLS.backend.map((skill, index) => (
               <li key={index}>{skill}</li>
