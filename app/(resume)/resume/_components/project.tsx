@@ -1,15 +1,32 @@
-import BoldText from '@/components/bold-text';
-import { ProjectType, WorkListType } from '../_constants/resume';
+import { ProjectType } from '../_constants/resume';
 import { Layout } from '@/components/resume/work-experience/Layout';
+import BlankLink from '@/components/blank-link';
 
-const Project = ({ project }: { project: ProjectType }) => {
+interface ProjectProps {
+  project: ProjectType;
+}
+
+const Project = ({ project }: ProjectProps) => {
   return (
     <Layout>
       <Layout.ProjectTitle title={project.projectTitle} subTitle={project.projectPeriod} />
       <Layout.InnerContainer>
-        <Layout.Content type="Description">{project.projectDescription}</Layout.Content>
+        <Layout.Content type="Description">
+          {project.projectDescription.map((desc, index) => (
+            <span key={index}>
+              {desc}
+              {project.projectLink && index === 0 && (
+                <>
+                  {' '}
+                  <BlankLink href={project.projectLink}>{project.projectLink}</BlankLink>
+                  {' '}
+                </>
+              )}
+            </span>
+          ))}
+        </Layout.Content>
         <Layout.Content type="Work">
-          <Layout.WorkList list={<WorkList workList={project.workList} />} />
+          <Layout.WorkList workList={project.workList} />
         </Layout.Content>
         <Layout.Content type="Tech Stack">{project.projectStack.join(', ')}</Layout.Content>
       </Layout.InnerContainer>
@@ -18,18 +35,3 @@ const Project = ({ project }: { project: ProjectType }) => {
 };
 
 export default Project;
-
-const WorkList = ({ workList }: { workList: WorkListType[] }) => {
-  return (
-    <>
-      {workList.map((work, i) => (
-        <li key={i}>
-          <BoldText>{work.featureTitle + ' : '}</BoldText>
-          {work.featureDescription.map((description, i) => (
-            <span key={i}>{description}</span>
-          ))}
-        </li>
-      ))}
-    </>
-  );
-};

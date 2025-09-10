@@ -1,3 +1,4 @@
+import React from 'react';
 import Divider from '@/components/resume/Divider';
 import Typography from '@/components/ui/typography';
 import { type CompanyType } from '../_constants/resume';
@@ -20,10 +21,10 @@ const Company = ({ company }: { company: CompanyType }) => {
       </div>
       <div className="xl:w-2/3">
         {company.projects.map((project, i) => (
-          <>
-            <Project key={i} project={project} />
+          <React.Fragment key={project.projectTitle}>
+            <Project project={project} />
             {i !== company.projects.length - 1 && <Divider />}
-          </>
+          </React.Fragment>
         ))}
       </div>
     </div>
